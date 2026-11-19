@@ -139,6 +139,10 @@ This downloads the Unsplash photos into `assets/img/photos/` and rewrites the co
 
 ---
 
+## 🌍 Live Site
+
+**https://hemeshwar2009.github.io/ITIHASAM/** — redeployed automatically by GitHub Actions on every push to `main` (see `.github/workflows/deploy-pages.yml`).
+
 ## 🌐 Deploying
 
 It is a static site, so any static host works (GitHub Pages, Netlify, Vercel, Cloudflare Pages). Upload the `itihasam` folder as-is. Once it is on a public URL, the QR code on the certificate points to that URL automatically.
