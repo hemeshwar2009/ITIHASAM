@@ -10,4 +10,4 @@
 // works only on one device).
 
 export const SUPABASE_URL = 'https://ebmjiebcbyrobaxntgfa.supabase.co';
-export const SUPABASE_KEY = '';
+export const SUPABASE_KEY = 'sb_publishable_mlse68ogg9KsmjF6N2oTLQ_iOp46fun';

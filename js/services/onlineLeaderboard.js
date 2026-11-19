@@ -34,7 +34,16 @@ async function rpc(fn, body) {
   });
   if (!res.ok) {
     let msg = `${res.status}`;
-    try { const j = await res.json(); msg = j.message || j.hint || msg; } catch (e) { /* ignore */ }
+    try {
+      const j = await res.json();
+      msg = j.message || j.hint || msg;
+      // Function/table missing: the SQL in supabase/migrations has not been run yet
+      if (j.code === 'PGRST202' || j.code === 'PGRST205' || j.code === '42883') {
+        msg = 'The online class board is not set up on the server yet. Ask your teacher to run the Itihasam database setup.';
+      } else if (/not allowed/i.test(msg)) {
+        msg = 'This explorer is already linked to another device.';
+      }
+    } catch (e) { /* ignore */ }
     throw new Error(msg);
   }
   const text = await res.text();
