@@ -47,7 +47,7 @@ export class LandingStoryboard {
         <div class="landing-content-wrap">
           <div class="landing-header-block">
             <div class="heritage-top-motif">❦ ══ •⊰ ॐ ⊱• ══ ❦</div>
-            <h1 class="main-title">${t('appName')}</h1>
+            <h1 class="main-title font-medieval">${t('appName')}</h1>
             <p class="title-meaning">इतिहासम् · <em>itihāsa</em> — "thus indeed it happened"</p>
             <h2 class="sub-title">${t('tagline')}</h2>
             <p class="supporting-text">${t('heroText')}</p>
@@ -58,6 +58,7 @@ export class LandingStoryboard {
               <button class="btn-ancient btn-terracotta" id="btn-hero-avatar">👤 ${t('customizeExplorer')}</button>
             </div>
             <div class="landing-quick-links">
+              <button class="quick-link-chip" data-go="start">🎮 Title Screen</button>
               <button class="quick-link-chip" data-go="daily">🔥 ${t('navDaily')}${gameState.hasAnsweredDailyToday() ? ' ✓' : ''}</button>
               <button class="quick-link-chip" data-go="timeline">⏳ ${t('navTimeline')}</button>
               <button class="quick-link-chip" data-go="passport">🛂 ${t('navPassport')} (${gameState.countStamps()}/28)</button>
@@ -95,7 +96,7 @@ export class LandingStoryboard {
               <!-- 5 Interconnected Stops (Interactive Floating Cards) -->
               <div class="floating-stops-row" id="floating-stops-row">
                 <!-- Stop 1: HISTORY & CIVILIZATION -->
-                <div class="journey-stop-card stop-1" data-category="history" style="top: 100px; left: 10px;" role="button" tabindex="0" aria-label="Stop 1: History and Civilization">
+                <div class="journey-stop-card stop-1" data-category="history" role="button" tabindex="0" aria-label="Stop 1: History and Civilization">
                   <div class="stop-badge">STOP 01</div>
                   <div class="stop-icon-wrap">📜</div>
                   <h4 class="stop-title">HISTORY & CIVILIZATION</h4>
@@ -104,7 +105,7 @@ export class LandingStoryboard {
                 </div>
 
                 <!-- Stop 2: FORGOTTEN TRADITIONAL GAMES -->
-                <div class="journey-stop-card stop-2" data-category="games" style="top: 15px; left: 240px;" role="button" tabindex="0" aria-label="Stop 2: Forgotten Traditional Games">
+                <div class="journey-stop-card stop-2" data-category="games" role="button" tabindex="0" aria-label="Stop 2: Forgotten Traditional Games">
                   <div class="stop-badge">STOP 02</div>
                   <div class="stop-icon-wrap">🎲</div>
                   <h4 class="stop-title">FORGOTTEN TRADITIONAL GAMES</h4>
@@ -113,7 +114,7 @@ export class LandingStoryboard {
                 </div>
 
                 <!-- Stop 3: ARCHITECTURAL WONDERS -->
-                <div class="journey-stop-card stop-3" data-category="architecture" style="top: 90px; left: 470px;" role="button" tabindex="0" aria-label="Stop 3: Architectural Wonders">
+                <div class="journey-stop-card stop-3" data-category="architecture" role="button" tabindex="0" aria-label="Stop 3: Architectural Wonders">
                   <div class="stop-badge">STOP 03</div>
                   <div class="stop-icon-wrap">🏛️</div>
                   <h4 class="stop-title">ARCHITECTURAL WONDERS</h4>
@@ -122,7 +123,7 @@ export class LandingStoryboard {
                 </div>
 
                 <!-- Stop 4: FESTIVALS & CELEBRATIONS -->
-                <div class="journey-stop-card stop-4" data-category="festivals" style="top: 10px; left: 700px;" role="button" tabindex="0" aria-label="Stop 4: Festivals and Celebrations">
+                <div class="journey-stop-card stop-4" data-category="festivals" role="button" tabindex="0" aria-label="Stop 4: Festivals and Celebrations">
                   <div class="stop-badge">STOP 04</div>
                   <div class="stop-icon-wrap">🪔</div>
                   <h4 class="stop-title">FESTIVALS & CELEBRATIONS</h4>
@@ -131,7 +132,7 @@ export class LandingStoryboard {
                 </div>
 
                 <!-- Stop 5: REGIONAL CULTURES -->
-                <div class="journey-stop-card stop-5" data-category="culture" style="top: 85px; left: 910px;" role="button" tabindex="0" aria-label="Stop 5: Regional Cultures">
+                <div class="journey-stop-card stop-5" data-category="culture" role="button" tabindex="0" aria-label="Stop 5: Regional Cultures">
                   <div class="stop-badge">STOP 05</div>
                   <div class="stop-icon-wrap">🎭</div>
                   <h4 class="stop-title">REGIONAL CULTURES</h4>
@@ -212,6 +213,8 @@ export class LandingStoryboard {
 
   setupOpposingPointerParallax() {
     if (document.body.classList.contains('reduced-motion')) return;
+    // Parallax only on wide screens, where the curved trail layout is used
+    if (window.innerWidth < 1120) return;
     window.addEventListener('mousemove', this.boundPointerMove);
     window.addEventListener('touchmove', this.boundTouchMove, { passive: true });
     this.startParallaxLoop();
@@ -230,8 +233,8 @@ export class LandingStoryboard {
     // Mouse right (+normX) => Box moves LEFT (-targetX)
     // Mouse top (-normY) => Box shifts DOWN (+targetY)
     // Mouse bottom (+normY) => Box shifts UP (-targetY)
-    const MAX_SHIFT_X = 26; // pixels, clamped inside viewport
-    const MAX_SHIFT_Y = 18;
+    const MAX_SHIFT_X = 12; // gentle, so cards never collide
+    const MAX_SHIFT_Y = 8;
 
     this.targetX = -normX * MAX_SHIFT_X;
     this.targetY = -normY * MAX_SHIFT_Y;
@@ -252,6 +255,7 @@ export class LandingStoryboard {
   startParallaxLoop() {
     const loop = () => {
       // Smooth interpolation (lerp)
+      if (window.innerWidth < 1120) { this.rafId = requestAnimationFrame(loop); return; }
       this.currentX += (this.targetX - this.currentX) * 0.08;
       this.currentY += (this.targetY - this.currentY) * 0.08;
 

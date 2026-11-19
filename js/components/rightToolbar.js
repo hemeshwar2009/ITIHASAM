@@ -6,6 +6,7 @@ import { gameState } from '../state/gameState.js';
 import { t, escapeHTML, LANGUAGES, getLanguage, setLanguage } from '../i18n.js';
 
 const NAV_ITEMS = [
+  { route: 'start', icon: '🎮', key: 'navStart', match: ['start'] },
   { route: 'landing', icon: '🏛️', key: 'navHome', match: ['landing'] },
   { route: 'india-map', icon: '🗺️', key: 'navMap', match: ['india-map'] },
   { route: 'states-directory', icon: '🧭', key: 'navExplore', match: ['states-directory', 'state-detail', 'game-view', 'slideshow'] },

@@ -4,7 +4,7 @@
 // • Photos, fonts and CDN scripts are cached the first time they load
 //   (cache-first), so a visited page keeps working without internet.
 
-const VERSION = 'itihasam-v4';
+const VERSION = 'itihasam-v5';
 const SHELL_CACHE = `${VERSION}-shell`;
 const RUNTIME_CACHE = `${VERSION}-runtime`;
 
@@ -14,6 +14,10 @@ const SHELL = [
   'manifest.webmanifest',
   'assets/img/heritage-placeholder.svg',
   'assets/img/icon.svg',
+  'assets/img/itihasam_start_bg.jpg',
+  'js/components/titleScreen.js',
+  'js/data/indiaMapPaths.js',
+  'styles/title-screen.css',
   'js/app.js',
   'js/i18n.js',
   'js/config.js',

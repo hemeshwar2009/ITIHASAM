@@ -23,6 +23,7 @@ import { TimelineMode } from './components/timelineMode.js';
 import { ClassLeaderboard } from './components/classLeaderboard.js';
 import { ImpactPage } from './components/impactPage.js';
 import { ToastNotifier } from './components/toastNotifier.js';
+import { TitleScreen } from './components/titleScreen.js';
 
 // Games
 import { PallanguzhiGame } from './games/traditionalGames.js';
@@ -42,7 +43,8 @@ const SIMPLE_VIEWS = {
   'daily': DailyChallenge,
   'timeline': TimelineMode,
   'leaderboard': ClassLeaderboard,
-  'impact': ImpactPage
+  'impact': ImpactPage,
+  'start': TitleScreen
 };
 
 class AppRouter {
@@ -78,11 +80,11 @@ class AppRouter {
 
     this.toasts = new ToastNotifier();
 
-    // 2. Always open on the landing page; it offers "Continue your journey"
-    //    when there is saved progress. A #hash deep-link is honoured.
+    // 2. Open on the game-style title screen (Continue / New Game / Map...).
+    //    A #hash deep-link is honoured.
     const fromHash = this.parseHash();
     if (fromHash) this.navigate(fromHash.view, fromHash.params, { replace: true });
-    else this.navigate('landing', {}, { replace: true });
+    else this.navigate('start', {}, { replace: true });
 
     window.addEventListener('popstate', () => {
       const h = this.parseHash();
@@ -206,7 +208,9 @@ class AppRouter {
   }
 
   renderSimple(viewName) {
-    this.mainViewContainer.innerHTML = `<div class="page-outer-wrap" id="simple-view-mount"></div>`;
+    // The title screen is full-bleed; other pages use the padded content wrapper
+    const wrapClass = viewName === 'start' ? 'title-outer-wrap' : 'page-outer-wrap';
+    this.mainViewContainer.innerHTML = `<div class="${wrapClass}" id="simple-view-mount"></div>`;
     const Cls = SIMPLE_VIEWS[viewName];
     this.activeComponent = new Cls('simple-view-mount');
     this.activeComponent.init();

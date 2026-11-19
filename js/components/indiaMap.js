@@ -1,30 +1,34 @@
 // js/components/indiaMap.js
-// ITIHASAM: Interactive "living map" of India's 28 states.
-// Drawn as a tile map (one tile per state placed roughly where it lies),
-// so every state is the same size, easy to tap and keyboard-accessible.
-// Each tile fills with gold as its five cultural experiences are completed.
+// ITIHASAM: Interactive geographical map of India.
+// Real state & Union Territory boundaries (DataMeet, CC BY 4.0) drawn as SVG.
+// Each of the 28 states is a colourful, clickable, keyboard-focusable shape;
+// a gold border and a passport stamp mark states whose five experiences are done.
 
 import { soundSynth } from '../audio/soundSynth.js';
 import { gameState, REGIONS_LIST } from '../state/gameState.js';
 import { INDIAN_STATES } from '../data/statesData.js';
 import { describeGame } from '../data/gameRouting.js';
+import { MAP_VIEWBOX, MAP_REGIONS, MAP_INNER_BORDERS, MAP_OUTER_BORDER } from '../data/indiaMapPaths.js';
 import { t, escapeHTML } from '../i18n.js';
 
-// [column, row] on a 10 x 7 grid, roughly following geography
-export const MAP_TILES = {
-  'himachal-pradesh': [5, 1, 'HP'],
-  'punjab': [4, 2, 'PB'], 'haryana': [5, 2, 'HR'], 'uttarakhand': [6, 2, 'UK'], 'sikkim': [8, 2, 'SK'], 'arunachal-pradesh': [10, 2, 'AR'],
-  'rajasthan': [4, 3, 'RJ'], 'uttar-pradesh': [5, 3, 'UP'], 'bihar': [6, 3, 'BR'], 'west-bengal': [7, 3, 'WB'], 'assam': [9, 3, 'AS'], 'nagaland': [10, 3, 'NL'],
-  'gujarat': [3, 4, 'GJ'], 'madhya-pradesh': [4, 4, 'MP'], 'chhattisgarh': [5, 4, 'CG'], 'jharkhand': [6, 4, 'JH'], 'meghalaya': [9, 4, 'ML'], 'manipur': [10, 4, 'MN'],
-  'maharashtra': [4, 5, 'MH'], 'telangana': [5, 5, 'TG'], 'odisha': [6, 5, 'OD'], 'tripura': [9, 5, 'TR'], 'mizoram': [10, 5, 'MZ'],
-  'goa': [3, 6, 'GA'], 'karnataka': [4, 6, 'KA'], 'andhra-pradesh': [5, 6, 'AP'],
-  'kerala': [4, 7, 'KL'], 'tamil-nadu': [5, 7, 'TN']
+// Short labels drawn on the map
+export const STATE_ABBR = {
+  'himachal-pradesh': 'HP', 'punjab': 'PB', 'haryana': 'HR', 'uttarakhand': 'UK', 'sikkim': 'SK',
+  'arunachal-pradesh': 'AR', 'rajasthan': 'RJ', 'uttar-pradesh': 'UP', 'bihar': 'BR', 'west-bengal': 'WB',
+  'assam': 'AS', 'nagaland': 'NL', 'gujarat': 'GJ', 'madhya-pradesh': 'MP', 'chhattisgarh': 'CG',
+  'jharkhand': 'JH', 'meghalaya': 'ML', 'manipur': 'MN', 'maharashtra': 'MH', 'telangana': 'TG',
+  'odisha': 'OD', 'tripura': 'TR', 'mizoram': 'MZ', 'goa': 'GA', 'karnataka': 'KA',
+  'andhra-pradesh': 'AP', 'kerala': 'KL', 'tamil-nadu': 'TN'
 };
+
+// Nudge a few labels so they sit clearly inside / beside small states
+const LABEL_NUDGE = { goa: [-26, 4], sikkim: [0, -2], tripura: [-2, 2], kerala: [-4, 6], haryana: [-4, 6], 'andhra-pradesh': [6, 10] };
+
+const SMALL_STATES = new Set(['goa', 'sikkim', 'tripura', 'manipur', 'mizoram', 'nagaland', 'meghalaya']);
 
 export class IndiaMap {
   constructor(containerId) {
     this.container = document.getElementById(containerId);
-    this.hoverId = null;
   }
 
   init() { this.render(); }
@@ -34,20 +38,34 @@ export class IndiaMap {
     const stamped = gameState.countStamps();
     const regions = gameState.getVisitedRegions();
     const pct = gameState.getOverallCompletionPercentage();
+    const stateIds = new Set(INDIAN_STATES.map(s => s.id));
 
-    const tiles = INDIAN_STATES.map(s => {
-      const pos = MAP_TILES[s.id];
-      if (!pos) return '';
+    // Union Territories: drawn in neutral sandstone, not part of the 28-state journey
+    const uts = Object.entries(MAP_REGIONS).filter(([id]) => !stateIds.has(id)).map(([id, r]) =>
+      `<path class="map-ut" d="${r.d}"><title>${escapeHTML(r.name)} (Union Territory)</title></path>`).join('');
+
+    const states = INDIAN_STATES.map(s => {
+      const r = MAP_REGIONS[s.id];
+      if (!r) return '';
       const done = gameState.getStateCompletionPercentage(s.id);
       const label = `${s.name}, ${s.region} India: ${done}% explored${done === 100 ? ', passport stamp earned' : ''}`;
-      return `
-        <button class="map-tile region-${s.region.toLowerCase()} ${done === 100 ? 'complete' : ''} ${done > 0 && done < 100 ? 'partial' : ''}"
-                style="grid-column:${pos[0] - 2};grid-row:${pos[1]};--fill:${done}%"
-                data-id="${s.id}" aria-label="${escapeHTML(label)}">
-          <span class="map-tile-fill" aria-hidden="true"></span>
-          <span class="map-tile-abbr">${pos[2]}</span>
-          <span class="map-tile-pct">${done === 100 ? '🛂' : done + '%'}</span>
-        </button>`;
+      return `<path class="map-state ${done === 100 ? 'complete' : ''} ${done > 0 && done < 100 ? 'partial' : ''}"
+          d="${r.d}" style="--state-color:${r.color}" data-id="${s.id}"
+          tabindex="0" role="button" aria-label="${escapeHTML(label)}"></path>`;
+    }).join('');
+
+    const labels = INDIAN_STATES.map(s => {
+      const r = MAP_REGIONS[s.id];
+      if (!r) return '';
+      const [nx, ny] = LABEL_NUDGE[s.id] || [0, 0];
+      const x = r.cx + nx, y = r.cy + ny;
+      const done = gameState.getStateCompletionPercentage(s.id);
+      const small = SMALL_STATES.has(s.id);
+      return `<g class="map-label ${small ? 'small' : ''}" data-for="${s.id}" aria-hidden="true">
+          <text x="${x}" y="${y}" class="map-abbr">${STATE_ABBR[s.id] || ''}</text>
+          ${done === 100 ? `<text x="${x}" y="${y + (small ? 13 : 18)}" class="map-stamp">🛂</text>`
+            : done > 0 ? `<text x="${x}" y="${y + (small ? 11 : 15)}" class="map-pct">${done}%</text>` : ''}
+        </g>`;
     }).join('');
 
     this.container.innerHTML = `
@@ -67,8 +85,22 @@ export class IndiaMap {
 
         <div class="map-layout">
           <div class="map-board ancient-panel">
-            <div class="map-grid" role="group" aria-label="Tile map of India's 28 states">${tiles}</div>
-            <p class="map-note">Tile map — each state is one tile placed roughly where it lies. Not to scale; Union Territories are not shown.</p>
+            <svg class="india-svg" viewBox="${MAP_VIEWBOX}" role="group" aria-label="Map of India with its 28 states">
+              <defs>
+                <filter id="map-shadow" x="-5%" y="-5%" width="110%" height="110%">
+                  <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#493A2D" flood-opacity="0.18"/>
+                </filter>
+              </defs>
+              <g filter="url(#map-shadow)">
+                ${uts}
+                ${states}
+              </g>
+              <path class="map-inner-borders" d="${MAP_INNER_BORDERS}"/>
+              <path class="map-outer-border" d="${MAP_OUTER_BORDER}"/>
+              <g class="map-labels">${labels}</g>
+            </svg>
+            <p class="map-note">Hover or focus a state to preview it; click or press Enter to explore. Union Territories are shown in sandstone.
+              Boundaries: <a href="https://github.com/datameet/maps" target="_blank" rel="noopener">DataMeet India</a> (CC BY 4.0).</p>
           </div>
           <aside class="map-info ancient-panel" id="map-info" aria-live="polite">
             ${this.infoPanel(null)}
@@ -76,36 +108,47 @@ export class IndiaMap {
         </div>
 
         <div class="map-legend ancient-panel">
-          ${REGIONS_LIST.map(r => `<span class="legend-item"><span class="legend-swatch region-${r.toLowerCase()}"></span>${r}${regions.has(r) ? ' ✓' : ''}</span>`).join('')}
-          <span class="legend-item"><span class="legend-swatch gold"></span>Completed (stamp earned)</span>
+          ${REGIONS_LIST.map(r => `<span class="legend-item">${r} India${regions.has(r) ? ' ✓' : ''}</span>`).join('<span aria-hidden="true">·</span>')}
+          <span class="legend-item"><span class="legend-swatch gold"></span>Gold border = all 5 experiences done</span>
+          <span class="legend-item"><span class="legend-swatch ut"></span>Union Territory</span>
         </div>
       </div>`;
 
-    this.container.querySelectorAll('.map-tile').forEach(tile => {
-      const id = tile.dataset.id;
+    this.container.querySelectorAll('.map-state').forEach(path => {
+      const id = path.dataset.id;
       const show = () => {
+        this.container.querySelectorAll('.map-state.active').forEach(p => p.classList.remove('active'));
+        path.classList.add('active');
+        // Bring the hovered state to the front so its outline is not hidden
+        path.parentNode.appendChild(path);
         const info = this.container.querySelector('#map-info');
         if (info) info.innerHTML = this.infoPanel(id);
         this.bindInfo();
       };
-      tile.addEventListener('mouseenter', show);
-      tile.addEventListener('focus', show);
-      tile.addEventListener('click', () => {
+      const open = () => {
         soundSynth.playBell();
         if (window.appRouter) window.appRouter.navigate('states-directory', { stateId: id });
+      };
+      path.addEventListener('mouseenter', show);
+      path.addEventListener('focus', show);
+      path.addEventListener('click', open);
+      path.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
       });
     });
   }
 
   infoPanel(id) {
     if (!id) {
-      return `<h3>Choose a state</h3><p>Hover or focus a tile to preview its heritage. Click (or press Enter) to open its five experiences.</p>
-        <p class="map-tip">💡 Tip: use the Tab key to move between states.</p>`;
+      return `<h3>Choose a state</h3><p>Hover over or focus a state to preview its heritage. Click (or press Enter) to open its five experiences.</p>
+        <p class="map-tip">💡 Tip: press Tab to move between states.</p>`;
     }
     const s = INDIAN_STATES.find(x => x.id === id);
     if (!s) return '';
+    const r = MAP_REGIONS[id];
     const cats = [['history', '📜'], ['games', '🎲'], ['architecture', '🏛️'], ['festivals', '🪔'], ['culture', '🎭']];
     return `
+      <span class="map-info-swatch" style="background:${r ? r.color : 'var(--accent-gold)'}"></span>
       <span class="region-pill">${escapeHTML(s.region)} India · ${escapeHTML(s.capital)}</span>
       <h3>${escapeHTML(s.name)}</h3>
       <p class="map-badge">${escapeHTML(s.badge)}</p>

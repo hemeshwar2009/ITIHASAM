@@ -139,6 +139,12 @@ This downloads the Unsplash photos into `assets/img/photos/` and rewrites the co
 
 ---
 
+## 🗺️ Credits
+
+- **Map boundaries:** [DataMeet India](https://github.com/datameet/maps) (CC BY 4.0), via [india-maps-data](https://github.com/udit-001/india-maps-data). Rebuild the map with `node tools/build-india-map.mjs <india.json>`.
+- **Photos:** [Unsplash](https://unsplash.com) (Unsplash License); file names keep the photo IDs.
+- **Title screen** background: monument skyline from the team's design assets.
+
 ## 🌍 Live Site
 
 **https://hemeshwar2009.github.io/ITIHASAM/** — redeployed automatically by GitHub Actions on every push to `main` (see `.github/workflows/deploy-pages.yml`).

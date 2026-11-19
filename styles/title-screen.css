@@ -1,0 +1,580 @@
+/* styles/title-start.css */
+/* ITIHASAM - Game-style title screen */
+
+.title-start-wrap {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 580px;
+  max-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1a0c02;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* ==========================================================================
+   1. BACKGROUND LAYER: The User's Uploaded Indian Monument Sunset Skyline
+   ========================================================================== */
+.title-bg-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/img/itihasam_start_bg.jpg');
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  z-index: 1;
+  filter: saturate(1.1) contrast(1.02);
+  transform: scale(1.01);
+  transition: transform 10s ease-out;
+}
+
+.title-start-wrap:hover .title-bg-layer {
+  transform: scale(1.03);
+}
+
+/* Atmospheric Warm Sunset Glow */
+.title-sky-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 12%, rgba(255, 248, 210, 0.3) 0%, rgba(245, 140, 30, 0.15) 40%, rgba(30, 12, 4, 0.45) 90%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.title-ground-shadow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 25%;
+  background: linear-gradient(to top, rgba(12, 6, 2, 0.85) 0%, rgba(20, 10, 4, 0.35) 60%, transparent 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Ambient Floating Particles (Golden Sun Dust) */
+.title-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.golden-ember {
+  position: absolute;
+  background: #FFEAA7;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #F39C12, 0 0 12px #FFEAA7;
+  opacity: 0.6;
+  animation: floatEmber linear infinite;
+}
+
+@keyframes floatEmber {
+  0% {
+    transform: translateY(105vh) translateX(0) scale(0.6);
+    opacity: 0;
+  }
+  20% { opacity: 0.8; }
+  80% { opacity: 0.6; }
+  100% {
+    transform: translateY(-5vh) translateX(30px) scale(1.1);
+    opacity: 0;
+  }
+}
+
+/* ==========================================================================
+   2. MAIN STAGE CONTENT (Left Logo & Character, Right Wooden Menu)
+   ========================================================================== */
+.title-stage-content {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  padding: 36px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   3. LEFT SIDE: Game Title Logo & Foreground Explorer Mascot
+   ========================================================================== */
+.title-left-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 520px;
+  z-index: 6;
+}
+
+/* The Chunky, Stylized "ITIHASAM" Game Logo (Switch / Indie Style) */
+.itihasam-logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 10px;
+  animation: logoSlideIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes logoSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-24px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.logo-crest-ornament {
+  position: relative;
+  left: 14px;
+  margin-bottom: -10px;
+  z-index: 2;
+  filter: drop-shadow(0 3px 0 #1A0D00) drop-shadow(0 6px 12px rgba(0,0,0,0.4));
+  animation: crestBob 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes crestBob {
+  from { transform: translateY(0) rotate(-1deg); }
+  to { transform: translateY(-4px) rotate(1deg); }
+}
+
+.itihasam-title-text {
+  font-family: var(--font-medieval, 'MedievalSharp', 'Uncial Antiqua', 'Metamorphous', cursive, serif);
+  font-size: clamp(3.8rem, 6.8vw, 6.2rem);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  line-height: 0.92;
+  margin: 0;
+  text-transform: uppercase;
+  
+  /* Chunky Warm Cream/Gold Face */
+  color: #FFFDF0;
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFF5D6 45%, #FAD77B 80%, #F39C12 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Chunky Solid Dark Outline + 3D Shadow (like "All of You" in reference) */
+  filter: drop-shadow(0 3px 0 #1A0C00)
+          drop-shadow(0 6px 0 #1A0C00)
+          drop-shadow(0 9px 0 #120800)
+          drop-shadow(0 14px 20px rgba(0, 0, 0, 0.75));
+  
+  transform: perspective(600px) rotate(-1deg);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.itihasam-title-text:hover {
+  transform: perspective(600px) rotate(0deg) scale(1.03);
+  filter: drop-shadow(0 3px 0 #1A0C00)
+          drop-shadow(0 7px 0 #1A0C00)
+          drop-shadow(0 11px 0 #120800)
+          drop-shadow(0 18px 26px rgba(0, 0, 0, 0.85));
+}
+
+/* Secondary Subtitle Tag */
+.logo-tagline-pill {
+  margin-top: 14px;
+  background: #1F1424;
+  border: 2px solid #573F60;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.15);
+}
+
+.logo-tagline-text {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #FFE699;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* Foreground Explorer Mascot looking toward the Sunset & Monuments */
+.start-mascot-wrapper {
+  margin-bottom: 24px;
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  animation: mascotEntrance 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes mascotEntrance {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.explorer-viewpoint-perch {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.explorer-character-svg {
+  width: 96px;
+  height: 110px;
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,0.6));
+  animation: explorerBreathing 3s ease-in-out infinite alternate;
+}
+
+@keyframes explorerBreathing {
+  from { transform: translateY(0); }
+  to { transform: translateY(-3px); }
+}
+
+.explorer-stone-platform {
+  width: 140px;
+  height: 20px;
+  background: #170E07;
+  border-top: 3px solid #3D2614;
+  border-radius: 6px 6px 0 0;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.7);
+  margin-top: -6px;
+}
+
+/* ==========================================================================
+   4. RIGHT SIDE: Vertical Wooden Signpost Menu with Capsule Pill Buttons
+   ========================================================================== */
+.title-right-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 6;
+  padding-right: 12px;
+}
+
+/* Rustic Wooden Board / Signpost Backdrop (matching reference) */
+.wooden-signpost-board {
+  position: relative;
+  background: linear-gradient(180deg, #624838 0%, #483427 45%, #35251B 100%);
+  border: 4px solid #28190E;
+  border-radius: 18px;
+  padding: 34px 22px 28px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.65), 
+              inset 0 2px 0 rgba(255, 255, 255, 0.2), 
+              inset 0 -3px 0 rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 250px;
+  animation: signpostDrop 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes signpostDrop {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Wooden Carved Notch details & Post Nails */
+.wooden-signpost-board::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 14px;
+  width: 8px;
+  height: 8px;
+  background: #1D1107;
+  border-radius: 50%;
+  box-shadow: inset 0 1px 2px #000, 214px 0 0 #1D1107, 0 340px 0 #1D1107, 214px 340px 0 #1D1107;
+}
+
+/* Little Green Sprout / Leaf on Top of Wooden Signpost (as in reference) */
+.signpost-top-sprout {
+  position: absolute;
+  top: -24px;
+  right: 28px;
+  width: 28px;
+  height: 28px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+  animation: leafSway 3s ease-in-out infinite alternate;
+  transform-origin: bottom center;
+}
+
+@keyframes leafSway {
+  from { transform: rotate(-5deg); }
+  to { transform: rotate(10deg); }
+}
+
+/* Capsule Pill Menu Buttons (exact shape & styling as reference) */
+.switch-pill-btn {
+  width: 100%;
+  height: 48px;
+  border-radius: 9999px;
+  background: linear-gradient(180deg, #44374E 0%, #2E2336 100%);
+  border: 2px solid #5C4A68;
+  color: #FFFFFF;
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  position: relative;
+  outline: none;
+}
+
+/* Inactive / Dimmed Button (like CONTINUE when no save, or secondary) */
+.switch-pill-btn.btn-dimmed {
+  background: linear-gradient(180deg, #322939 0%, #221B27 100%);
+  border-color: #3F3348;
+  color: #796A82;
+  cursor: pointer;
+}
+
+.switch-pill-btn.btn-dimmed:hover {
+  color: #D6CCE0;
+  border-color: #554562;
+  background: linear-gradient(180deg, #3C3044 0%, #29202E 100%);
+}
+
+/* Active Highlight / Primary Button (like NEW GAME in reference) */
+.switch-pill-btn.btn-primary {
+  background: linear-gradient(180deg, #51425D 0%, #35283E 100%);
+  border-color: #735D82;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* Hover & Focus state */
+.switch-pill-btn:hover,
+.switch-pill-btn.selected {
+  transform: translateY(-2px) scale(1.03);
+  background: linear-gradient(180deg, #B76E4B 0%, #8B4A2A 100%);
+  border-color: #FFD4A3;
+  color: #FFFFFF;
+  box-shadow: 0 6px 18px rgba(183, 110, 75, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.switch-pill-btn:active {
+  transform: translateY(2px) scale(0.98);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Pointer Cursor Indicator for Keyboard / Gamepad Nav */
+.switch-pill-btn.selected::before {
+  content: '▶';
+  position: absolute;
+  left: 14px;
+  font-size: 0.75rem;
+  color: #FFE699;
+  animation: cursorPulse 0.6s infinite alternate;
+}
+
+@keyframes cursorPulse {
+  from { transform: translateX(0); }
+  to { transform: translateX(3px); }
+}
+
+/* Bottom Signpost Base Pole */
+.signpost-ground-post {
+  position: absolute;
+  bottom: -40px;
+  width: 32px;
+  height: 44px;
+  background: #1C1109;
+  border-left: 3px solid #2F1E11;
+  border-right: 3px solid #140C06;
+  z-index: -1;
+  border-radius: 0 0 4px 4px;
+}
+
+/* Hide Chatbot and Autocollapse Toolbar on Title Screen for Immersion */
+body:has(#title-start-screen) #chatbot-mount {
+  display: none;
+}
+
+body:has(#title-start-screen) .right-vertical-toolbar {
+  opacity: 0.75;
+  transform: translateX(calc(100% - 14px));
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+body:has(#title-start-screen) .right-vertical-toolbar:hover {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* ==========================================================================
+   5. BOTTOM UTILITY BAR (Profile Badge & Console Controls Legend)
+   ========================================================================== */
+.title-bottom-bar {
+  position: absolute;
+  bottom: 18px;
+  left: 0;
+  width: 100%;
+  padding: 0 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 8;
+  pointer-events: none;
+}
+
+/* Circular Profile Badge (bottom-left, like the color wheel icon in reference) */
+.circular-profile-badge {
+  pointer-events: auto;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 3px solid #1A0D00;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.circular-profile-badge:hover {
+  transform: scale(1.12) rotate(6deg);
+}
+
+.profile-avatar-emoji {
+  font-size: 1.4rem;
+}
+
+/* Controller-style prompts (bottom-right) */
+.switch-control-hints {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: var(--font-sans, sans-serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #FFE4B5;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+  pointer-events: auto;
+}
+
+.control-hint-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.switch-key-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #2D1E32;
+  border: 1.5px solid #82668E;
+  color: #FFF;
+  font-size: 0.65rem;
+  font-weight: 800;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+/* Launching Transition */
+.title-start-wrap.launching {
+  animation: switchSceneTransition 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes switchSceneTransition {
+  0% {
+    filter: brightness(1);
+    transform: scale(1);
+  }
+  30% {
+    filter: brightness(1.6);
+  }
+  100% {
+    filter: brightness(2.2);
+    transform: scale(1.04);
+    opacity: 0;
+  }
+}
+
+/* ==========================================================================
+   6. RESPONSIVE DESIGN FOR SMALLER SCREENS & MOBILE
+   ========================================================================== */
+@media (max-width: 900px) {
+  .title-stage-content {
+    padding: 24px 20px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+
+  .title-left-column {
+    align-items: center;
+    max-width: 100%;
+  }
+
+  .itihasam-logo-container {
+    align-items: center;
+  }
+
+  .logo-crest-ornament {
+    left: 0;
+  }
+
+  .itihasam-title-text {
+    font-size: 3.6rem;
+  }
+
+  .start-mascot-wrapper {
+    display: none;
+  }
+
+  .title-right-column {
+    align-items: center;
+    padding-right: 0;
+    margin-bottom: 40px;
+  }
+
+  .wooden-signpost-board {
+    width: 260px;
+    padding: 20px 16px;
+  }
+
+  .title-bottom-bar {
+    padding: 0 20px 12px;
+  }
+
+  .switch-control-hints {
+    display: none;
+  }
+}
