@@ -1,5 +1,5 @@
 // js/data/avatarData.js
-// DISCOVER INDIA: Explorer Avatar Customization Data
+// ITIHASAM: Explorer Avatar Customization Data
 
 export const INITIAL_ARCHETYPES = [
   {

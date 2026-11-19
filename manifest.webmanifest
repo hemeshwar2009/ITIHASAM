@@ -1,0 +1,16 @@
+{
+  "name": "Itihasam — Interactive Indian Heritage",
+  "short_name": "Itihasam",
+  "description": "Explore the history, traditional games, architecture, festivals and living cultures of all 28 states of India through play.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#F5F0E6",
+  "theme_color": "#B69A62",
+  "lang": "en",
+  "categories": ["education", "games"],
+  "icons": [
+    { "src": "assets/img/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

@@ -1,5 +1,5 @@
 # server.py
-# Simple local development server for DISCOVER INDIA
+# Simple local development server for ITIHASAM
 import http.server
 import socketserver
 import webbrowser
@@ -35,7 +35,7 @@ def run():
     os.chdir(DIRECTORY)
     with socketserver.TCPServer(("", PORT), CustomHTTPHandler) as httpd:
         print("=" * 60)
-        print(" 🏛️  DISCOVER INDIA — Interactive Cultural Heritage Experience")
+        print(" 🏛️  ITIHASAM — Interactive Cultural Heritage Experience")
         print(f" 🌐  Server running at: http://localhost:{PORT}")
         print(" 📖  Press Ctrl+C to stop the server.")
         print("=" * 60)

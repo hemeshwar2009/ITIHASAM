@@ -1,4 +1,4 @@
-# DISCOVER INDIA – An Interactive Cultural Heritage Experience
+# ITIHASAM (इतिहासम्) – An Interactive Cultural Heritage Experience
 
 > *"28 States. Countless Stories. One Living Heritage."*  
 > **Project Tagline:** *"Explore the Past. Play the Present. Preserve the Heritage."*
@@ -7,7 +7,7 @@
 
 ## 🌟 Executive Summary
 
-**DISCOVER INDIA** is a visually immersive, interactive educational gaming website designed to bring India's rich cultural heritage alive for students and audiences worldwide. Designed following the authentic **ANCIENT WHITE** aesthetic, the platform combines the tactile elegance of ancient Indian manuscripts, stone-carved temple architecture, and vintage parchment textures with playable pixel-art games, interactive storyboards, and progressive gamified learning.
+**ITIHASAM** is a visually immersive, interactive educational gaming website designed to bring India's rich cultural heritage alive for students and audiences worldwide. Designed following the authentic **ANCIENT WHITE** aesthetic, the platform combines the tactile elegance of ancient Indian manuscripts, stone-carved temple architecture, and vintage parchment textures with playable pixel-art games, interactive storyboards, and progressive gamified learning.
 
 The platform covers **all 28 states of India without exception**, with authentic historical personalities, indigenous board games, architectural marvels, sacred festivals, and living traditions.
 
@@ -97,66 +97,123 @@ Every mini-game initially opens in **DEMO MODE**:
 
 ---
 
+## ✨ What's New in Itihasam
+
+- **A different game for each state:** Pallanguzhi (Tamil Nadu, Goa), **Chaupar / Pachisi / Pagade / Ashta Chamma** dice races (Karnataka, Andhra Pradesh, Telangana, Gujarat, Rajasthan, Uttar Pradesh), **Bagh-Chal** tigers vs goats (Uttarakhand), and themed **folk sports** challenges for the rest: archery, kabaddi, wrestling, gilli-danda, Gedi stilts, Manipuri polo, Insuknawr, Mallakhamb and more. The routing lives in `js/data/gameRouting.js`.
+- **Pass & Play:** Pallanguzhi, Chaupar and Bagh-Chal can be played by two people on one device. Pallanguzhi's AI now simulates every move instead of always picking the biggest pit.
+- **Festivals per state:** ten "build the celebration" themes (Pookalam, Pongal pot, Bathukamma, Dasara Gombe, Rangoli, Mandana, Durga Puja pandal, Rath chariot, river of diyas, Losar prayer flags) and eleven **drum-rhythm** festivals (Garba, Bhangra dhol, Bihu, Wangala, Hornbill log drum, Kullu nagara, Sarhul mandar, Yaoshang, Cheraw, Shigmo, Khajuraho tabla).
+- **State-specific History quests:** the courtyard, its colours, the historic figures you meet and their dialogue all come from each state's data.
+- **Living India Map** (tile map) that fills with gold, a **Heritage Passport** with one stamp per state, a **Daily Heritage Challenge** with streaks, and **Timeline of the Ages**.
+- **Class Mode:** several explorer profiles on one device, ranked on a Class Board.
+- **Heritage Guide** now searches all 28 states' content and explains every game's rules.
+- **Rewards fixed:** a loss no longer awards points; badges match their descriptions; badge points can now trigger level-ups; 28 collectible artifacts (one per state, from its History quest); the slideshow only completes after every slide is seen. Toast pop-ups announce badges, level-ups, artifacts and stamps.
+- **Certificate:** download as a PNG with a QR code, print / save as PDF, or share (on phones).
+- **Interface languages:** English, हिन्दी, தமிழ் (Settings).
+- **Accessibility:** every game playable by keyboard, screen-reader labels and live narration, focus outlines, skip link, Esc closes dialogs, high-contrast and reduced-motion modes.
+- **Offline & installable (PWA):** a service worker caches the app and every photo you have viewed; it can be installed from Settings in Chrome or Edge.
+- **Regional music motifs:** an optional short melody in each region's style plays when you open a state (Settings → Regional Music Motifs).
+- **Impact page** for judges and teachers: problem, audience, learning goals, curriculum links, roadmap.
+
+---
+
 ## 🚀 How to Run Locally
 
-You can run **DISCOVER INDIA** using Python's built-in server or by opening `index.html` in any modern web browser.
+ES modules and the service worker need a local web server; double-clicking `index.html` **will not work**.
 
-### Option 1: Python Dev Server (Recommended)
+### Option 1: Node.js (recommended — no installs needed beyond Node)
+```bash
+node server.mjs
+```
+Then open **http://localhost:8080**
+
+### Option 2: Python
 ```bash
 python server.py
 ```
-Then open your browser at:
-```
-http://localhost:8080
-```
 
-### Option 2: Direct File Open
-Simply double-click `index.html` or open it directly in Chrome, Edge, Safari, or Firefox:
+### Optional: store the photos locally (for demos on bad Wi-Fi)
+```bash
+node tools/download-images.mjs
 ```
-file:///C:/Users/pathm/OneDrive/Desktop/Ideathon%20folder/index.html
-```
+This downloads the Unsplash photos into `assets/img/photos/` and rewrites the code to use them. (Without it, photos still work offline once they have been viewed, thanks to the service worker.)
+
+---
+
+## 🌐 Deploying
+
+It is a static site, so any static host works (GitHub Pages, Netlify, Vercel, Cloudflare Pages). Upload the `itihasam` folder as-is. Once it is on a public URL, the QR code on the certificate points to that URL automatically.
+
+## 🌐 Online Class Leaderboard (Supabase)
+
+The Class Board can rank a whole class across devices using Supabase project `ebmjiebcbyrobaxntgfa`. One-time setup:
+
+1. In the Supabase dashboard, open **SQL Editor**, paste the contents of `supabase/migrations/20261119000000_online_leaderboard.sql` and click **Run**.
+2. Open **Project Settings → API Keys**, copy the **publishable** key (`sb_publishable_…`, or the legacy `anon` key) and paste it into `js/config.js` as `SUPABASE_KEY`. This key is meant to be public. **Never** paste the secret / `service_role` key.
+3. Reload the site → **Class Board** → enter a class code (e.g. `DPS-7B`) and a display name.
+
+How it is secured: the table has Row Level Security on with no policies, so the public key cannot read or write it directly. The site only calls `submit_score` (each row is protected by a secret that stays on the student's device, stored hashed in the database) and `class_leaderboard` (returns one class's names and scores, no ids or secrets). Joining is opt-in and shares only the display name, points, level, stamps and streak. Scores are reported by the browser, so this is friendly competition, not tamper-proof grading.
+
+Without a key the site works fully offline, and Class Mode keeps profiles on a single device.
 
 ---
 
 ## 📁 Project Structure
 
 ```
-├── index.html                  # Single-page web application entry point
-├── server.py                   # Lightweight Python dev server with CORS & ES module MIME types
-├── README.md                   # Complete architectural documentation
+├── index.html                  # Single-page app entry (skip link, manifest, fonts)
+├── manifest.webmanifest        # PWA manifest (installable app)
+├── sw.js                       # Service worker: offline app shell + photo cache
+├── server.mjs                  # Zero-dependency Node dev server
+├── server.py                   # Python dev server (alternative)
+├── tools/download-images.mjs   # Optional: save Unsplash photos locally
+├── assets/img/                 # App icon & offline placeholder illustration
 ├── styles/
-│   ├── ancient-white.css       # Core theme variables, typography, ancient panels, parchment
-│   ├── landing.css             # Heritage collage, curved SVG pathway, opposing pointer parallax
-│   ├── toolbar.css             # Right-side vertical toolbar & collapsible mobile panel
-│   ├── states.css              # 28 States grid, search, regional filters, 5-category modal
-│   ├── games.css               # Pixel-art game wrappers, wooden boards, canvas styling
-│   ├── slideshow.css           # Living Traditions slideshow (5s delay, auto-scroll, pause/resume)
-│   ├── rewards.css             # Levels progression, badges, artifacts, printable certificate
-│   ├── avatar.css              # Explorer customization UI with live preview
-│   └── chatbot.css             # Heritage Guide floating companion widget
+│   ├── ancient-white.css       # Core theme variables, typography, panels
+│   ├── landing.css             # Landing collage & curved storyboard
+│   ├── toolbar.css             # Right-side navigation
+│   ├── states.css              # 28 States directory & category modal
+│   ├── games.css               # Game wrappers, Pallanguzhi, Pookalam, history quest
+│   ├── slideshow.css           # Living Traditions slideshow
+│   ├── rewards.css             # Levels, badges, artifacts, certificate
+│   ├── avatar.css              # Explorer customization
+│   ├── chatbot.css             # Heritage Guide
+│   └── features.css            # Map, passport, daily, timeline, class board, impact,
+│                               #   Chaupar, Bagh-Chal, sports, rhythm, toasts, a11y, mobile
 └── js/
-    ├── app.js                  # Central application orchestrator & router
-    ├── audio/
-    │   └── soundSynth.js       # Web Audio API synthesizer (bells, clacks, rolls, fanfares)
+    ├── config.js               # Supabase URL + publishable key (online board)
+    ├── services/onlineLeaderboard.js # Online class board (Supabase RPC)
+    ├── app.js                  # Router (hash URLs, deep links), preferences, PWA
+    ├── i18n.js                 # English / हिन्दी / தமிழ் interface strings + escapeHTML
+    ├── audio/soundSynth.js     # Web Audio: bells, clacks, drums, regional motifs
     ├── data/
-    │   ├── statesData.js       # Comprehensive authentic cultural data for ALL 28 STATES
-    │   ├── rewardsData.js      # Levels, badges, artifacts, unlock conditions
-    │   ├── avatarData.js       # Archetypes, attires, headwear, accessories
-    │   └── chatbotData.js      # Heritage Guide QA knowledge base & quick chips
-    ├── state/
-    │   └── gameState.js        # Progression, CDP points, state completion, localStorage
+    │   ├── statesData.js       # Cultural content for all 28 states
+    │   ├── gameRouting.js      # Which game / sport / festival each state uses
+    │   ├── rewardsData.js      # Levels, 15 badges, 28 artifacts
+    │   ├── avatarData.js       # Explorer archetypes & outfits
+    │   └── chatbotData.js      # Heritage Guide curated answers
+    ├── state/gameState.js      # Profiles (Class Mode), progress, badges, streaks, events
     ├── components/
-    │   ├── landingStoryboard.js# Curved journey, SVG trail, opposing pointer movement
-    │   ├── stateExplorer.js    # 28 States directory & 5-category detail cards
-    │   ├── avatarCustomizer.js # "Choose Your Explorer" customization & canvas preview
-    │   ├── livingTraditions.js # 5-sec delay auto-scrolling cultural slideshow
-    │   ├── rewardsModal.js     # Rewards, badges, 28-state tracker, printable certificate
-    │   ├── rightToolbar.js     # Persistent right-side vertical navigation
-    │   └── heritageGuide.js    # Floating circular companion chatbot
+    │   ├── landingStoryboard.js  # Landing page + continue card
+    │   ├── indiaMap.js           # Living tile map of India
+    │   ├── heritagePassport.js   # One stamp per state
+    │   ├── dailyChallenge.js     # Question of the day + streak calendar
+    │   ├── timelineMode.js       # Chronology challenge (drag or ▲▼)
+    │   ├── classLeaderboard.js   # Class Mode profiles & ranking
+    │   ├── impactPage.js         # Why Itihasam: goals, audience, curriculum
+    │   ├── toastNotifier.js      # Badge / level / artifact / stamp pop-ups
+    │   ├── stateExplorer.js      # 28 states directory & detail modal
+    │   ├── avatarCustomizer.js   # Choose your explorer
+    │   ├── livingTraditions.js   # Culture slideshow
+    │   ├── rewardsModal.js       # Rewards + PNG/QR certificate
+    │   ├── rightToolbar.js       # Navigation, settings, help
+    │   └── heritageGuide.js      # Chatbot with full-content search
     └── games/
-        ├── gameEngine.js       # Base mini-game engine, Demo Mode & "READY TO PLAY?" sequence
-        ├── historyAdventure.js # 2D top-down pixel-art historical RPG adventure
-        ├── traditionalGames.js # Playable 14-pit Pallanguzhi (mancala) board game
-        ├── architectureBuilder.js # Pixel-art monument construction puzzle
-        └── festivalSimulation.js  # Concentric floral Pookalam mandala simulation
+        ├── gameEngine.js         # Demo mode, Ready/Victory dialogs, Pass & Play
+        ├── historyAdventure.js   # State-specific courtyard quest
+        ├── traditionalGames.js   # Pallanguzhi
+        ├── chauparGame.js        # Chaupar / Pachisi race
+        ├── baghChalGame.js       # Bagh-Chal / Aadu Puli Aattam
+        ├── folkSportsGame.js     # Timing challenge for folk sports
+        ├── architectureBuilder.js# Monument reconstruction
+        └── festivalSimulation.js # Festival builds & drum rhythm
 ```

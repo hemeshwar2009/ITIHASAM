@@ -1,5 +1,5 @@
 // js/games/architectureBuilder.js
-// DISCOVER INDIA: Pixel-Art Architectural Construction Experience
+// ITIHASAM: Pixel-Art Architectural Construction Experience
 
 import { BaseMiniGame } from './gameEngine.js';
 import { soundSynth } from '../audio/soundSynth.js';
@@ -246,7 +246,7 @@ export class ArchitectureBuilderGame extends BaseMiniGame {
         );
         soundSynth.playVictory();
         setTimeout(() => {
-          this.finishGame(true, 250, 'Vimana Master Architect Badge');
+          this.finishGame(true, this.options.points, 'Vimana Master Architect Badge');
         }, 1200);
       }
     } else {

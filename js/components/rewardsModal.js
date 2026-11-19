@@ -1,10 +1,32 @@
 // js/components/rewardsModal.js
-// DISCOVER INDIA: Rewards Dashboard, Badges, Artifacts & Printable Certificate
+// ITIHASAM: Rewards Dashboard, Badges, Artifacts & Printable Certificate
 
 import { soundSynth } from '../audio/soundSynth.js';
 import { gameState } from '../state/gameState.js';
 import { LEVELS, BADGES, ARTIFACTS } from '../data/rewardsData.js';
 import { INDIAN_STATES } from '../data/statesData.js';
+import { escapeHTML } from '../i18n.js';
+
+const QR_LIB = 'https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js';
+let qrLibPromise = null;
+function loadQRLib() {
+  if (window.QRCode) return Promise.resolve(window.QRCode);
+  if (!qrLibPromise) {
+    qrLibPromise = new Promise((resolve, reject) => {
+      const s = document.createElement('script');
+      s.src = QR_LIB;
+      s.onload = () => resolve(window.QRCode);
+      s.onerror = () => { qrLibPromise = null; reject(new Error('QR library unavailable')); };
+      document.head.appendChild(s);
+    });
+  }
+  return qrLibPromise;
+}
+
+export function shareUrl() {
+  if (/^https?:$/.test(location.protocol)) return location.origin + location.pathname;
+  return null; // opened from a file: no public link to encode
+}
 
 export class RewardsModal {
   constructor(containerId, options = {}) {
@@ -50,12 +72,12 @@ export class RewardsModal {
         </div>
 
         <!-- Rewards Navigation Tabs -->
-        <div class="rewards-tabs-bar">
-          <button class="rewards-tab-btn ${this.activeTab === 'levels' ? 'active' : ''}" data-tab="levels">📜 Level Progression</button>
-          <button class="rewards-tab-btn ${this.activeTab === 'badges' ? 'active' : ''}" data-tab="badges">🎖️ Badges (${gameState.state.unlockedBadges.length}/${BADGES.length})</button>
-          <button class="rewards-tab-btn ${this.activeTab === 'artifacts' ? 'active' : ''}" data-tab="artifacts">🏺 Collectible Artifacts (${gameState.state.collectedArtifacts.length}/${ARTIFACTS.length})</button>
-          <button class="rewards-tab-btn ${this.activeTab === 'states-progress' ? 'active' : ''}" data-tab="states-progress">🗺️ 28 States Tracker</button>
-          <button class="rewards-tab-btn ${this.activeTab === 'certificate' ? 'active' : ''}" data-tab="certificate">🎓 Heritage Certificate</button>
+        <div class="rewards-tabs-bar" role="tablist" aria-label="Rewards sections">
+          <button class="rewards-tab-btn ${this.activeTab === 'levels' ? 'active' : ''}" data-tab="levels" role="tab" aria-selected="${this.activeTab === 'levels'}">📜 Level Progression</button>
+          <button class="rewards-tab-btn ${this.activeTab === 'badges' ? 'active' : ''}" data-tab="badges" role="tab" aria-selected="${this.activeTab === 'badges'}">🎖️ Badges (${gameState.state.unlockedBadges.length}/${BADGES.length})</button>
+          <button class="rewards-tab-btn ${this.activeTab === 'artifacts' ? 'active' : ''}" data-tab="artifacts" role="tab" aria-selected="${this.activeTab === 'artifacts'}">🏺 Collectible Artifacts (${gameState.state.collectedArtifacts.length}/${ARTIFACTS.length})</button>
+          <button class="rewards-tab-btn ${this.activeTab === 'states-progress' ? 'active' : ''}" data-tab="states-progress" role="tab" aria-selected="${this.activeTab === 'states-progress'}">🗺️ 28 States Tracker</button>
+          <button class="rewards-tab-btn ${this.activeTab === 'certificate' ? 'active' : ''}" data-tab="certificate" role="tab" aria-selected="${this.activeTab === 'certificate'}">🎓 Heritage Certificate</button>
         </div>
 
         <!-- Tab 1: Progressive Levels -->
@@ -63,7 +85,6 @@ export class RewardsModal {
           <div class="levels-progression-timeline">
             ${LEVELS.map(lvl => {
               const isUnlocked = currentLvl >= lvl.level;
-              const isCompleted = pts >= lvl.requiredPoints + 200;
               return `
                 <div class="level-card ancient-panel ${isUnlocked ? 'unlocked' : 'locked'}">
                   <div class="level-badge-col">
@@ -128,7 +149,7 @@ export class RewardsModal {
                     <span class="meta-val">${art.material}</span>
                   </div>
                   <div class="artifact-status-banner">
-                    ${isCollected ? '✓ COLLECTED IN REPOSITORY' : '🔒 Explore state to discover'}
+                    ${isCollected ? '✓ COLLECTED IN REPOSITORY' : `🔒 Complete the ${escapeHTML(art.state)} history quest`}
                   </div>
                 </div>
               `;
@@ -161,7 +182,7 @@ export class RewardsModal {
 
                 return `
                   <div class="tracker-row">
-                    <span class="td-state font-bold">${s.name}</span>
+                    <span class="td-state font-bold">${pct === 100 ? '🛂 ' : ''}${s.name}</span>
                     <span class="td-region">${s.region}</span>
                     <span class="td-cat ${h ? 'done' : 'pending'}">${h ? '✓' : '•'}</span>
                     <span class="td-cat ${g ? 'done' : 'pending'}">${g ? '✓' : '•'}</span>
@@ -183,12 +204,12 @@ export class RewardsModal {
               <div class="cert-outer-border">
                 <div class="cert-inner-border">
                   <div class="cert-top-seal">🏛️ ॐ 🏛️</div>
-                  <h3 class="cert-title">DISCOVER INDIA</h3>
+                  <h3 class="cert-title">ITIHASAM</h3>
                   <h4 class="cert-subtitle">CERTIFICATE OF CULTURAL HERITAGE MASTERY</h4>
-                  
+
                   <p class="cert-prose">This certifies that intrepid heritage explorer</p>
-                  <h2 class="cert-recipient-name">${gameState.state.avatar.name || 'Aryavart'}</h2>
-                  <p class="cert-prose">has journeyed through the ancient history, forgotten traditional games, architectural wonders, sacred festivals and living traditions across the 28 states of India.</p>
+                  <h2 class="cert-recipient-name">${escapeHTML(gameState.state.avatar.name || 'Explorer')}</h2>
+                  <p class="cert-prose">has journeyed through the ancient history, forgotten traditional games, architectural wonders, sacred festivals and living traditions of India, earning ${gameState.countStamps()} of 28 state passport stamps and ${gameState.state.unlockedBadges.length} badges.</p>
 
                   <div class="cert-stats-row">
                     <div class="cert-stat-item">
@@ -211,11 +232,15 @@ export class RewardsModal {
                       <span class="sig-title">Council of Living Traditions</span>
                     </div>
                     <div class="sig-seal-wrap">
-                      <span class="ashoka-chakra-seal">☸️</span>
-                      <span class="seal-text">Official Seal</span>
+                      <span class="ashoka-chakra-seal" aria-hidden="true">☸️</span>
+                      <span class="seal-text">Itihasam Seal</span>
+                    </div>
+                    <div class="cert-qr-wrap">
+                      <div id="cert-qr" class="cert-qr" aria-label="QR code linking to Itihasam"></div>
+                      <span class="seal-text">Scan to explore</span>
                     </div>
                     <div class="sig-col">
-                      <span class="sig-line">${gameState.state.avatar.name || 'Explorer'}</span>
+                      <span class="sig-line">${escapeHTML(gameState.state.avatar.name || 'Explorer')}</span>
                       <span class="sig-title">Master Heritage Explorer</span>
                     </div>
                   </div>
@@ -224,7 +249,9 @@ export class RewardsModal {
             </div>
 
             <div class="cert-action-bar">
-              <button class="btn-ancient btn-gold" id="btn-print-certificate">🖨️ PRINT / DOWNLOAD CERTIFICATE</button>
+              <button class="btn-ancient btn-gold" id="btn-download-certificate">⬇ DOWNLOAD AS IMAGE (PNG)</button>
+              <button class="btn-ancient btn-secondary" id="btn-print-certificate">🖨️ PRINT / SAVE AS PDF</button>
+              ${navigator.share ? '<button class="btn-ancient btn-terracotta" id="btn-share-certificate">📤 SHARE</button>' : ''}
             </div>
           </div>
         </div>
@@ -251,5 +278,148 @@ export class RewardsModal {
         window.print();
       });
     }
+
+    if (this.activeTab === 'certificate') this.renderQR();
+
+    const btnDl = this.container.querySelector('#btn-download-certificate');
+    if (btnDl) btnDl.addEventListener('click', async () => {
+      soundSynth.playBell();
+      const blob = await this.certificateBlob();
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `itihasam-certificate-${(gameState.state.avatar.name || 'explorer').replace(/[^a-z0-9]+/gi, '-').toLowerCase()}.png`;
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+    });
+
+    const btnShare = this.container.querySelector('#btn-share-certificate');
+    if (btnShare) btnShare.addEventListener('click', async () => {
+      try {
+        const blob = await this.certificateBlob();
+        const file = new File([blob], 'itihasam-certificate.png', { type: 'image/png' });
+        const data = { title: 'My Itihasam Heritage Certificate', text: `I earned ${gameState.state.points} Cultural Discovery Points exploring India's heritage on Itihasam!` };
+        if (shareUrl()) data.url = shareUrl();
+        if (navigator.canShare && navigator.canShare({ files: [file] })) data.files = [file];
+        await navigator.share(data);
+      } catch (e) { /* user cancelled */ }
+    });
+  }
+
+  async renderQR() {
+    const holder = this.container.querySelector('#cert-qr');
+    if (!holder) return;
+    if (!shareUrl()) { holder.closest('.cert-qr-wrap').classList.add('hidden'); return; }
+    try {
+      const QRCode = await loadQRLib();
+      holder.innerHTML = '';
+      new QRCode(holder, { text: shareUrl(), width: 96, height: 96, colorDark: '#493A2D', colorLight: '#FAF7F0' });
+    } catch (e) {
+      holder.closest('.cert-qr-wrap').classList.add('hidden');
+    }
+  }
+
+  qrImage() {
+    const holder = this.container.querySelector('#cert-qr');
+    if (!holder) return null;
+    return holder.querySelector('canvas') || holder.querySelector('img');
+  }
+
+  /** Draws the certificate onto a canvas and returns a PNG blob. */
+  certificateBlob() {
+    const W = 1600, H = 1130;
+    const c = document.createElement('canvas');
+    c.width = W; c.height = H;
+    const ctx = c.getContext('2d');
+    const s = gameState.state;
+    const name = s.avatar.name || 'Explorer';
+
+    // Parchment
+    const g = ctx.createRadialGradient(W / 2, H / 2, 100, W / 2, H / 2, W * 0.7);
+    g.addColorStop(0, '#FAF7F0');
+    g.addColorStop(1, '#EFE5D2');
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, W, H);
+    // Borders
+    ctx.strokeStyle = '#B69A62'; ctx.lineWidth = 14; ctx.strokeRect(40, 40, W - 80, H - 80);
+    ctx.strokeStyle = '#B76E4B'; ctx.lineWidth = 3; ctx.strokeRect(72, 72, W - 144, H - 144);
+    ctx.setLineDash([10, 8]); ctx.strokeStyle = '#D8CBB6'; ctx.strokeRect(92, 92, W - 184, H - 184); ctx.setLineDash([]);
+
+    ctx.textAlign = 'center';
+    ctx.fillStyle = '#B69A62';
+    ctx.font = '40px serif';
+    ctx.fillText('❦ ══ •⊰ ॐ ⊱• ══ ❦', W / 2, 175);
+    ctx.fillStyle = '#493A2D';
+    ctx.font = 'bold 92px Cinzel, Georgia, serif';
+    ctx.fillText('ITIHASAM', W / 2, 280);
+    ctx.font = '30px Marcellus, Georgia, serif';
+    ctx.fillStyle = '#B76E4B';
+    ctx.fillText('CERTIFICATE OF CULTURAL HERITAGE MASTERY', W / 2, 335);
+
+    ctx.fillStyle = '#736152';
+    ctx.font = 'italic 30px Georgia, serif';
+    ctx.fillText('This certifies that heritage explorer', W / 2, 420);
+    ctx.fillStyle = '#493A2D';
+    ctx.font = 'bold 76px Cinzel, Georgia, serif';
+    ctx.fillText(name.slice(0, 28), W / 2, 515);
+    ctx.strokeStyle = '#B69A62'; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(W / 2 - 380, 540); ctx.lineTo(W / 2 + 380, 540); ctx.stroke();
+
+    ctx.fillStyle = '#736152';
+    ctx.font = '28px Georgia, serif';
+    ctx.fillText('has journeyed through the history, traditional games, architecture,', W / 2, 600);
+    ctx.fillText('festivals and living traditions of India.', W / 2, 640);
+
+    const stats = [
+      ['Cultural Points', `${s.points} CDP`],
+      ['Mastery Rank', `Level ${s.currentLevel}`],
+      ['Passport Stamps', `${gameState.countStamps()} / 28`],
+      ['Badges', `${s.unlockedBadges.length}`]
+    ];
+    stats.forEach(([label, val], i) => {
+      const x = 330 + i * 313;
+      ctx.fillStyle = '#B76E4B'; ctx.font = '22px Georgia, serif'; ctx.fillText(label, x, 730);
+      ctx.fillStyle = '#493A2D'; ctx.font = 'bold 38px Georgia, serif'; ctx.fillText(val, x, 778);
+    });
+
+    ctx.font = '24px Georgia, serif';
+    ctx.fillStyle = '#736152';
+    ctx.fillText(new Date().toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' }), 360, 930);
+    ctx.fillText('Date awarded', 360, 965);
+    // Gold 24-spoke chakra seal (drawn, so it looks the same on every device)
+    const cx = W / 2, cy = 915, R = 62;
+    ctx.save();
+    ctx.strokeStyle = '#B69A62';
+    ctx.fillStyle = 'rgba(182, 154, 98, 0.12)';
+    ctx.lineWidth = 6;
+    ctx.beginPath(); ctx.arc(cx, cy, R, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+    ctx.lineWidth = 2;
+    for (let k = 0; k < 24; k++) {
+      const ang = (k / 24) * Math.PI * 2;
+      ctx.beginPath();
+      ctx.moveTo(cx + Math.cos(ang) * 10, cy + Math.sin(ang) * 10);
+      ctx.lineTo(cx + Math.cos(ang) * (R - 6), cy + Math.sin(ang) * (R - 6));
+      ctx.stroke();
+    }
+    ctx.fillStyle = '#B69A62';
+    ctx.beginPath(); ctx.arc(cx, cy, 10, 0, Math.PI * 2); ctx.fill();
+    ctx.restore();
+    ctx.fillStyle = '#736152';
+    ctx.font = '20px Georgia, serif';
+    ctx.fillText('Itihasam Seal', cx, cy + R + 32);
+
+    const qr = this.qrImage();
+    if (qr) {
+      try {
+        ctx.fillStyle = '#FAF7F0';
+        ctx.fillRect(1150, 830, 170, 170);
+        ctx.drawImage(qr, 1160, 840, 150, 150);
+        ctx.fillStyle = '#736152';
+        ctx.font = '20px Georgia, serif';
+        ctx.fillText('Scan to explore', 1235, 1030);
+      } catch (e) { /* ignore */ }
+    }
+
+    return new Promise(resolve => c.toBlob(resolve, 'image/png'));
   }
 }

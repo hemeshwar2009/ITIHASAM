@@ -1,11 +1,12 @@
 // js/audio/soundSynth.js
-// DISCOVER INDIA: Web Audio API Retro Heritage Synthesizer
+// ITIHASAM: Web Audio API Retro Heritage Synthesizer
 // Synthesizes temple chimes, wooden board clacks, cowrie rolls, and victory raga fanfares
 
 class SoundSynthesizer {
   constructor() {
     this.ctx = null;
     this.enabled = true;
+    this.musicEnabled = false;
   }
 
   init() {
@@ -145,6 +146,81 @@ class SoundSynthesizer {
       this.playBell();
       setTimeout(() => this.playVictory(), 200);
     } catch (e) {}
+  }
+
+  // 7. Festival drum (dhol / mandar / log drum) — soft=true for the backing beat
+  playDrum(soft = false) {
+    if (!this.enabled) return;
+    try {
+      this.ensureContext();
+      if (!this.ctx) return;
+      const now = this.ctx.currentTime;
+      const osc = this.ctx.createOscillator();
+      const gain = this.ctx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(soft ? 110 : 160, now);
+      osc.frequency.exponentialRampToValueAtTime(soft ? 55 : 60, now + 0.18);
+      gain.gain.setValueAtTime(soft ? 0.18 : 0.45, now);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.22);
+      osc.connect(gain);
+      gain.connect(this.ctx.destination);
+      osc.start(now);
+      osc.stop(now + 0.24);
+    } catch (e) {}
+  }
+
+  // 8. Short regional melody, one per region, in a characteristic scale and
+  //    timbre (veena-like pluck for the South, flute for the North, etc.).
+  playRegionalMotif(region) {
+    if (!this.enabled || !this.musicEnabled) return;
+    const SA = 261.63;
+    const ratio = { S: 1, r: 16 / 15, R: 9 / 8, g: 6 / 5, G: 5 / 4, M: 4 / 3, P: 3 / 2, d: 8 / 5, D: 5 / 3, n: 9 / 5, N: 15 / 8, S2: 2 };
+    const MOTIFS = {
+      South: { wave: 'triangle', notes: ['S', 'R', 'G', 'P', 'D', 'S2', 'D', 'P'], dur: 0.22 },       // Mohanam on veena
+      North: { wave: 'sine', notes: ['S', 'R', 'M', 'P', 'n', 'P', 'M', 'R'], dur: 0.3 },            // Bhimpalasi-ish flute
+      West: { wave: 'sawtooth', notes: ['S', 'G', 'M', 'P', 'N', 'S2', 'N', 'P'], dur: 0.2 },         // Shehnai-like
+      East: { wave: 'triangle', notes: ['S', 'R', 'G', 'M', 'P', 'G', 'R', 'S'], dur: 0.26 },         // Baul ektara
+      Northeast: { wave: 'square', notes: ['S', 'R', 'G', 'P', 'D', 'P', 'G', 'R'], dur: 0.2 },       // Bamboo pentatonic
+      Central: { wave: 'sine', notes: ['S', 'g', 'M', 'P', 'd', 'P', 'M', 'g'], dur: 0.3 }           // Malkauns-ish sarangi
+    };
+    const m = MOTIFS[region] || MOTIFS.South;
+    try {
+      this.ensureContext();
+      if (!this.ctx) return;
+      const start = this.ctx.currentTime + 0.05;
+      m.notes.forEach((n, i) => {
+        const t = start + i * m.dur;
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+        osc.type = m.wave;
+        osc.frequency.setValueAtTime(SA * ratio[n], t);
+        const peak = m.wave === 'sawtooth' || m.wave === 'square' ? 0.05 : 0.14;
+        gain.gain.setValueAtTime(0.0001, t);
+        gain.gain.exponentialRampToValueAtTime(peak, t + 0.02);
+        gain.gain.exponentialRampToValueAtTime(0.0001, t + m.dur * 1.6);
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+        osc.start(t);
+        osc.stop(t + m.dur * 1.7);
+      });
+      // Tanpura-like drone underneath
+      const drone = this.ctx.createOscillator();
+      const dg = this.ctx.createGain();
+      drone.type = 'sine';
+      drone.frequency.setValueAtTime(SA / 2, start);
+      dg.gain.setValueAtTime(0.0001, start);
+      dg.gain.exponentialRampToValueAtTime(0.06, start + 0.3);
+      dg.gain.exponentialRampToValueAtTime(0.0001, start + m.notes.length * m.dur + 0.6);
+      drone.connect(dg);
+      dg.connect(this.ctx.destination);
+      drone.start(start);
+      drone.stop(start + m.notes.length * m.dur + 0.7);
+    } catch (e) {}
+  }
+
+  toggleMusic(enable = !this.musicEnabled) {
+    this.musicEnabled = enable;
+    return this.musicEnabled;
   }
 
   toggleSound(enable = !this.enabled) {

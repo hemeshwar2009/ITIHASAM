@@ -1,5 +1,5 @@
 // js/data/statesData.js
-// DISCOVER INDIA: Comprehensive Cultural Storyboard for All 28 States of India
+// ITIHASAM: Comprehensive Cultural Storyboard for All 28 States of India
 // Every state contains all 5 authentic cultural categories:
 // 1. History & Civilization
 // 2. Forgotten Traditional Games
@@ -295,7 +295,7 @@ export const INDIAN_STATES = [
           "title": "Vallam Kali Snake Boat Race",
           "subtitle": "Rhythm on the Punnamada Waters",
           "description": "Over 100 synchronized rowers surging through tranquil backwaters to the thunderous tempo of Vanchipattu songs.",
-          "image": "https://images.unsplash.com/photo-1609137144822-2633519c238b?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/heritage-placeholder.svg",
           "tag": "Maritime Sport"
         },
         {
@@ -316,7 +316,7 @@ export const INDIAN_STATES = [
     "region": "South",
     "badge": "Realm of Vijayanagara & Hoysala Stonecraft",
     "tagline": "Golden Capitals of Hampi, Carved Soapstone Temples & Fragrant Sandalwood Forests",
-    "heroImage": "https://images.unsplash.com/photo-1600100397608-f010f443b7cf?auto=format&fit=crop&w=1200&q=80",
+    "heroImage": "assets/img/heritage-placeholder.svg",
     "history": {
       "title": "Vijayanagara Empire & Chalukyan Heritage",
       "era": "6th Century \u2013 17th Century CE",
@@ -431,7 +431,7 @@ export const INDIAN_STATES = [
           "title": "Yakshagana Dramatic Performance",
           "subtitle": "Celestial Dance of Coastal Karnataka",
           "description": "Acrobatic spins, thundering Chande drum rhythms, and majestic crown ornamentation bringing Mahabharata sagas to life.",
-          "image": "https://images.unsplash.com/photo-1600100397608-f010f443b7cf?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/heritage-placeholder.svg",
           "tag": "Folk Theatre"
         },
         {
@@ -466,7 +466,7 @@ export const INDIAN_STATES = [
     "region": "South",
     "badge": "Heart of Kuchipudi & Satavahana Glory",
     "tagline": "Amaravati Buddhist Heritage, Lepakshi Wonders & Kalamkari Artistry",
-    "heroImage": "https://images.unsplash.com/photo-1599818816946-b60b73c41793?auto=format&fit=crop&w=1200&q=80",
+    "heroImage": "assets/img/heritage-placeholder.svg",
     "history": {
       "title": "Satavahana Empire & Amaravati Civilization",
       "era": "2nd Century BCE \u2013 3rd Century CE",
@@ -582,7 +582,7 @@ export const INDIAN_STATES = [
           "title": "Kuchipudi Tarangam Performance",
           "subtitle": "Dance on the Rims of Brass",
           "description": "Dancers execute complex rhythmic foot patterns while balancing effortlessly on the edge of a brass plate.",
-          "image": "https://images.unsplash.com/photo-1599818816946-b60b73c41793?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/heritage-placeholder.svg",
           "tag": "Classical Dance"
         },
         {
@@ -917,7 +917,7 @@ export const INDIAN_STATES = [
     "region": "West",
     "badge": "Cradle of Lothal & Sacred Somnath",
     "tagline": "Rani ki Vav Stepwells, Vibrant Garba Circles & Historic Dholavira Reservoirs",
-    "heroImage": "https://images.unsplash.com/photo-1599818816946-b60b73c41793?auto=format&fit=crop&w=1200&q=80",
+    "heroImage": "assets/img/heritage-placeholder.svg",
     "history": {
       "title": "Harappan Maritime Ports & Solanki Dynasty",
       "era": "2500 BCE \u2013 13th Century CE",
@@ -1517,7 +1517,7 @@ export const INDIAN_STATES = [
     "region": "North",
     "badge": "Battleground of Kurukshetra & Rakhigarhi Roots",
     "tagline": "Ancient Indus Metropolis of Rakhigarhi, Gita Discourse & Wrestling Champions",
-    "heroImage": "https://images.unsplash.com/photo-1599818816946-b60b73c41793?auto=format&fit=crop&w=1200&q=80",
+    "heroImage": "assets/img/heritage-placeholder.svg",
     "history": {
       "title": "Indus Civilization at Rakhigarhi & Kurukshetra",
       "era": "2600 BCE \u2013 18th Century CE",
@@ -1632,7 +1632,7 @@ export const INDIAN_STATES = [
           "title": "Dhamal Harvest Dance",
           "subtitle": "Ancient Rhythm of the Duf Drum",
           "description": "Men and women dancing with wooden batons and brass cymbals under the spring harvest moonlight.",
-          "image": "https://images.unsplash.com/photo-1599818816946-b60b73c41793?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/heritage-placeholder.svg",
           "tag": "Folk Dance"
         },
         {
@@ -1816,7 +1816,7 @@ export const INDIAN_STATES = [
     "region": "North",
     "badge": "Sanctuary of Kedarnath & the Ganga's Descent",
     "tagline": "Glacial Origins of Sacred Rivers, Alpine Bugyals & Ancient Himalayan Temples",
-    "heroImage": "https://images.unsplash.com/photo-1600100397608-f010f443b7cf?auto=format&fit=crop&w=1200&q=80",
+    "heroImage": "assets/img/heritage-placeholder.svg",
     "history": {
       "title": "Katyuri Dynasty & Char Dham Pilgrimage",
       "era": "6th Century \u2013 18th Century CE",
@@ -1931,7 +1931,7 @@ export const INDIAN_STATES = [
           "title": "Chholiya Martial Sword Dance",
           "subtitle": "Ancient Warrior Dance of Kumaon",
           "description": "Warriors leaping in synchronized sword combat accompanied by the resonant calls of the Ransingha trumpet.",
-          "image": "https://images.unsplash.com/photo-1600100397608-f010f443b7cf?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/heritage-placeholder.svg",
           "tag": "Martial Dance"
         },
         {
@@ -2268,7 +2268,7 @@ export const INDIAN_STATES = [
     "region": "East",
     "badge": "Temple Chariot of Konark & Jagannath",
     "tagline": "Konark Sun Temple Wheels, Odissi Classical Dance & Sacred Pattachitra Scrolls",
-    "heroImage": "https://images.unsplash.com/photo-1609137144822-2633519c238b?auto=format&fit=crop&w=1200&q=80",
+    "heroImage": "assets/img/heritage-placeholder.svg",
     "history": {
       "title": "Kalinga Maritime Empire & Eastern Ganga Dynasty",
       "era": "3rd Century BCE \u2013 16th Century CE",
@@ -2383,7 +2383,7 @@ export const INDIAN_STATES = [
           "title": "Odissi Sculptural Posture",
           "subtitle": "Poetry in Motion from Ancient Temple Walls",
           "description": "The exquisite Tribhanga stance mirroring the sculpted celestial dancers of Konark and Jagannath.",
-          "image": "https://images.unsplash.com/photo-1609137144822-2633519c238b?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/heritage-placeholder.svg",
           "tag": "Classical Dance"
         },
         {
@@ -2719,7 +2719,7 @@ export const INDIAN_STATES = [
     "region": "East",
     "badge": "Heart of Bastar Tribal Art & Ancient Sirpur",
     "tagline": "Bastar 75-Day Dussehra, Laxman Brick Temple & Bell-Metal Dokra Artisans",
-    "heroImage": "https://images.unsplash.com/photo-1599818816946-b60b73c41793?auto=format&fit=crop&w=1200&q=80",
+    "heroImage": "assets/img/heritage-placeholder.svg",
     "history": {
       "title": "Dakshina Kosala Kingdom & Bastar Royal Lineage",
       "era": "5th Century CE \u2013 20th Century CE",
@@ -2834,7 +2834,7 @@ export const INDIAN_STATES = [
           "title": "Panthi Acrobatic Folk Dance",
           "subtitle": "Human Pyramids of Spiritual Harmony",
           "description": "Satnami dancers clad in white forming towering human spires to the hypnotic rhythm of the Mandar drum.",
-          "image": "https://images.unsplash.com/photo-1599818816946-b60b73c41793?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/heritage-placeholder.svg",
           "tag": "Folk Dance"
         },
         {
@@ -3168,7 +3168,7 @@ export const INDIAN_STATES = [
     "region": "Northeast",
     "badge": "Cradle of Modern Polo & Manipuri Raas Leela",
     "tagline": "Ancient Sagol Kangjei Polo, Floating Loktak Lake & Thang-Ta Martial Arts",
-    "heroImage": "https://images.unsplash.com/photo-1600100397608-f010f443b7cf?auto=format&fit=crop&w=1200&q=80",
+    "heroImage": "assets/img/heritage-placeholder.svg",
     "history": {
       "title": "Kingdom of Kangleipak & Birthplace of Polo",
       "era": "33 CE \u2013 1949 CE",
@@ -3283,7 +3283,7 @@ export const INDIAN_STATES = [
           "title": "Manipuri Classical Raas Leela",
           "subtitle": "Celestial Grace of the Potloi Skirt",
           "description": "Dancers performing the divine Raas in shimmering cylindrical Potloi skirts that float without showing foot movements.",
-          "image": "https://images.unsplash.com/photo-1600100397608-f010f443b7cf?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/heritage-placeholder.svg",
           "tag": "Classical Dance"
         },
         {
@@ -4188,7 +4188,7 @@ export const INDIAN_STATES = [
           "title": "Khajuraho Temple Stone Sculptures",
           "subtitle": "Triumph of Medieval Chandela Stonecraft",
           "description": "Exquisite Sandstone Nagara temple facades covered in thousands of sculptural celestial maidens and deities.",
-          "image": "https://images.unsplash.com/photo-1599818816946-b60b73c41793?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/heritage-placeholder.svg",
           "tag": "Sculptural Art"
         },
         {

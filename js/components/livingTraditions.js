@@ -1,5 +1,5 @@
 // js/components/livingTraditions.js
-// DISCOVER INDIA: Living Traditions Automatic Cultural Slideshow
+// ITIHASAM: Living Traditions Automatic Cultural Slideshow
 // Strict adherence to 5-second initial delay, auto-scroll to right, pause/resume, and rich cultural lore.
 
 import { soundSynth } from '../audio/soundSynth.js';
@@ -17,6 +17,9 @@ export class LivingTraditionsSlideshow {
     this.isPaused = false;
     this.firstRun = true;
     this.intervalSeconds = 5; // Exactly 5 seconds as specified
+    this.secondsLeft = this.intervalSeconds;
+    this.viewed = new Set([0]);
+    this.completed = gameState.isActivityCompleted(this.stateData.id, 'culture');
   }
 
   compileSlides() {
@@ -57,9 +60,19 @@ export class LivingTraditionsSlideshow {
   init() {
     this.render();
     this.startAutoSlideshow();
+    this.updateProgress();
+  }
 
-    // Mark completion in game state
-    gameState.completeActivity(this.stateData.id, 'culture', 150);
+  // The activity is completed only once every slide has been seen
+  updateProgress() {
+    const el = this.container.querySelector('#slides-viewed');
+    if (el) el.textContent = `${this.viewed.size} / ${this.slides.length} slides seen${this.completed ? ' ✓' : ''}`;
+    if (!this.completed && this.viewed.size >= this.slides.length) {
+      this.completed = true;
+      const res = gameState.completeActivity(this.stateData.id, 'culture', this.stateData.culture.points || 150);
+      soundSynth.playVictory();
+      if (el) el.textContent = `All ${this.slides.length} slides seen ✓ ${res.isFirstTime ? '+' + (this.stateData.culture.points || 150) + ' CDP' : ''}`;
+    }
   }
 
   render() {
@@ -72,6 +85,7 @@ export class LivingTraditionsSlideshow {
           <div class="slideshow-title-info">
             <span class="category-pill">REGIONAL CULTURES & LIVING TRADITIONS</span>
             <h2 class="state-title">${this.stateData.name} — Living Arts & Heritage</h2>
+            <span class="slides-viewed-pill" id="slides-viewed" aria-live="polite"></span>
           </div>
           <div class="slideshow-status-pills">
             <div class="timer-countdown-pill" id="timer-indicator">
@@ -177,16 +191,15 @@ export class LivingTraditionsSlideshow {
 
   startAutoSlideshow() {
     this.clearTimer();
-    let secondsLeft = this.intervalSeconds; // 5 seconds exactly
-    this.updateTimerDisplay(secondsLeft);
+    this.secondsLeft = this.intervalSeconds; // 5 seconds exactly
+    this.updateTimerDisplay(this.secondsLeft);
 
     const countdownInterval = setInterval(() => {
       if (!this.isPaused) {
-        secondsLeft--;
-        this.updateTimerDisplay(secondsLeft);
-        if (secondsLeft <= 0) {
-          secondsLeft = this.intervalSeconds;
-          this.nextSlide(); // Auto-scrolls toward the RIGHT
+        this.secondsLeft--;
+        this.updateTimerDisplay(this.secondsLeft);
+        if (this.secondsLeft <= 0) {
+          this.nextSlide(); // Auto-scrolls toward the RIGHT (resets the countdown)
         }
       }
     }, 1000);
@@ -228,7 +241,10 @@ export class LivingTraditionsSlideshow {
     });
 
     // Reset countdown timer without halting auto-scroll
+    this.secondsLeft = this.intervalSeconds;
     this.updateTimerDisplay(this.intervalSeconds);
+    this.viewed.add(this.currentIndex);
+    this.updateProgress();
   }
 
   togglePause() {
@@ -246,7 +262,7 @@ export class LivingTraditionsSlideshow {
       if (this.isPaused) {
         indicator.innerHTML = '<span class="timer-icon">⏸️</span> Slideshow Paused';
       } else {
-        indicator.innerHTML = '<span class="timer-icon">⏱️</span> Auto-Advancing in <span id="timer-seconds-left">5s</span>';
+        indicator.innerHTML = `<span class="timer-icon">⏱️</span> Auto-Advancing in <span id="timer-seconds-left">${this.secondsLeft}s</span>`;
       }
     }
   }

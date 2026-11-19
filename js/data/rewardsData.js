@@ -1,5 +1,7 @@
 // js/data/rewardsData.js
-// DISCOVER INDIA: Reward and Progression Systems
+// ITIHASAM: Reward and Progression Systems
+
+import { INDIAN_STATES } from './statesData.js';
 
 export const LEVELS = [
   {
@@ -70,7 +72,7 @@ export const BADGES = [
     name: 'First Step into the Past',
     category: 'Exploration',
     icon: '🧭',
-    description: 'Explored your first Indian State.',
+    description: 'Completed your first cultural activity in any state.',
     cdpReward: 50
   },
   {
@@ -78,7 +80,7 @@ export const BADGES = [
     name: 'Keeper of Dynasties',
     category: 'History',
     icon: '📜',
-    description: 'Completed a historical adventure mission and deciphered an ancient inscription.',
+    description: 'Completed 5 historical adventure missions and deciphered their inscriptions.',
     cdpReward: 150
   },
   {
@@ -94,7 +96,23 @@ export const BADGES = [
     name: 'Tiger & Goat Tactician',
     category: 'Games',
     icon: '🐅',
-    description: 'Successfully trapped the tigers or captured goats in Aadu Puli Aattam.',
+    description: 'Won a game of Bagh-Chal / Aadu Puli Aattam (tigers vs goats).',
+    cdpReward: 200
+  },
+  {
+    id: 'chaupar-champion',
+    name: 'Lord of the Chaupar Cross',
+    category: 'Games',
+    icon: '🎲',
+    description: 'Brought all your pieces home first in a race game of Chaupar / Pachisi.',
+    cdpReward: 200
+  },
+  {
+    id: 'folk-sports-ace',
+    name: 'Folk Sports Ace',
+    category: 'Games',
+    icon: '🏹',
+    description: 'Won 3 folk sports challenges (archery, kabaddi, gilli-danda and more).',
     cdpReward: 200
   },
   {
@@ -114,6 +132,14 @@ export const BADGES = [
     cdpReward: 180
   },
   {
+    id: 'rhythm-keeper',
+    name: 'Keeper of the Festival Beat',
+    category: 'Festivals',
+    icon: '🥁',
+    description: 'Kept the rhythm in a festival drum challenge (Bihu, Wangala, Garba and more).',
+    cdpReward: 180
+  },
+  {
     id: 'pongal-celebrant',
     name: 'Pongalo Pongal!',
     category: 'Festivals',
@@ -126,20 +152,44 @@ export const BADGES = [
     name: 'Living Traditions Scholar',
     category: 'Culture',
     icon: '🎭',
-    description: 'Explored cultural slideshows and learned about 5 state dance and craft forms.',
+    description: 'Watched the Living Traditions slideshows of 5 different states to the end.',
     cdpReward: 150
   },
   {
+    id: 'streak-keeper',
+    name: 'Daily Sadhaka',
+    category: 'Exploration',
+    icon: '🔥',
+    description: 'Answered the Daily Heritage Challenge 3 days in a row.',
+    cdpReward: 120
+  },
+  {
+    id: 'timeline-sage',
+    name: 'Sage of the Ages',
+    category: 'History',
+    icon: '⏳',
+    description: 'Placed at least 8 eras in the correct order in Timeline Mode.',
+    cdpReward: 150
+  },
+  {
+    id: 'passport-complete',
+    name: 'Full Heritage Passport',
+    category: 'Mastery',
+    icon: '🛂',
+    description: 'Collected the passport stamp of all 28 states by finishing every category.',
+    cdpReward: 1000
+  },
+  {
     id: 'all-regions-voyager',
-    name: 'Voyager of 28 States',
+    name: 'Voyager of the Six Zones',
     category: 'Mastery',
     icon: '🇮🇳',
-    description: 'Explored heritage across all 6 geographical zones of India.',
+    description: 'Completed at least one activity in each of the 6 regions of India.',
     cdpReward: 500
   }
 ];
 
-export const ARTIFACTS = [
+const FEATURED_ARTIFACTS = [
   {
     id: 'chola-nataraja',
     name: 'Chola Lost-Wax Bronze Nataraja',
@@ -221,6 +271,27 @@ export const ARTIFACTS = [
     location: 'Majuli Island Guild'
   }
 ];
+
+// One collectible relic per state: detailed featured entries first, then each
+// state's own history artifact from statesData.
+const slug = (name) => name.toLowerCase().replace(/s+/g, '-');
+
+export const ARTIFACTS = INDIAN_STATES.map(st => {
+  const featured = FEATURED_ARTIFACTS.find(a => slug(a.state) === st.id);
+  if (featured) return { ...featured, stateId: st.id };
+  const a = st.history.artifact || {};
+  return {
+    id: a.id || `${st.id}-relic`,
+    name: a.name || `${st.name} Heritage Relic`,
+    state: st.name,
+    stateId: st.id,
+    era: a.period || st.history.era,
+    icon: a.icon || '🏺',
+    lore: a.lore || st.history.highlights,
+    material: a.material || 'Traditional materials',
+    location: a.location || st.capital
+  };
+});
 
 if (typeof window !== 'undefined') {
   window.LEVELS = LEVELS;

@@ -1,0 +1,10 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+node_modules/
+# Local Claude Code settings
+.claude/
+# Never commit secrets
+.env
+.env.*

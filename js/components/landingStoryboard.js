@@ -1,8 +1,10 @@
 // js/components/landingStoryboard.js
-// DISCOVER INDIA: Landing Page, Curved Storyboard Journey & Opposing Pointer Parallax
+// ITIHASAM: Landing Page, Curved Storyboard Journey & Opposing Pointer Parallax
 
 import { soundSynth } from '../audio/soundSynth.js';
 import { gameState } from '../state/gameState.js';
+import { t, escapeHTML } from '../i18n.js';
+import { getStateById } from '../data/statesData.js';
 
 export class LandingStoryboard {
   constructor(containerId, options = {}) {
@@ -31,11 +33,11 @@ export class LandingStoryboard {
         <div class="heritage-collage-bg">
           <div class="collage-item c-taj" style="background-image: url('https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1200&q=80')"></div>
           <div class="collage-item c-brihadeeswarar" style="background-image: url('https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1200&q=80')"></div>
-          <div class="collage-item c-hampi" style="background-image: url('https://images.unsplash.com/photo-1600100397608-f010f443b7cf?auto=format&fit=crop&w=1200&q=80')"></div>
+          <div class="collage-item c-hampi" style="background-image: url('assets/img/heritage-placeholder.svg')"></div>
           <div class="collage-item c-dance" style="background-image: url('https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&w=1200&q=80')"></div>
           <div class="collage-item c-fort" style="background-image: url('https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=1200&q=80')"></div>
           <div class="collage-item c-boat" style="background-image: url('https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1200&q=80')"></div>
-          
+
           <!-- Subtle Ancient-White Parchment Overlay -->
           <div class="ancient-white-overlay"></div>
           <div class="mandala-faint-bg"></div>
@@ -45,14 +47,21 @@ export class LandingStoryboard {
         <div class="landing-content-wrap">
           <div class="landing-header-block">
             <div class="heritage-top-motif">❦ ══ •⊰ ॐ ⊱• ══ ❦</div>
-            <h1 class="main-title">DISCOVER INDIA</h1>
-            <h2 class="sub-title">28 States. Countless Stories. One Living Heritage.</h2>
-            <p class="supporting-text">
-              Travel through centuries of history, rediscover forgotten games, explore architectural wonders and experience the living traditions of India.
-            </p>
+            <h1 class="main-title">${t('appName')}</h1>
+            <p class="title-meaning">इतिहासम् · <em>itihāsa</em> — "thus indeed it happened"</p>
+            <h2 class="sub-title">${t('tagline')}</h2>
+            <p class="supporting-text">${t('heroText')}</p>
+            ${this.continueCard()}
             <div class="quick-cta-row">
-              <button class="btn-ancient btn-gold" id="btn-hero-explore">🏛️ EXPLORE ALL 28 STATES</button>
-              <button class="btn-ancient btn-terracotta" id="btn-hero-avatar">👤 CUSTOMIZE YOUR EXPLORER</button>
+              <button class="btn-ancient btn-gold" id="btn-hero-map">🗺️ ${t('openMap')}</button>
+              <button class="btn-ancient btn-secondary" id="btn-hero-explore">🏛️ ${t('exploreStates')}</button>
+              <button class="btn-ancient btn-terracotta" id="btn-hero-avatar">👤 ${t('customizeExplorer')}</button>
+            </div>
+            <div class="landing-quick-links">
+              <button class="quick-link-chip" data-go="daily">🔥 ${t('navDaily')}${gameState.hasAnsweredDailyToday() ? ' ✓' : ''}</button>
+              <button class="quick-link-chip" data-go="timeline">⏳ ${t('navTimeline')}</button>
+              <button class="quick-link-chip" data-go="passport">🛂 ${t('navPassport')} (${gameState.countStamps()}/28)</button>
+              <button class="quick-link-chip" data-go="impact">🌱 ${t('navImpact')}</button>
             </div>
           </div>
 
@@ -66,7 +75,7 @@ export class LandingStoryboard {
 
             <div class="curved-path-wrap" id="curved-path-wrap">
               <!-- SVG Curved Winding Trail connecting the 5 stops -->
-              <svg class="winding-path-svg" viewBox="0 0 1100 240" preserveAspectRatio="none">
+              <svg class="winding-path-svg" viewBox="0 0 1100 240" preserveAspectRatio="none" aria-hidden="true">
                 <defs>
                   <linearGradient id="goldPathGrad" x1="0%" y1="0%" x2="100%" y2="0%">
                     <stop offset="0%" stop-color="#B69A62" stop-opacity="0.8" />
@@ -75,18 +84,18 @@ export class LandingStoryboard {
                   </linearGradient>
                 </defs>
                 <!-- Winding S-curve trail -->
-                <path d="M 60 140 C 220 20, 320 220, 520 80 C 680 -20, 800 230, 1040 120" 
-                      fill="none" 
-                      stroke="url(#goldPathGrad)" 
-                      stroke-width="4" 
-                      stroke-dasharray="8 6" 
+                <path d="M 60 140 C 220 20, 320 220, 520 80 C 680 -20, 800 230, 1040 120"
+                      fill="none"
+                      stroke="url(#goldPathGrad)"
+                      stroke-width="4"
+                      stroke-dasharray="8 6"
                       class="animated-path" />
               </svg>
 
               <!-- 5 Interconnected Stops (Interactive Floating Cards) -->
               <div class="floating-stops-row" id="floating-stops-row">
                 <!-- Stop 1: HISTORY & CIVILIZATION -->
-                <div class="journey-stop-card stop-1" data-category="history" style="top: 100px; left: 10px;">
+                <div class="journey-stop-card stop-1" data-category="history" style="top: 100px; left: 10px;" role="button" tabindex="0" aria-label="Stop 1: History and Civilization">
                   <div class="stop-badge">STOP 01</div>
                   <div class="stop-icon-wrap">📜</div>
                   <h4 class="stop-title">HISTORY & CIVILIZATION</h4>
@@ -95,16 +104,16 @@ export class LandingStoryboard {
                 </div>
 
                 <!-- Stop 2: FORGOTTEN TRADITIONAL GAMES -->
-                <div class="journey-stop-card stop-2" data-category="games" style="top: 15px; left: 240px;">
+                <div class="journey-stop-card stop-2" data-category="games" style="top: 15px; left: 240px;" role="button" tabindex="0" aria-label="Stop 2: Forgotten Traditional Games">
                   <div class="stop-badge">STOP 02</div>
                   <div class="stop-icon-wrap">🎲</div>
                   <h4 class="stop-title">FORGOTTEN TRADITIONAL GAMES</h4>
-                  <p class="stop-desc">Pallanguzhi, Aadu Puli, Pagade & indigenous sports.</p>
+                  <p class="stop-desc">Pallanguzhi, Chaupar, Bagh-Chal & folk sports.</p>
                   <span class="explore-hint">Play Games →</span>
                 </div>
 
                 <!-- Stop 3: ARCHITECTURAL WONDERS -->
-                <div class="journey-stop-card stop-3" data-category="architecture" style="top: 90px; left: 470px;">
+                <div class="journey-stop-card stop-3" data-category="architecture" style="top: 90px; left: 470px;" role="button" tabindex="0" aria-label="Stop 3: Architectural Wonders">
                   <div class="stop-badge">STOP 03</div>
                   <div class="stop-icon-wrap">🏛️</div>
                   <h4 class="stop-title">ARCHITECTURAL WONDERS</h4>
@@ -113,16 +122,16 @@ export class LandingStoryboard {
                 </div>
 
                 <!-- Stop 4: FESTIVALS & CELEBRATIONS -->
-                <div class="journey-stop-card stop-4" data-category="festivals" style="top: 10px; left: 700px;">
+                <div class="journey-stop-card stop-4" data-category="festivals" style="top: 10px; left: 700px;" role="button" tabindex="0" aria-label="Stop 4: Festivals and Celebrations">
                   <div class="stop-badge">STOP 04</div>
                   <div class="stop-icon-wrap">🪔</div>
                   <h4 class="stop-title">FESTIVALS & CELEBRATIONS</h4>
-                  <p class="stop-desc">Pookalam mandalas, Pongal feasts & harvest joy.</p>
+                  <p class="stop-desc">Pookalams, pandals, Bihu & Garba beats.</p>
                   <span class="explore-hint">Experience Joy →</span>
                 </div>
 
                 <!-- Stop 5: REGIONAL CULTURES -->
-                <div class="journey-stop-card stop-5" data-category="culture" style="top: 85px; left: 910px;">
+                <div class="journey-stop-card stop-5" data-category="culture" style="top: 85px; left: 910px;" role="button" tabindex="0" aria-label="Stop 5: Regional Cultures">
                   <div class="stop-badge">STOP 05</div>
                   <div class="stop-icon-wrap">🎭</div>
                   <h4 class="stop-title">REGIONAL CULTURES</h4>
@@ -150,6 +159,20 @@ export class LandingStoryboard {
       });
     }
 
+    const btnMap = this.container.querySelector('#btn-hero-map');
+    if (btnMap) btnMap.addEventListener('click', () => { soundSynth.playClick(); window.appRouter && window.appRouter.navigate('india-map'); });
+
+    const btnContinue = this.container.querySelector('#btn-hero-continue');
+    if (btnContinue) btnContinue.addEventListener('click', () => {
+      soundSynth.playBell();
+      window.appRouter && window.appRouter.navigate('states-directory', { stateId: btnContinue.dataset.state });
+    });
+
+    this.container.querySelectorAll('[data-go]').forEach(b => b.addEventListener('click', () => {
+      soundSynth.playClick();
+      window.appRouter && window.appRouter.navigate(b.dataset.go);
+    }));
+
     const btnAvatar = this.container.querySelector('#btn-hero-avatar');
     if (btnAvatar) {
       btnAvatar.addEventListener('click', () => {
@@ -161,18 +184,34 @@ export class LandingStoryboard {
     // Hook the 5 category stops
     const stops = this.container.querySelectorAll('.journey-stop-card');
     stops.forEach(stop => {
-      stop.addEventListener('click', () => {
+      const go = () => {
         soundSynth.playBell();
         const cat = stop.dataset.category;
-        gameState.setCurrentView('states-directory', { categoryKey: cat });
-        if (window.appRouter) {
-          window.appRouter.navigate('states-directory', { categoryKey: cat });
-        }
+        if (window.appRouter) window.appRouter.navigate('states-directory', { categoryKey: cat });
+      };
+      stop.addEventListener('click', go);
+      stop.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); }
       });
     });
   }
 
+  continueCard() {
+    if (!gameState.hasProgress()) return '';
+    const s = gameState.state;
+    const st = getStateById(s.activeStateId);
+    return `
+      <div class="continue-card ancient-panel">
+        <div>
+          <span class="continue-label">${t('welcomeBack')}, <strong>${escapeHTML(s.avatar.name || 'Explorer')}</strong></span>
+          <span class="continue-meta">🪙 ${s.points} CDP · Level ${s.currentLevel} · 🛂 ${gameState.countStamps()}/28 · 🔥 ${(s.daily && s.daily.streak) || 0}</span>
+        </div>
+        ${st ? `<button class="btn-ancient btn-gold btn-sm" id="btn-hero-continue" data-state="${st.id}">▶ ${t('continueJourneyCta')}: ${escapeHTML(st.name)}</button>` : ''}
+      </div>`;
+  }
+
   setupOpposingPointerParallax() {
+    if (document.body.classList.contains('reduced-motion')) return;
     window.addEventListener('mousemove', this.boundPointerMove);
     window.addEventListener('touchmove', this.boundTouchMove, { passive: true });
     this.startParallaxLoop();

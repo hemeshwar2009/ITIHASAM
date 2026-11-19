@@ -1,5 +1,5 @@
 // js/games/historyAdventure.js
-// DISCOVER INDIA: Pixel-Art Top-Down Historical Adventure Game
+// ITIHASAM: Pixel-Art Top-Down Historical Adventure Game
 
 import { BaseMiniGame } from './gameEngine.js';
 import { soundSynth } from '../audio/soundSynth.js';
@@ -47,22 +47,36 @@ export class HistoryAdventureGame extends BaseMiniGame {
       frame: 0
     };
 
-    // World Entities (NPCs, Edicts, Treasures)
+    // World Entities (NPCs, Edicts, Treasures) — built from this state's history
+    const h = this.stateData.history;
+    const figures = (h.keyFigures && h.keyFigures.length) ? h.keyFigures : ['Royal Chronicler', 'Court Sage'];
+    this.figures = figures;
     this.entities = [
       {
         id: 'npc-scholar',
-        name: 'Royal Scholar Sundaram',
-        role: 'Court Chronicler',
-        x: 320,
-        y: 140,
+        name: figures[0],
+        role: 'Historic Figure',
+        x: 300,
+        y: 150,
         width: 24,
         height: 32,
         icon: '👳',
-        dialogue: 'Greetings Explorer! Inspect the Great Granite Edict near the northern sanctum to solve the Emperor’s riddle.'
+        dialogue: `Greetings, Explorer! I am ${figures[0]}. ${h.highlights || ''} Now inspect the stone inscription to the north-east.`
+      },
+      {
+        id: 'npc-sage',
+        name: figures[1] || 'Court Sage',
+        role: 'Keeper of Knowledge',
+        x: 180,
+        y: 270,
+        width: 24,
+        height: 32,
+        icon: '🧙',
+        dialogue: `Knowledge of this land: ${h.knowledgeSystem || 'ancient sciences, arts and crafts passed down for generations.'}`
       },
       {
         id: 'stone-edict',
-        name: 'Royal Granite Edict of Rajaraja Chola',
+        name: h.discoveryMission ? h.discoveryMission.name : 'Ancient Inscription',
         role: 'Sacred Inscription',
         x: 480,
         y: 120,
@@ -74,7 +88,7 @@ export class HistoryAdventureGame extends BaseMiniGame {
       },
       {
         id: 'artifact-chest',
-        name: 'Royal Reliquary Chest',
+        name: (h.artifact && h.artifact.name) || 'Royal Reliquary Chest',
         role: 'Sacred Artifact',
         x: 480,
         y: 280,
@@ -87,6 +101,14 @@ export class HistoryAdventureGame extends BaseMiniGame {
 
     this.keys = {};
     this.animationFrameId = null;
+    this.palette = {
+      South: { floor: '#E8DFD0', grid: '#D8CBB6', wall: '#B69A62' },
+      West: { floor: '#F0E2C8', grid: '#DCC8A2', wall: '#C08A4E' },
+      North: { floor: '#E9E4DA', grid: '#D2CBBE', wall: '#9C8466' },
+      East: { floor: '#EADBCB', grid: '#D6C1A9', wall: '#A8674A' },
+      Northeast: { floor: '#DFE6D6', grid: '#C5D0B8', wall: '#6F8B5A' },
+      Central: { floor: '#EEDFCF', grid: '#D9C5AE', wall: '#A8775A' }
+    }[this.stateData.region] || { floor: '#E8DFD0', grid: '#D8CBB6', wall: '#B69A62' };
   }
 
   runDemoSequence() {
@@ -103,8 +125,8 @@ export class HistoryAdventureGame extends BaseMiniGame {
         title: 'Step 2: Consult Royal Chroniclers',
         desc: 'Approach scholars and sculptors to learn historical clues and folklore.',
         action: () => {
-          this.autoMovePlayer(300, 160, () => {
-            this.showDialogue('Royal Scholar Sundaram', 'The Chola fleet crossed the Bay of Bengal to Kadaram! Inspect the stone inscription.');
+          this.autoMovePlayer(280, 170, () => {
+            this.showDialogue(this.figures[0], (this.stateData.history.discoveryMission && this.stateData.history.discoveryMission.objective) || 'Inspect the stone inscription.');
             soundSynth.playBell();
           });
         }
@@ -114,7 +136,8 @@ export class HistoryAdventureGame extends BaseMiniGame {
         desc: 'Interact with stone edicts to unlock historical discovery puzzles.',
         action: () => {
           this.autoMovePlayer(460, 140, () => {
-            this.showDialogue('Ancient Tamil Grantha Inscription', 'Carved in 1014 CE: "Svasti Sri! Hail the righteous fleet of the Cholas..."');
+            const m = this.stateData.history.discoveryMission;
+            this.showDialogue(m ? m.name : 'Ancient Inscription', m ? m.description : 'An ancient inscription awaits.');
             soundSynth.playClack();
           });
         }
@@ -153,7 +176,7 @@ export class HistoryAdventureGame extends BaseMiniGame {
     this.startLoop();
     this.updateNarration(
       'Mission Objective:',
-      `Walk to the Royal Scholar and Stone Edict to decipher: "${this.stateData.history.discoveryMission.name}".`
+      `Talk to ${this.figures[0]}, then inspect the inscription (🪨) to solve: "${this.stateData.history.discoveryMission.name}". Arrow keys / WASD to move, E or Space to interact.`
     );
   }
 
@@ -238,16 +261,19 @@ export class HistoryAdventureGame extends BaseMiniGame {
   }
 
   setupControls() {
-    window.addEventListener('keydown', (e) => {
-      this.keys[e.key.toLowerCase()] = true;
-      if (e.key === 'e' || e.key === 'E' || e.key === ' ') {
-        this.interact();
-      }
-    });
-
-    window.addEventListener('keyup', (e) => {
-      this.keys[e.key.toLowerCase()] = false;
-    });
+    this.removeKeyListeners();
+    this.onKeyDown = (e) => {
+      if (!this.isGameActive || this.isDemoMode) return;
+      if (e.target && /input|textarea|select/i.test(e.target.tagName)) return;
+      const k = e.key.toLowerCase();
+      if (['arrowup', 'arrowdown', 'arrowleft', 'arrowright', ' '].includes(k)) e.preventDefault();
+      this.keys[k] = true;
+      if ((k === 'e' || k === ' ') && !e.repeat) this.interact();
+      if (k === 'escape') this.hideDialogue();
+    };
+    this.onKeyUp = (e) => { this.keys[e.key.toLowerCase()] = false; };
+    window.addEventListener('keydown', this.onKeyDown);
+    window.addEventListener('keyup', this.onKeyUp);
 
     // Touch D-Pad buttons
     const bindBtn = (id, key) => {
@@ -273,7 +299,13 @@ export class HistoryAdventureGame extends BaseMiniGame {
     }
   }
 
+  removeKeyListeners() {
+    if (this.onKeyDown) window.removeEventListener('keydown', this.onKeyDown);
+    if (this.onKeyUp) window.removeEventListener('keyup', this.onKeyUp);
+  }
+
   startLoop() {
+    if (this.animationFrameId) cancelAnimationFrame(this.animationFrameId);
     const loop = () => {
       if (!this.isGameOver) {
         this.update();
@@ -311,7 +343,7 @@ export class HistoryAdventureGame extends BaseMiniGame {
       const dist = Math.hypot((this.player.x + 12) - (ent.x + 16), (this.player.y + 16) - (ent.y + 16));
       if (dist < 55) {
         soundSynth.playClick();
-        if (ent.id === 'npc-scholar') {
+        if (ent.id === 'npc-scholar' || ent.id === 'npc-sage') {
           this.showDialogue(ent.name, ent.dialogue);
         } else if (ent.id === 'stone-edict') {
           this.openRiddleModal();
@@ -320,7 +352,8 @@ export class HistoryAdventureGame extends BaseMiniGame {
             this.showDialogue('Royal Reliquary', 'This chest is locked. Decipher the Stone Edict riddle first to break the ancient seal!');
           } else {
             soundSynth.playVictory();
-            this.finishGame(true, 150, this.stateData.history.artifact.name);
+            this.removeKeyListeners();
+            this.finishGame(true, this.options.points, this.stateData.history.artifact ? this.stateData.history.artifact.name : '');
           }
         }
         return;
@@ -402,12 +435,12 @@ export class HistoryAdventureGame extends BaseMiniGame {
     const w = this.canvas.width;
     const h = this.canvas.height;
 
-    // 1. Draw Ancient Stone Courtyard Floor
-    ctx.fillStyle = '#E8DFD0';
+    // 1. Draw Ancient Stone Courtyard Floor (tinted by region)
+    ctx.fillStyle = this.palette.floor;
     ctx.fillRect(0, 0, w, h);
 
     // Stone flagstone grid
-    ctx.strokeStyle = '#D8CBB6';
+    ctx.strokeStyle = this.palette.grid;
     ctx.lineWidth = 1;
     for (let x = 0; x < w; x += 32) {
       ctx.beginPath();
@@ -423,11 +456,14 @@ export class HistoryAdventureGame extends BaseMiniGame {
     }
 
     // 2. Decorative Courtyard Walls & Pillars
-    ctx.fillStyle = '#B69A62';
+    ctx.fillStyle = this.palette.wall;
     ctx.fillRect(0, 0, w, 40); // Top wall
-    ctx.fillStyle = '#493A2D';
+    ctx.fillStyle = '#2B1E16';
     ctx.font = '12px serif';
-    ctx.fillText('🏛️ CHOLA ROYAL PALACE COURTYARD — 1010 CE', 20, 25);
+    const banner = `🏛️ ${this.stateData.name.toUpperCase()} — ${this.stateData.history.title}`;
+    ctx.fillText(banner.length > 62 ? banner.slice(0, 60) + '…' : banner, 20, 25);
+    ctx.font = '10px serif';
+    ctx.fillText(this.stateData.history.era || '', w - 20 - ctx.measureText(this.stateData.history.era || '').width, 25);
 
     // Stone pillars
     [64, 192, 384, 544].forEach(px => {
@@ -447,13 +483,15 @@ export class HistoryAdventureGame extends BaseMiniGame {
 
       // Entity Icon / Pixel representation
       ctx.font = '24px sans-serif';
+      ctx.fillStyle = '#000000'; // opaque fill so emoji glyphs render at full strength
       ctx.fillText(ent.icon, ent.x, ent.y + ent.height - 6);
 
       // Label
       ctx.font = '10px sans-serif';
       ctx.fillStyle = '#493A2D';
       ctx.textAlign = 'center';
-      ctx.fillText(ent.name.split(' ')[0], ent.x + ent.width / 2, ent.y - 4);
+      const shortName = ent.name.length > 22 ? ent.name.slice(0, 20) + '…' : ent.name;
+      ctx.fillText(shortName, ent.x + ent.width / 2, ent.y - 4);
       ctx.textAlign = 'start';
     }
 
@@ -493,6 +531,8 @@ export class HistoryAdventureGame extends BaseMiniGame {
 
   destroy() {
     super.destroy();
+    this.isGameOver = true;
+    this.removeKeyListeners();
     if (this.animationFrameId) {
       cancelAnimationFrame(this.animationFrameId);
     }

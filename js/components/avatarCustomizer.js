@@ -1,8 +1,9 @@
 // js/components/avatarCustomizer.js
-// DISCOVER INDIA: Avatar Customization Interface ("Choose Your Explorer")
+// ITIHASAM: Avatar Customization Interface ("Choose Your Explorer")
 
 import { soundSynth } from '../audio/soundSynth.js';
 import { gameState } from '../state/gameState.js';
+import { escapeHTML } from '../i18n.js';
 import { INITIAL_ARCHETYPES, CUSTOMIZATION_OPTIONS } from '../data/avatarData.js';
 
 export class AvatarCustomizer {
@@ -41,7 +42,7 @@ export class AvatarCustomizer {
 
               <div class="character-identity-inputs">
                 <label for="explorer-name-input" class="input-label">Explorer Name:</label>
-                <input type="text" id="explorer-name-input" value="${this.currentAvatar.name || 'Aryavart'}" class="ancient-input text-center" maxlength="20" />
+                <input type="text" id="explorer-name-input" value="${escapeHTML(this.currentAvatar.name || 'Aryavart')}" class="ancient-input text-center" maxlength="20" />
               </div>
 
               <div class="character-current-gear">

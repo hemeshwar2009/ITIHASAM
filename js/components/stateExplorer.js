@@ -1,9 +1,11 @@
 // js/components/stateExplorer.js
-// DISCOVER INDIA: 28 States Directory, Regional Filtering, Search & State Detail Modal
+// ITIHASAM: 28 States Directory, Regional Filtering, Search & State Detail Modal
 
 import { soundSynth } from '../audio/soundSynth.js';
 import { gameState } from '../state/gameState.js';
 import { INDIAN_STATES, getStateById, searchStates, getStatesByRegion } from '../data/statesData.js';
+import { describeGame, getFestivalTheme } from '../data/gameRouting.js';
+import { escapeHTML } from '../i18n.js';
 
 export class StateExplorer {
   constructor(containerId, options = {}) {
@@ -12,6 +14,24 @@ export class StateExplorer {
     this.searchQuery = '';
     this.selectedStateId = options.stateId || null;
     this.selectedCategoryKey = options.categoryKey || null;
+    this.onKeyDown = (e) => {
+      if (e.key !== 'Escape') return;
+      const modal = this.container && this.container.querySelector('#state-detail-modal');
+      if (modal && !modal.classList.contains('hidden')) this.closeStateDetail();
+    };
+    document.addEventListener('keydown', this.onKeyDown);
+  }
+
+  destroy() {
+    document.removeEventListener('keydown', this.onKeyDown);
+  }
+
+  closeStateDetail() {
+    const modal = this.container.querySelector('#state-detail-modal');
+    if (modal) modal.classList.add('hidden');
+    this.selectedStateId = null;
+    if (window.appRouter && window.appRouter.writeHash) window.appRouter.writeHash('states-directory', {}, true);
+    if (this.lastFocus && document.contains(this.lastFocus)) this.lastFocus.focus();
   }
 
   init() {
@@ -37,15 +57,16 @@ export class StateExplorer {
           <div class="explorer-filter-controls">
             <!-- Search Box -->
             <div class="search-input-wrap">
-              <span class="search-icon">🔍</span>
-              <input type="text" id="state-search-input" placeholder="Search by state, monument, dance, or festival..." value="${this.searchQuery}" class="ancient-input" />
-              ${this.searchQuery ? '<button class="clear-search-btn" id="btn-clear-search">✖</button>' : ''}
+              <span class="search-icon" aria-hidden="true">🔍</span>
+              <label class="sr-only" for="state-search-input">Search states</label>
+              <input type="search" id="state-search-input" placeholder="Search by state, monument, dance, or festival..." value="${escapeHTML(this.searchQuery)}" class="ancient-input" />
+              ${this.searchQuery ? '<button class="clear-search-btn" id="btn-clear-search" aria-label="Clear search">✖</button>' : ''}
             </div>
 
             <!-- Regional Filter Chips -->
             <div class="region-chips-row" id="region-chips-row">
               ${['All', 'South', 'West', 'North', 'East', 'Northeast', 'Central'].map(reg => `
-                <button class="region-chip ${this.activeFilter === reg ? 'active' : ''}" data-region="${reg}">
+                <button class="region-chip ${this.activeFilter === reg ? 'active' : ''}" data-region="${reg}" aria-pressed="${this.activeFilter === reg}">
                   ${reg === 'All' ? 'All 28 States' : reg + ' India'}
                 </button>
               `).join('')}
@@ -60,7 +81,7 @@ export class StateExplorer {
             return `
               <div class="state-card ancient-panel" data-id="${state.id}">
                 <div class="state-card-image-wrap">
-                  <img src="${state.heroImage}" alt="${state.name}" class="state-card-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&w=600&q=80';" />
+                  <img src="${state.heroImage}" alt="${escapeHTML(state.name)} heritage" class="state-card-img" loading="lazy" />
                   <div class="card-gradient-overlay"></div>
                   <span class="region-tag">${state.region}</span>
                   <div class="state-badge-pill">${state.badge}</div>
@@ -74,15 +95,15 @@ export class StateExplorer {
                   <p class="state-tagline">${state.tagline}</p>
 
                   <div class="state-card-footer">
-                    <div class="completion-mini-bar">
+                    <div class="completion-mini-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${completionPct}" aria-label="${escapeHTML(state.name)} explored">
                       <div class="mini-bar-track">
                         <div class="mini-bar-fill" style="width: ${completionPct}%"></div>
                       </div>
                       <span class="mini-bar-text">${completionPct}% Explored</span>
                     </div>
 
-                    <button class="btn-ancient btn-gold btn-sm btn-open-state" data-id="${state.id}">
-                      Explore 5 Categories →
+                    <button class="btn-ancient btn-gold btn-sm btn-open-state" data-id="${state.id}" aria-label="Explore the 5 categories of ${escapeHTML(state.name)}">
+                      ${completionPct === 100 ? '🛂 ' : ''}Explore 5 Categories →
                     </button>
                   </div>
                 </div>
@@ -92,7 +113,7 @@ export class StateExplorer {
             <div class="empty-results-box ancient-panel">
               <span class="empty-icon">📜</span>
               <h3>No States Found</h3>
-              <p>No states matched your query "${this.searchQuery}". Try searching for another name or reset filters.</p>
+              <p>No states matched your query "${escapeHTML(this.searchQuery)}". Try searching for another name or reset filters.</p>
               <button class="btn-ancient btn-gold" id="btn-reset-filters">Reset All Filters</button>
             </div>
           `}
@@ -100,7 +121,7 @@ export class StateExplorer {
 
         <!-- State Detail Modal (5 Categories View) -->
         <div class="state-modal-overlay hidden" id="state-detail-modal">
-          <div class="state-modal-content ancient-panel" id="modal-content-container">
+          <div class="state-modal-content ancient-panel" id="modal-content-container" role="dialog" aria-modal="true" aria-labelledby="state-modal-title">
             <!-- Modal Body populated when state clicked -->
           </div>
         </div>
@@ -122,7 +143,7 @@ export class StateExplorer {
     }
     if (this.searchQuery.trim()) {
       const q = this.searchQuery.toLowerCase().trim();
-      list = list.filter(s => 
+      list = list.filter(s =>
         s.name.toLowerCase().includes(q) ||
         s.capital.toLowerCase().includes(q) ||
         s.tagline.toLowerCase().includes(q) ||
@@ -143,7 +164,14 @@ export class StateExplorer {
     if (searchInput) {
       searchInput.addEventListener('input', (e) => {
         this.searchQuery = e.target.value;
+        const caret = e.target.selectionStart;
         this.render();
+        // Re-rendering replaces the input; keep focus and caret so typing is uninterrupted
+        const again = this.container.querySelector('#state-search-input');
+        if (again) {
+          again.focus();
+          try { again.setSelectionRange(caret, caret); } catch (err) { /* ignore */ }
+        }
       });
     }
 
@@ -176,11 +204,12 @@ export class StateExplorer {
     }
 
     // State card clicks
-    const stateCards = this.container.querySelectorAll('.state-card, .btn-open-state');
+    const stateCards = this.container.querySelectorAll('.state-card');
     stateCards.forEach(card => {
       card.addEventListener('click', (e) => {
         const id = card.dataset.id;
         if (id) {
+          this.lastFocus = card.querySelector('.btn-open-state');
           soundSynth.playBell();
           this.openStateDetail(id);
         }
@@ -193,6 +222,9 @@ export class StateExplorer {
     if (!state) return;
 
     this.selectedStateId = stateId;
+    soundSynth.playRegionalMotif(state.region);
+    if (window.appRouter && window.appRouter.writeHash) window.appRouter.writeHash('states-directory', { stateId }, true);
+    const festTheme = getFestivalTheme(state.id);
     const modal = this.container.querySelector('#state-detail-modal');
     const modalContent = this.container.querySelector('#modal-content-container');
     if (!modal || !modalContent) return;
@@ -216,7 +248,7 @@ export class StateExplorer {
         icon: '🎲',
         image: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=600&q=80',
         rewardPts: state.games.points,
-        rewardText: 'Master of Pallanguzhi Badge'
+        rewardText: `Play: ${describeGame(state.id)}`
       },
       {
         key: 'architecture',
@@ -236,7 +268,7 @@ export class StateExplorer {
         icon: '🪔',
         image: 'https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&w=600&q=80',
         rewardPts: state.festivals.points,
-        rewardText: 'Festival Maestro Badge'
+        rewardText: festTheme.kind === 'rhythm' ? `Rhythm: ${festTheme.instrument}` : `Build: ${festTheme.heading.toLowerCase().replace(/(^|\s)\S/g, c => c.toUpperCase())}`
       },
       {
         key: 'culture',
@@ -246,7 +278,7 @@ export class StateExplorer {
         icon: '🎭',
         image: 'https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&w=600&q=80',
         rewardPts: state.culture.points,
-        rewardText: 'Living Traditions Scholar Badge'
+        rewardText: 'Watch all slides to complete'
       }
     ];
 
@@ -254,10 +286,10 @@ export class StateExplorer {
       <div class="state-modal-header">
         <div class="header-titles">
           <span class="region-pill">${state.region} India • Capital: ${state.capital}</span>
-          <h2>${state.name}</h2>
+          <h2 id="state-modal-title">${escapeHTML(state.name)}</h2>
           <p class="header-tagline">${state.tagline}</p>
         </div>
-        <button class="modal-close-btn" id="btn-close-state-modal">✖</button>
+        <button class="modal-close-btn" id="btn-close-state-modal" aria-label="Close ${escapeHTML(state.name)}">✖</button>
       </div>
 
       <div class="state-modal-body">
@@ -271,10 +303,10 @@ export class StateExplorer {
             return `
               <div class="category-detail-card ancient-panel ${isCompleted ? 'completed' : ''}" data-key="${cat.key}">
                 <div class="cat-card-img-wrap">
-                  <img src="${cat.image}" alt="${cat.title}" class="cat-img" loading="lazy" />
+                  <img src="${cat.image}" alt="" class="cat-img" loading="lazy" />
                   <span class="cat-num-pill">${cat.num}</span>
                   <div class="cat-status-badge">
-                    ${isCompleted ? '✓ Completed' : '🔒 Available'}
+                    ${isCompleted ? '✓ Completed' : '▶ Available'}
                   </div>
                 </div>
 
@@ -290,7 +322,7 @@ export class StateExplorer {
                     <span class="reward-item">🎁 ${cat.rewardText}</span>
                   </div>
 
-                  <button class="btn-ancient btn-gold btn-block btn-launch-category" data-category="${cat.key}">
+                  <button class="btn-ancient btn-gold btn-block btn-launch-category" data-category="${cat.key}" aria-label="${isCompleted ? 'Replay' : 'Play'} ${escapeHTML(cat.title)} in ${escapeHTML(state.name)}">
                     ${isCompleted ? 'Replay Experience ↺' : 'Explore & Play →'}
                   </button>
                 </div>
@@ -306,11 +338,13 @@ export class StateExplorer {
     // Close button
     const btnClose = modalContent.querySelector('#btn-close-state-modal');
     if (btnClose) {
+      btnClose.focus({ preventScroll: true });
       btnClose.addEventListener('click', () => {
         soundSynth.playClick();
-        modal.classList.add('hidden');
+        this.closeStateDetail();
       });
     }
+    modal.onclick = (e) => { if (e.target === modal) this.closeStateDetail(); };
 
     // Launch category buttons
     const launchBtns = modalContent.querySelectorAll('.btn-launch-category, .category-detail-card');
