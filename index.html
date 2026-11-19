@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DISCOVER INDIA — An Interactive Cultural Heritage Experience</title>
+  <meta name="description" content="Explore India's history, forgotten traditional games, architectural wonders, festivals, and regional cultures across all 28 states through interactive pixel-art games and storyboards." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏛️</text></svg>" />
+
+  <!-- Google Fonts: Royal Cinzel, Classical Marcellus, Modern Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Marcellus&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Ancient White Theme Stylesheets -->
+  <link rel="stylesheet" href="styles/ancient-white.css" />
+  <link rel="stylesheet" href="styles/landing.css" />
+  <link rel="stylesheet" href="styles/toolbar.css" />
+  <link rel="stylesheet" href="styles/states.css" />
+  <link rel="stylesheet" href="styles/games.css" />
+  <link rel="stylesheet" href="styles/slideshow.css" />
+  <link rel="stylesheet" href="styles/rewards.css" />
+  <link rel="stylesheet" href="styles/avatar.css" />
+  <link rel="stylesheet" href="styles/chatbot.css" />
+
+  <style>
+    /* Game View Specific Breadcrumb Bar */
+    .game-view-outer-wrap {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    .game-view-breadcrumb {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 18px;
+      margin-bottom: 20px;
+    }
+    .breadcrumb-info {
+      font-size: 0.92rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- App Main Root -->
+  <div id="app-root">
+    <!-- Dynamic Main View Container -->
+    <main id="main-view-container"></main>
+
+    <!-- Persistent Right-Side Vertical Toolbar Mount -->
+    <div id="toolbar-mount"></div>
+
+    <!-- Floating Chatbot Companion Mount (Bottom-Right) -->
+    <div id="chatbot-mount"></div>
+  </div>
+
+  <!-- Main ES Module Application Script -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

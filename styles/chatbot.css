@@ -1,0 +1,199 @@
+/* styles/chatbot.css */
+/* DISCOVER INDIA - Heritage Guide Chatbot Styling */
+
+.heritage-chatbot-widget {
+  position: fixed;
+  bottom: 24px;
+  right: calc(var(--toolbar-width) + 20px);
+  z-index: 1200;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* Floating Circular Button */
+.chatbot-trigger-btn {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #FAF7F0;
+  border: 2px solid var(--accent-gold);
+  box-shadow: 0 6px 24px rgba(73, 58, 45, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+}
+
+.chatbot-trigger-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 28px rgba(182, 154, 98, 0.35);
+  border-color: var(--accent-terracotta);
+}
+
+.trigger-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.trigger-badge {
+  font-size: 0.62rem;
+  font-weight: 800;
+  color: var(--accent-terracotta);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Chatbot Expanded Window */
+.chatbot-window {
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  width: 360px;
+  height: 500px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 16px 40px rgba(73, 58, 45, 0.25);
+  overflow: hidden;
+  animation: modalScaleUp 0.25s cubic-bezier(0.2, 0.8, 0.4, 1);
+}
+
+.chatbot-header {
+  padding: 12px 16px;
+  background: #EFE8DC;
+  border-bottom: 1px solid var(--border-sandstone);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.guide-avatar-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-sandstone);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.guide-header-info {
+  flex: 1;
+}
+
+.guide-name {
+  font-family: var(--font-serif-classic);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.guide-status {
+  font-size: 0.68rem;
+  color: #2E7D32;
+  display: block;
+}
+
+/* Quick Suggestion Chips */
+.quick-chips-bar {
+  display: flex;
+  gap: 6px;
+  padding: 8px 12px;
+  background: var(--bg-primary);
+  border-bottom: 1px dashed var(--border-sandstone);
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.chat-chip-btn {
+  padding: 4px 10px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-sandstone);
+  border-radius: 12px;
+  font-size: 0.72rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.chat-chip-btn:hover {
+  background: #EBE3D3;
+  border-color: var(--accent-gold);
+}
+
+/* Message History Area */
+.chatbot-messages-area {
+  flex: 1;
+  padding: 16px 14px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #FAF7F0;
+}
+
+.chat-message {
+  display: flex;
+  max-width: 85%;
+}
+
+.bot-message {
+  align-self: flex-start;
+}
+
+.user-message {
+  align-self: flex-end;
+}
+
+.message-bubble {
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+.bot-message .message-bubble {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-sandstone);
+  color: var(--text-primary);
+  border-bottom-left-radius: 2px;
+}
+
+.user-message .message-bubble {
+  background: var(--accent-gold);
+  color: #FFFFFF;
+  border-bottom-right-radius: 2px;
+}
+
+/* Input Form Bar */
+.chatbot-input-bar {
+  display: flex;
+  gap: 8px;
+  padding: 10px 12px;
+  background: #EFE8DC;
+  border-top: 1px solid var(--border-sandstone);
+}
+
+.chatbot-input-bar .ancient-input {
+  padding: 8px 12px;
+  font-size: 0.85rem;
+}
+
+.chatbot-input-bar .btn-ancient {
+  padding: 8px 14px;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 600px) {
+  .chatbot-window {
+    width: calc(100vw - 80px);
+    right: 0;
+  }
+}

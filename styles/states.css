@@ -1,0 +1,445 @@
+/* styles/states.css */
+/* DISCOVER INDIA - 28 States Directory & Category Exploration View */
+
+.states-explorer-wrap {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 36px 24px;
+}
+
+/* Explorer Header & Filters */
+.explorer-header {
+  padding: 24px;
+  margin-bottom: 28px;
+}
+
+.explorer-title-area {
+  margin-bottom: 20px;
+}
+
+.explorer-title-area h2 {
+  font-family: var(--font-serif-royal);
+  font-size: 2.2rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 6px;
+}
+
+.explorer-title-area p {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.explorer-filter-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Search input with icon */
+.search-input-wrap {
+  position: relative;
+  max-width: 600px;
+  width: 100%;
+}
+
+.search-input-wrap .search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.1rem;
+  color: var(--accent-gold);
+  pointer-events: none;
+}
+
+.search-input-wrap .ancient-input {
+  padding-left: 42px;
+  padding-right: 40px;
+  font-size: 1rem;
+}
+
+.clear-search-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 13px;
+}
+
+/* Regional Chips Row */
+.region-chips-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.region-chip {
+  padding: 8px 16px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-sandstone);
+  border-radius: 20px;
+  font-family: var(--font-serif-classic);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.region-chip:hover {
+  background: #EBE3D3;
+  border-color: var(--accent-gold);
+}
+
+.region-chip.active {
+  background: var(--accent-gold);
+  color: #FFFFFF;
+  border-color: var(--accent-gold-hover);
+  box-shadow: 0 2px 8px rgba(182, 154, 98, 0.3);
+}
+
+/* 28 States Cards Grid */
+.states-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.state-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.state-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(73, 58, 45, 0.14);
+}
+
+.state-card-image-wrap {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+}
+
+.state-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.state-card:hover .state-card-img {
+  transform: scale(1.06);
+}
+
+.card-gradient-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to top, rgba(73, 58, 45, 0.85) 0%, transparent 60%);
+}
+
+.region-tag {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 3px 10px;
+  background: rgba(250, 247, 240, 0.92);
+  border: 1px solid var(--border-sandstone);
+  border-radius: 12px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent-terracotta);
+  text-transform: uppercase;
+}
+
+.state-badge-pill {
+  position: absolute;
+  bottom: 12px;
+  left: 14px;
+  right: 14px;
+  color: #FAF7F0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Card Body */
+.state-card-body {
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.state-name-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6px;
+}
+
+.state-name {
+  font-family: var(--font-serif-classic);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.state-capital {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.state-tagline {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.state-card-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--border-sandstone);
+}
+
+.completion-mini-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.mini-bar-track {
+  flex: 1;
+  height: 6px;
+  background: #E8DFD0;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.mini-bar-fill {
+  height: 100%;
+  background: var(--accent-gold);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.mini-bar-text {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent-terracotta);
+}
+
+/* Empty Results */
+.empty-results-box {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 48px 24px;
+}
+
+.empty-icon {
+  font-size: 3rem;
+  margin-bottom: 12px;
+}
+
+/* State Detail Modal (5 Categories View) */
+.state-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(73, 58, 45, 0.6);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1500;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.state-modal-content {
+  max-width: 1080px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 32px;
+  animation: modalScaleUp 0.25s cubic-bezier(0.2, 0.8, 0.4, 1);
+}
+
+.state-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-sandstone);
+}
+
+.state-modal-header h2 {
+  font-family: var(--font-serif-royal);
+  font-size: 2.4rem;
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+  margin: 6px 0;
+}
+
+.header-tagline {
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+.modal-instruction-banner {
+  padding: 12px 16px;
+  background: rgba(182, 154, 98, 0.12);
+  border: 1px solid rgba(182, 154, 98, 0.3);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+}
+
+/* 5 Category Cards Grid inside Modal */
+.category-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.category-detail-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.category-detail-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(73, 58, 45, 0.12);
+}
+
+.cat-card-img-wrap {
+  position: relative;
+  height: 150px;
+  overflow: hidden;
+}
+
+.cat-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cat-num-pill {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 3px 8px;
+  background: rgba(73, 58, 45, 0.85);
+  color: #FAF7F0;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.cat-status-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 3px 10px;
+  background: rgba(250, 247, 240, 0.95);
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent-terracotta);
+}
+
+.category-detail-card.completed .cat-status-badge {
+  color: #2E7D32;
+}
+
+.cat-card-content {
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.cat-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.cat-icon {
+  font-size: 1.4rem;
+}
+
+.cat-title {
+  font-family: var(--font-serif-classic);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.cat-description {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.cat-reward-indicator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  background: var(--bg-primary);
+  border-radius: 6px;
+  margin-bottom: 14px;
+}
+
+.reward-points {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent-terracotta);
+}
+
+.reward-item {
+  font-size: 0.78rem;
+  color: var(--text-primary);
+}
+
+/* Modal close button */
+.modal-close-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-sandstone);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: var(--text-muted);
+  transition: all 0.2s ease;
+}
+
+.modal-close-btn:hover {
+  background: #EAE2D2;
+  color: var(--text-primary);
+}

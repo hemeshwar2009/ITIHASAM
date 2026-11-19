@@ -1,0 +1,247 @@
+/* styles/avatar.css */
+/* DISCOVER INDIA - Explorer Avatar Customization View */
+
+.avatar-customizer-wrap {
+  max-width: 1080px;
+  margin: 30px auto;
+  padding: 32px;
+}
+
+.customizer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-sandstone);
+}
+
+.customizer-header h2 {
+  font-family: var(--font-serif-royal);
+  font-size: 2.2rem;
+  margin-bottom: 4px;
+}
+
+.customizer-layout-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 32px;
+}
+
+/* Left Column: Live Character Preview */
+.preview-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.character-preview-card {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.preview-canvas-wrap {
+  margin-bottom: 16px;
+}
+
+.character-identity-inputs {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.input-label {
+  display: block;
+  font-family: var(--font-serif-classic);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.character-current-gear {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.gear-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background: var(--bg-primary);
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: var(--text-primary);
+  text-align: left;
+}
+
+/* Right Column: Customization Tabs & Options */
+.options-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.customizer-tabs-nav {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab-btn {
+  padding: 10px 20px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-sandstone);
+  border-radius: 8px;
+  font-family: var(--font-serif-classic);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+  background: #EBE3D3;
+  border-color: var(--accent-gold);
+}
+
+.tab-btn.active {
+  background: var(--accent-gold);
+  color: #FFFFFF;
+  border-color: var(--accent-gold-hover);
+}
+
+/* Archetypes Cards List */
+.archetypes-cards-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.archetype-select-card {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.archetype-select-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-gold);
+}
+
+.archetype-select-card.selected {
+  border-color: var(--accent-terracotta);
+  box-shadow: 0 0 0 2px rgba(183, 110, 75, 0.4);
+}
+
+.arch-top {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+
+.arch-name {
+  font-family: var(--font-serif-classic);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.arch-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent-terracotta);
+}
+
+.arch-desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin-bottom: 14px;
+  flex: 1;
+}
+
+/* Custom Sections */
+.custom-section {
+  margin-bottom: 24px;
+}
+
+.section-title {
+  font-family: var(--font-serif-classic);
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--accent-terracotta);
+}
+
+.skin-tones-row {
+  display: flex;
+  gap: 14px;
+}
+
+.tone-circle-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.tone-circle-btn:hover {
+  transform: scale(1.15);
+}
+
+.tone-circle-btn.active {
+  border-color: var(--accent-terracotta);
+  box-shadow: 0 0 0 2px var(--accent-gold);
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.option-pill-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-sandstone);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.option-pill-btn:hover {
+  background: #EBE3D3;
+  border-color: var(--accent-gold);
+}
+
+.option-pill-btn.active {
+  background: #FAF7F0;
+  border-color: var(--accent-gold);
+  color: var(--accent-terracotta);
+  box-shadow: inset 0 0 6px rgba(182, 154, 98, 0.2);
+}
+
+@media (max-width: 860px) {
+  .customizer-layout-grid {
+    grid-template-columns: 1fr;
+  }
+}

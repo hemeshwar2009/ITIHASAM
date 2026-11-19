@@ -1,0 +1,331 @@
+// js/components/stateExplorer.js
+// DISCOVER INDIA: 28 States Directory, Regional Filtering, Search & State Detail Modal
+
+import { soundSynth } from '../audio/soundSynth.js';
+import { gameState } from '../state/gameState.js';
+import { INDIAN_STATES, getStateById, searchStates, getStatesByRegion } from '../data/statesData.js';
+
+export class StateExplorer {
+  constructor(containerId, options = {}) {
+    this.container = document.getElementById(containerId);
+    this.activeFilter = options.region || 'All';
+    this.searchQuery = '';
+    this.selectedStateId = options.stateId || null;
+    this.selectedCategoryKey = options.categoryKey || null;
+  }
+
+  init() {
+    this.render();
+  }
+
+  render() {
+    if (!this.container) return;
+
+    const filteredStates = this.getFilteredList();
+
+    this.container.innerHTML = `
+      <div class="states-explorer-wrap">
+        <!-- Explorer Header Bar -->
+        <div class="explorer-header ancient-panel">
+          <div class="explorer-title-area">
+            <span class="category-pill">STORYBOARD DIRECTORY</span>
+            <h2>Explore the 28 States of India</h2>
+            <p>Select any state to embark on its five interactive cultural experiences.</p>
+          </div>
+
+          <!-- Search & Filter Controls -->
+          <div class="explorer-filter-controls">
+            <!-- Search Box -->
+            <div class="search-input-wrap">
+              <span class="search-icon">🔍</span>
+              <input type="text" id="state-search-input" placeholder="Search by state, monument, dance, or festival..." value="${this.searchQuery}" class="ancient-input" />
+              ${this.searchQuery ? '<button class="clear-search-btn" id="btn-clear-search">✖</button>' : ''}
+            </div>
+
+            <!-- Regional Filter Chips -->
+            <div class="region-chips-row" id="region-chips-row">
+              ${['All', 'South', 'West', 'North', 'East', 'Northeast', 'Central'].map(reg => `
+                <button class="region-chip ${this.activeFilter === reg ? 'active' : ''}" data-region="${reg}">
+                  ${reg === 'All' ? 'All 28 States' : reg + ' India'}
+                </button>
+              `).join('')}
+            </div>
+          </div>
+        </div>
+
+        <!-- 28 States Cards Grid -->
+        <div class="states-grid-container" id="states-grid">
+          ${filteredStates.length > 0 ? filteredStates.map(state => {
+            const completionPct = gameState.getStateCompletionPercentage(state.id);
+            return `
+              <div class="state-card ancient-panel" data-id="${state.id}">
+                <div class="state-card-image-wrap">
+                  <img src="${state.heroImage}" alt="${state.name}" class="state-card-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&w=600&q=80';" />
+                  <div class="card-gradient-overlay"></div>
+                  <span class="region-tag">${state.region}</span>
+                  <div class="state-badge-pill">${state.badge}</div>
+                </div>
+
+                <div class="state-card-body">
+                  <div class="state-name-row">
+                    <h3 class="state-name">${state.name}</h3>
+                    <span class="state-capital">🏛️ ${state.capital}</span>
+                  </div>
+                  <p class="state-tagline">${state.tagline}</p>
+
+                  <div class="state-card-footer">
+                    <div class="completion-mini-bar">
+                      <div class="mini-bar-track">
+                        <div class="mini-bar-fill" style="width: ${completionPct}%"></div>
+                      </div>
+                      <span class="mini-bar-text">${completionPct}% Explored</span>
+                    </div>
+
+                    <button class="btn-ancient btn-gold btn-sm btn-open-state" data-id="${state.id}">
+                      Explore 5 Categories →
+                    </button>
+                  </div>
+                </div>
+              </div>
+            `;
+          }).join('') : `
+            <div class="empty-results-box ancient-panel">
+              <span class="empty-icon">📜</span>
+              <h3>No States Found</h3>
+              <p>No states matched your query "${this.searchQuery}". Try searching for another name or reset filters.</p>
+              <button class="btn-ancient btn-gold" id="btn-reset-filters">Reset All Filters</button>
+            </div>
+          `}
+        </div>
+
+        <!-- State Detail Modal (5 Categories View) -->
+        <div class="state-modal-overlay hidden" id="state-detail-modal">
+          <div class="state-modal-content ancient-panel" id="modal-content-container">
+            <!-- Modal Body populated when state clicked -->
+          </div>
+        </div>
+      </div>
+    `;
+
+    this.attachEventListeners();
+
+    // If initial selectedStateId provided, open it immediately
+    if (this.selectedStateId) {
+      this.openStateDetail(this.selectedStateId);
+    }
+  }
+
+  getFilteredList() {
+    let list = INDIAN_STATES;
+    if (this.activeFilter && this.activeFilter !== 'All') {
+      list = getStatesByRegion(this.activeFilter);
+    }
+    if (this.searchQuery.trim()) {
+      const q = this.searchQuery.toLowerCase().trim();
+      list = list.filter(s => 
+        s.name.toLowerCase().includes(q) ||
+        s.capital.toLowerCase().includes(q) ||
+        s.tagline.toLowerCase().includes(q) ||
+        s.badge.toLowerCase().includes(q) ||
+        s.history.title.toLowerCase().includes(q) ||
+        s.games.title.toLowerCase().includes(q) ||
+        s.architecture.monumentName.toLowerCase().includes(q) ||
+        s.festivals.title.toLowerCase().includes(q) ||
+        s.culture.title.toLowerCase().includes(q)
+      );
+    }
+    return list;
+  }
+
+  attachEventListeners() {
+    // Search input
+    const searchInput = this.container.querySelector('#state-search-input');
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        this.searchQuery = e.target.value;
+        this.render();
+      });
+    }
+
+    const btnClearSearch = this.container.querySelector('#btn-clear-search');
+    if (btnClearSearch) {
+      btnClearSearch.addEventListener('click', () => {
+        this.searchQuery = '';
+        this.render();
+      });
+    }
+
+    // Region chips
+    const regionChips = this.container.querySelectorAll('.region-chip');
+    regionChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        soundSynth.playClick();
+        this.activeFilter = chip.dataset.region;
+        this.render();
+      });
+    });
+
+    // Reset filters
+    const btnReset = this.container.querySelector('#btn-reset-filters');
+    if (btnReset) {
+      btnReset.addEventListener('click', () => {
+        this.searchQuery = '';
+        this.activeFilter = 'All';
+        this.render();
+      });
+    }
+
+    // State card clicks
+    const stateCards = this.container.querySelectorAll('.state-card, .btn-open-state');
+    stateCards.forEach(card => {
+      card.addEventListener('click', (e) => {
+        const id = card.dataset.id;
+        if (id) {
+          soundSynth.playBell();
+          this.openStateDetail(id);
+        }
+      });
+    });
+  }
+
+  openStateDetail(stateId) {
+    const state = getStateById(stateId);
+    if (!state) return;
+
+    this.selectedStateId = stateId;
+    const modal = this.container.querySelector('#state-detail-modal');
+    const modalContent = this.container.querySelector('#modal-content-container');
+    if (!modal || !modalContent) return;
+
+    const categories = [
+      {
+        key: 'history',
+        num: '01',
+        title: 'History & Civilization',
+        desc: state.history.highlights,
+        icon: '📜',
+        image: state.heroImage,
+        rewardPts: state.history.points,
+        rewardText: state.history.artifact ? state.history.artifact.name : 'Chola Inscription Badge'
+      },
+      {
+        key: 'games',
+        num: '02',
+        title: 'Forgotten Traditional Games',
+        desc: `${state.games.title} — ${state.games.origin}. ${state.games.rules[0]}`,
+        icon: '🎲',
+        image: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=600&q=80',
+        rewardPts: state.games.points,
+        rewardText: 'Master of Pallanguzhi Badge'
+      },
+      {
+        key: 'architecture',
+        num: '03',
+        title: 'Architectural Wonders',
+        desc: `${state.architecture.title}: ${state.architecture.marvelDetails}`,
+        icon: '🏛️',
+        image: 'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=600&q=80',
+        rewardPts: state.architecture.points,
+        rewardText: 'Vimana Master Architect Badge'
+      },
+      {
+        key: 'festivals',
+        num: '04',
+        title: 'Festivals & Celebrations',
+        desc: `${state.festivals.title} (${state.festivals.season}). ${state.festivals.rituals}`,
+        icon: '🪔',
+        image: 'https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&w=600&q=80',
+        rewardPts: state.festivals.points,
+        rewardText: 'Festival Maestro Badge'
+      },
+      {
+        key: 'culture',
+        num: '05',
+        title: 'Regional Cultures',
+        desc: `${state.culture.title}. ${state.culture.dance}. ${state.culture.handicrafts}`,
+        icon: '🎭',
+        image: 'https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&w=600&q=80',
+        rewardPts: state.culture.points,
+        rewardText: 'Living Traditions Scholar Badge'
+      }
+    ];
+
+    modalContent.innerHTML = `
+      <div class="state-modal-header">
+        <div class="header-titles">
+          <span class="region-pill">${state.region} India • Capital: ${state.capital}</span>
+          <h2>${state.name}</h2>
+          <p class="header-tagline">${state.tagline}</p>
+        </div>
+        <button class="modal-close-btn" id="btn-close-state-modal">✖</button>
+      </div>
+
+      <div class="state-modal-body">
+        <div class="modal-instruction-banner">
+          <span>✨</span> Select any of the 5 cultural category cards below to begin its interactive game & story experience:
+        </div>
+
+        <div class="category-cards-grid">
+          ${categories.map(cat => {
+            const isCompleted = gameState.isActivityCompleted(state.id, cat.key);
+            return `
+              <div class="category-detail-card ancient-panel ${isCompleted ? 'completed' : ''}" data-key="${cat.key}">
+                <div class="cat-card-img-wrap">
+                  <img src="${cat.image}" alt="${cat.title}" class="cat-img" loading="lazy" />
+                  <span class="cat-num-pill">${cat.num}</span>
+                  <div class="cat-status-badge">
+                    ${isCompleted ? '✓ Completed' : '🔒 Available'}
+                  </div>
+                </div>
+
+                <div class="cat-card-content">
+                  <div class="cat-title-row">
+                    <span class="cat-icon">${cat.icon}</span>
+                    <h4 class="cat-title">${cat.title}</h4>
+                  </div>
+                  <p class="cat-description">${cat.desc}</p>
+
+                  <div class="cat-reward-indicator">
+                    <span class="reward-points">+${cat.rewardPts} CDP</span>
+                    <span class="reward-item">🎁 ${cat.rewardText}</span>
+                  </div>
+
+                  <button class="btn-ancient btn-gold btn-block btn-launch-category" data-category="${cat.key}">
+                    ${isCompleted ? 'Replay Experience ↺' : 'Explore & Play →'}
+                  </button>
+                </div>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      </div>
+    `;
+
+    modal.classList.remove('hidden');
+
+    // Close button
+    const btnClose = modalContent.querySelector('#btn-close-state-modal');
+    if (btnClose) {
+      btnClose.addEventListener('click', () => {
+        soundSynth.playClick();
+        modal.classList.add('hidden');
+      });
+    }
+
+    // Launch category buttons
+    const launchBtns = modalContent.querySelectorAll('.btn-launch-category, .category-detail-card');
+    launchBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const catKey = btn.dataset.category || btn.closest('.category-detail-card').dataset.key;
+        if (catKey) {
+          soundSynth.playBell();
+          modal.classList.add('hidden');
+          if (window.appRouter) {
+            window.appRouter.launchCategoryGame(state.id, catKey);
+          }
+        }
+      });
+    });
+  }
+}

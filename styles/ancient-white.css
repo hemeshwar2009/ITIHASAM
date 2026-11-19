@@ -1,0 +1,257 @@
+/* styles/ancient-white.css */
+/* DISCOVER INDIA - Core Visual Identity: ANCIENT WHITE THEME */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Marcellus&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Ancient White Color Palette */
+  --bg-primary: #F5F0E6;       /* Antique White */
+  --bg-secondary: #FAF7F0;     /* Ivory */
+  --text-primary: #493A2D;     /* Dark Brown */
+  --text-muted: #736152;       /* Medium Warm Brown */
+  --accent-gold: #B69A62;      /* Muted Antique Gold */
+  --accent-gold-light: #DFCFA6;
+  --accent-gold-hover: #9E834F;
+  --accent-terracotta: #B76E4B;/* Terracotta */
+  --accent-terracotta-dark: #914F30;
+  --border-sandstone: #D8CBB6; /* Soft Sandstone */
+  --border-subtle: #E8DFD0;
+  --surface-card: #FAF7F0;
+  --shadow-ancient: 0 4px 20px rgba(73, 58, 45, 0.08);
+  --shadow-deep: 0 8px 32px rgba(73, 58, 45, 0.12);
+  --radius-panel: 14px;
+  --radius-btn: 8px;
+  --font-serif-royal: 'Cinzel', serif;
+  --font-serif-classic: 'Marcellus', serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --toolbar-width: 80px;
+}
+
+/* Reset & Box Sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle Parchment Texture */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: radial-gradient(#D8CBB6 0.75px, transparent 0.75px), radial-gradient(#D8CBB6 0.75px, #F5F0E6 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+  opacity: 0.28;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Typography Defaults */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif-classic);
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+}
+
+.font-serif-royal {
+  font-family: var(--font-serif-royal);
+}
+
+.text-gold {
+  color: var(--accent-gold);
+}
+
+.text-terracotta {
+  color: var(--accent-terracotta);
+}
+
+/* Ancient Panel (Content Card styling) */
+.ancient-panel {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-sandstone);
+  border-radius: var(--radius-panel);
+  box-shadow: var(--shadow-ancient);
+  position: relative;
+}
+
+.ancient-panel::after {
+  content: '';
+  position: absolute;
+  top: 3px; left: 3px; right: 3px; bottom: 3px;
+  border: 1px dashed rgba(182, 154, 98, 0.25);
+  border-radius: calc(var(--radius-panel) - 3px);
+  pointer-events: none;
+}
+
+/* Ancient Buttons */
+.btn-ancient {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 22px;
+  font-family: var(--font-serif-classic);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  border-radius: var(--radius-btn);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: 1px solid transparent;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-ancient:active {
+  transform: translateY(1px);
+}
+
+.btn-gold {
+  background: #B69A62;
+  color: #FFFFFF;
+  border-color: #9E834F;
+  box-shadow: 0 2px 10px rgba(182, 154, 98, 0.35);
+}
+
+.btn-gold:hover {
+  background: var(--accent-gold-hover);
+  box-shadow: 0 4px 14px rgba(182, 154, 98, 0.45);
+}
+
+.btn-terracotta {
+  background: var(--accent-terracotta);
+  color: #FFFFFF;
+  border-color: var(--accent-terracotta-dark);
+}
+
+.btn-terracotta:hover {
+  background: var(--accent-terracotta-dark);
+}
+
+.btn-secondary {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border-color: var(--border-sandstone);
+}
+
+.btn-secondary:hover {
+  background: #EBE3D3;
+  border-color: var(--accent-gold);
+}
+
+.btn-sm {
+  padding: 6px 14px;
+  font-size: 0.85rem;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.btn-close-sm {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--border-sandstone);
+  border-radius: 50%;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.btn-close-sm:hover {
+  background: #EAE2D2;
+  color: var(--text-primary);
+  border-color: var(--accent-gold);
+}
+
+/* Category Pill */
+.category-pill {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(182, 154, 98, 0.15);
+  border: 1px solid rgba(182, 154, 98, 0.4);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--accent-terracotta);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+/* Ancient Input */
+.ancient-input {
+  width: 100%;
+  padding: 10px 16px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-sandstone);
+  border-radius: var(--radius-btn);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.ancient-input:focus {
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 0 3px rgba(182, 154, 98, 0.2);
+}
+
+/* Helper Utilities */
+.hidden {
+  display: none !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+/* App Main Container Layout with Right Toolbar Margin */
+#app-root {
+  min-height: 100vh;
+  margin-right: var(--toolbar-width);
+  position: relative;
+  z-index: 1;
+}
+
+/* Scrollbar Aesthetics */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-sandstone);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-gold);
+}

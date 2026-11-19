@@ -1,0 +1,255 @@
+/* styles/toolbar.css */
+/* DISCOVER INDIA - Right-Side Persistent Vertical Navigation Toolbar */
+
+.right-vertical-toolbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: var(--toolbar-width);
+  background: #FAF7F0;
+  border-left: 1px solid var(--border-sandstone);
+  box-shadow: -4px 0 20px rgba(73, 58, 45, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 8px;
+  z-index: 1000;
+  transition: width 0.3s cubic-bezier(0.2, 0.8, 0.4, 1), transform 0.3s ease;
+}
+
+.right-vertical-toolbar::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 2px; bottom: 0; width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(182, 154, 98, 0.35), transparent);
+}
+
+/* Toolbar Collapse Toggle */
+.toolbar-collapse-toggle {
+  position: absolute;
+  top: 14px;
+  left: -14px;
+  width: 26px;
+  height: 26px;
+  background: #FAF7F0;
+  border: 1px solid var(--border-sandstone);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: -2px 2px 8px rgba(73, 58, 45, 0.12);
+  color: var(--accent-gold);
+  font-size: 11px;
+  transition: all 0.2s ease;
+  z-index: 1001;
+}
+
+.toolbar-collapse-toggle:hover {
+  background: #EAE2D2;
+  color: var(--accent-terracotta);
+}
+
+/* Collapsed state */
+.right-vertical-toolbar.collapsed {
+  width: 16px;
+  padding: 16px 0;
+}
+
+.right-vertical-toolbar.collapsed .toolbar-nav-list,
+.right-vertical-toolbar.collapsed .toolbar-points-indicator,
+.right-vertical-toolbar.collapsed .toolbar-avatar-preview {
+  display: none;
+}
+
+/* Points Pill at Top */
+.toolbar-points-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 4px;
+  background: rgba(182, 154, 98, 0.12);
+  border: 1px solid rgba(182, 154, 98, 0.3);
+  border-radius: 10px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.pts-icon {
+  font-size: 1.1rem;
+}
+
+.pts-text {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--accent-terracotta);
+  line-height: 1.2;
+}
+
+/* Navigation Items List */
+.toolbar-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  flex: 1;
+  justify-content: center;
+}
+
+.toolbar-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 7px 2px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: all 0.2s ease;
+}
+
+.toolbar-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+  margin-bottom: 3px;
+  transition: transform 0.2s ease;
+}
+
+.toolbar-label {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-align: center;
+  line-height: 1.1;
+  color: var(--text-primary);
+}
+
+.toolbar-btn:hover {
+  background: rgba(182, 154, 98, 0.14);
+  border-color: rgba(182, 154, 98, 0.3);
+  color: var(--accent-terracotta);
+}
+
+.toolbar-btn:hover .toolbar-icon {
+  transform: scale(1.15);
+}
+
+.toolbar-btn.active {
+  background: #FAF7F0;
+  border-color: var(--accent-gold);
+  box-shadow: inset 0 0 8px rgba(182, 154, 98, 0.2), 0 2px 8px rgba(73, 58, 45, 0.08);
+}
+
+.toolbar-btn.active .toolbar-label {
+  color: var(--accent-terracotta);
+  font-weight: 700;
+}
+
+/* Bottom Explorer Avatar Preview Pill */
+.toolbar-avatar-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 4px;
+  background: #F5F0E6;
+  border: 1px solid var(--border-sandstone);
+  border-radius: 10px;
+  width: 100%;
+  text-align: center;
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+.avatar-mini-icon {
+  font-size: 1.2rem;
+}
+
+.avatar-mini-name {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 60px;
+}
+
+/* Modals for Settings & Help */
+.settings-modal-overlay,
+.help-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(73, 58, 45, 0.45);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.settings-card,
+.help-card {
+  max-width: 520px;
+  width: 100%;
+  padding: 24px;
+  animation: modalScaleUp 0.25s cubic-bezier(0.2, 0.8, 0.4, 1);
+}
+
+@keyframes modalScaleUp {
+  from { transform: scale(0.92); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.settings-header,
+.help-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-sandstone);
+}
+
+.setting-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px dashed var(--border-sandstone);
+}
+
+.setting-row h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.setting-row p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.help-body p {
+  margin-bottom: 12px;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+/* Responsive collapsible panel */
+@media (max-width: 768px) {
+  :root {
+    --toolbar-width: 60px;
+  }
+  .toolbar-label {
+    display: none;
+  }
+}
