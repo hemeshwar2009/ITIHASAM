@@ -31,12 +31,12 @@ export class LandingStoryboard {
       <div class="landing-hero-section">
         <!-- Heritage Collage Background with Ancient White Overlay -->
         <div class="heritage-collage-bg">
-          <div class="collage-item c-taj" style="background-image: url('https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1200&q=80')"></div>
-          <div class="collage-item c-brihadeeswarar" style="background-image: url('https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1200&q=80')"></div>
+          <div class="collage-item c-taj" style="background-image: url('assets/img/photos/1564507592333-c60657eea523-w1200.jpg')"></div>
+          <div class="collage-item c-brihadeeswarar" style="background-image: url('assets/img/photos/1582510003544-4d00b7f74220-w1200.jpg')"></div>
           <div class="collage-item c-hampi" style="background-image: url('assets/img/heritage-placeholder.svg')"></div>
-          <div class="collage-item c-dance" style="background-image: url('https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&w=1200&q=80')"></div>
-          <div class="collage-item c-fort" style="background-image: url('https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=1200&q=80')"></div>
-          <div class="collage-item c-boat" style="background-image: url('https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1200&q=80')"></div>
+          <div class="collage-item c-dance" style="background-image: url('assets/img/photos/1547153760-18fc86324498-w1200.jpg')"></div>
+          <div class="collage-item c-fort" style="background-image: url('assets/img/photos/1599661046289-e31897846e41-w1200.jpg')"></div>
+          <div class="collage-item c-boat" style="background-image: url('assets/img/photos/1602216056096-3b40cc0c9944-w1200.jpg')"></div>
 
           <!-- Subtle Ancient-White Parchment Overlay -->
           <div class="ancient-white-overlay"></div>

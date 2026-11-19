@@ -246,7 +246,7 @@ export class StateExplorer {
         title: 'Forgotten Traditional Games',
         desc: `${state.games.title} — ${state.games.origin}. ${state.games.rules[0]}`,
         icon: '🎲',
-        image: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=600&q=80',
+        image: 'assets/img/photos/1607604276583-eef5d076aa5f-w600.jpg',
         rewardPts: state.games.points,
         rewardText: `Play: ${describeGame(state.id)}`
       },
@@ -256,7 +256,7 @@ export class StateExplorer {
         title: 'Architectural Wonders',
         desc: `${state.architecture.title}: ${state.architecture.marvelDetails}`,
         icon: '🏛️',
-        image: 'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=600&q=80',
+        image: 'assets/img/photos/1590050752117-238cb0fb12b1-w600.jpg',
         rewardPts: state.architecture.points,
         rewardText: 'Vimana Master Architect Badge'
       },
@@ -266,7 +266,7 @@ export class StateExplorer {
         title: 'Festivals & Celebrations',
         desc: `${state.festivals.title} (${state.festivals.season}). ${state.festivals.rituals}`,
         icon: '🪔',
-        image: 'https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&w=600&q=80',
+        image: 'assets/img/photos/1596178065887-1198b6148b2b-w600.jpg',
         rewardPts: state.festivals.points,
         rewardText: festTheme.kind === 'rhythm' ? `Rhythm: ${festTheme.instrument}` : `Build: ${festTheme.heading.toLowerCase().replace(/(^|\s)\S/g, c => c.toUpperCase())}`
       },
@@ -276,7 +276,7 @@ export class StateExplorer {
         title: 'Regional Cultures',
         desc: `${state.culture.title}. ${state.culture.dance}. ${state.culture.handicrafts}`,
         icon: '🎭',
-        image: 'https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&w=600&q=80',
+        image: 'assets/img/photos/1547153760-18fc86324498-w600.jpg',
         rewardPts: state.culture.points,
         rewardText: 'Watch all slides to complete'
       }

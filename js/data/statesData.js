@@ -15,7 +15,7 @@ export const INDIAN_STATES = [
     "region": "South",
     "badge": "Temple Realm of the Cholas",
     "tagline": "Living Chola Temples, Sangam Literature & Sacred Classical Arts",
-    "heroImage": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1200&q=80",
+    "heroImage": "assets/img/photos/1582510003544-4d00b7f74220-w1200.jpg",
     "history": {
       "title": "Chola Naval Empire & Sangam Era",
       "era": "300 BCE \u2013 13th Century CE",
@@ -131,28 +131,28 @@ export const INDIAN_STATES = [
           "title": "Bharatanatyam Temple Recital",
           "subtitle": "Classical Expression of Divine Rhythm",
           "description": "Expressive eyes, sculptural mudras, and rhythmic ankle bell footwork preserving two millennia of temple tradition.",
-          "image": "https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1547153760-18fc86324498-w1000.jpg",
           "tag": "Dance"
         },
         {
           "title": "Brihadeeswarar Temple Vimana",
           "subtitle": "Engineering Miracle of 1010 CE",
           "description": "Soaring 216 feet into the Thanjavur skyline, carved completely from interlocked granite blocks without mortar.",
-          "image": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1582510003544-4d00b7f74220-w1000.jpg",
           "tag": "Architecture"
         },
         {
           "title": "Tanjore Gold Leaf Painting",
           "subtitle": "Devotional Art Encrusted with Gemstones",
           "description": "Sacred paintings adorned with 22-carat gold foil, Jaipur glass stones, and vivid natural mineral pigments.",
-          "image": "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1607604276583-eef5d076aa5f-w1000.jpg",
           "tag": "Crafts"
         },
         {
           "title": "Traditional Kolam at Sunrise",
           "subtitle": "Sacred Mathematics at the Threshold",
           "description": "Intricate symmetrical geometric networks drawn with rice flour to welcome prosperity and feed harmless insects.",
-          "image": "https://images.unsplash.com/photo-1605379399642-870262d3d051?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1605379399642-870262d3d051-w1000.jpg",
           "tag": "Living Tradition"
         }
       ],
@@ -166,7 +166,7 @@ export const INDIAN_STATES = [
     "region": "South",
     "badge": "God's Own Land of Muziris & Kathakali",
     "tagline": "Ancient Spice Ports, Matrilineal Legacies & Ayurvedic Healing Traditions",
-    "heroImage": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1200&q=80",
+    "heroImage": "assets/img/photos/1602216056096-3b40cc0c9944-w1200.jpg",
     "history": {
       "title": "Chera Kingdom & Ancient Port of Muziris",
       "era": "3rd Century BCE \u2013 18th Century CE",
@@ -281,14 +281,14 @@ export const INDIAN_STATES = [
           "title": "Kathakali Paccha Warrior",
           "subtitle": "Sculptural Theatre of Colors",
           "description": "Green chutti facial makeup framing vivid eyes that depict epic narratives through 24 root mudras.",
-          "image": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1602216056096-3b40cc0c9944-w1000.jpg",
           "tag": "Dance Drama"
         },
         {
           "title": "Onam Floral Pookalam",
           "subtitle": "Ten Days of Concentric Petal Mandalas",
           "description": "Vibrant harmony of yellow marigold, red hibiscus, and fragrant jasmine welcoming King Mahabali.",
-          "image": "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1596178065887-1198b6148b2b-w1000.jpg",
           "tag": "Festival Art"
         },
         {
@@ -302,7 +302,7 @@ export const INDIAN_STATES = [
           "title": "Kalaripayattu Martial Science",
           "subtitle": "Mother of Asian Martial Arts",
           "description": "Fluid airborne strikes, animal postures, and flexible Urumi sword maneuvers practiced in sacred pit arenas.",
-          "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1518709268805-4e9042af9f23-w1000.jpg",
           "tag": "Living Tradition"
         }
       ],
@@ -438,21 +438,21 @@ export const INDIAN_STATES = [
           "title": "Stone Chariot of Vittala Temple",
           "subtitle": "Eternal Symbol of Vijayanagara Glory",
           "description": "Carved with such architectural precision that its monumental wheels were designed to revolve on stone axes.",
-          "image": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1590050752117-238cb0fb12b1-w1000.jpg",
           "tag": "Architecture"
         },
         {
           "title": "Channapatna Lacquerware Toys",
           "subtitle": "Centuries-Old Royal Toycraft of Tipu Sultan",
           "description": "Turned Wrightia tinctoria wood polished to a glossy sheen using natural vegetable dyes and lacquer.",
-          "image": "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1563245372-f21724e3856d-w1000.jpg",
           "tag": "Crafts"
         },
         {
           "title": "Mysore Palace Royal Illumination",
           "subtitle": "Radiance of the Wodeyar Dynasts",
           "description": "Over 97,000 incandescent lamps casting a warm golden glow across Indo-Saracenic arches during Dasara.",
-          "image": "https://images.unsplash.com/photo-1580835239846-5bb9ce03c8c3?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1580835239846-5bb9ce03c8c3-w1000.jpg",
           "tag": "Living Tradition"
         }
       ],
@@ -589,21 +589,21 @@ export const INDIAN_STATES = [
           "title": "Monolithic Lepakshi Nandi",
           "subtitle": "Granite Majesty of the 16th Century",
           "description": "A single giant granite boulder shaped into a sublime resting bull adorned with carved bells and garlands.",
-          "image": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1590050752117-238cb0fb12b1-w1000.jpg",
           "tag": "Architecture"
         },
         {
           "title": "Kalamkari Botanical Tapestry",
           "subtitle": "Natural Pigments on Pure Cotton",
           "description": "Intricate Ramayana narratives drawn by master artisans using sharpened bamboo reeds and madder root dyes.",
-          "image": "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1607604276583-eef5d076aa5f-w1000.jpg",
           "tag": "Handicrafts"
         },
         {
           "title": "Sunrise Muggu Patterns",
           "subtitle": "Symmetry and Sacred Geometry",
           "description": "Daily flour mandalas drawn at house entrances that symbolize abundance and harmonious living with nature.",
-          "image": "https://images.unsplash.com/photo-1605379399642-870262d3d051?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1605379399642-870262d3d051-w1000.jpg",
           "tag": "Living Tradition"
         }
       ],
@@ -617,7 +617,7 @@ export const INDIAN_STATES = [
     "region": "South",
     "badge": "Realm of Kakatiyas & Golconda Splendor",
     "tagline": "Floating Bricks of Ramappa, Floral Magic of Bathukamma & Royal Nizami Heritage",
-    "heroImage": "https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=1200&q=80",
+    "heroImage": "assets/img/photos/1605649487212-47bdab064df7-w1200.jpg",
     "history": {
       "title": "Kakatiya Dynasty & Golconda Sultanate",
       "era": "11th Century \u2013 18th Century CE",
@@ -732,28 +732,28 @@ export const INDIAN_STATES = [
           "title": "Bathukamma Floral Celebration",
           "subtitle": "Worship of Mother Nature in Blossom",
           "description": "Concentric rings of medicinal wild flowers floating gracefully in serene temple tanks during twilight.",
-          "image": "https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1605649487212-47bdab064df7-w1000.jpg",
           "tag": "Floral Festival"
         },
         {
           "title": "Ramappa Temple Bracket Sculptures",
           "subtitle": "Black Basalt Masterpieces of 1213 CE",
           "description": "Intricate Madanika dancers sculpted with fine jewelry, delicate fingers, and mirror-polished stone surfaces.",
-          "image": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1590050752117-238cb0fb12b1-w1000.jpg",
           "tag": "Architecture"
         },
         {
           "title": "Bidriware Silver Inlay Vase",
           "subtitle": "Centuries-Old Metal Alchemy of the Deccan",
           "description": "Pure silver wire hand-hammered into engraved zinc alloy and blackened with historic Bidar fort soil.",
-          "image": "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1563245372-f21724e3856d-w1000.jpg",
           "tag": "Metalcraft"
         },
         {
           "title": "Pochampally Double-Ikat Weave",
           "subtitle": "Geometric Poetry on Silk and Cotton",
           "description": "Yarn tie-dyed with microscopic accuracy before weaving to generate mesmerizing kaleidoscope motifs.",
-          "image": "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1607604276583-eef5d076aa5f-w1000.jpg",
           "tag": "Textiles"
         }
       ],
@@ -767,7 +767,7 @@ export const INDIAN_STATES = [
     "region": "West",
     "badge": "Fortress Realm of Shivaji Maharaj",
     "tagline": "Monolithic Ellora Kailash Temple, Warli Tribal Art & Ganeshotsav Splendor",
-    "heroImage": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?auto=format&fit=crop&w=1200&q=80",
+    "heroImage": "assets/img/photos/1570168007204-dfb528c6958f-w1200.jpg",
     "history": {
       "title": "Maratha Empire & Rock-Cut Sanctuaries",
       "era": "2nd Century BCE \u2013 19th Century CE",
@@ -882,28 +882,28 @@ export const INDIAN_STATES = [
           "title": "Lavani Rhythmic Folk Dance",
           "subtitle": "Poetry of the Nine-Yard Saree",
           "description": "Electrifying footwork and soulful facial expressions accompanied by the pulsating rhythms of the Dholki.",
-          "image": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1570168007204-dfb528c6958f-w1000.jpg",
           "tag": "Folk Dance"
         },
         {
           "title": "Kailash Monolithic Temple",
           "subtitle": "Mountain Chiseled from the Top Down",
           "description": "Cave 16 of Ellora: an entire multi-storey Dravidian temple complex sculpted out of a single volcanic cliff.",
-          "image": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1590050752117-238cb0fb12b1-w1000.jpg",
           "tag": "Architecture"
         },
         {
           "title": "Warli Tribal Mural Art",
           "subtitle": "Ancient Geometric Harmony of Forest Spirits",
           "description": "Basic circles, triangles, and squares drawn in rice paste depicting Tarpa dances and harmony with wildlife.",
-          "image": "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1607604276583-eef5d076aa5f-w1000.jpg",
           "tag": "Folk Art"
         },
         {
           "title": "Ganeshotsav Visarjan Procession",
           "subtitle": "Ecstasy of Dhol-Tasha Rhythms",
           "description": "Thousands of percussionists in traditional saffron phetas playing synchronized rhythms during festive immersion.",
-          "image": "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1567157577867-05ccb1388e66-w1000.jpg",
           "tag": "Living Tradition"
         }
       ],
@@ -1032,28 +1032,28 @@ export const INDIAN_STATES = [
           "title": "Navratri Garba Dance Circle",
           "subtitle": "Nine Nights of Rhythmic Devotion",
           "description": "Concentric rings of dancers clad in mirrored attire moving in graceful synchrony under festive lights.",
-          "image": "https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1547153760-18fc86324498-w1000.jpg",
           "tag": "Folk Dance"
         },
         {
           "title": "Rani ki Vav Sculpted Corridor",
           "subtitle": "UNESCO Inverted Subterranean Palace",
           "description": "Seven descending terraces of exquisite Maru-Gurjara sculptures honoring water as the elixir of life.",
-          "image": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1590050752117-238cb0fb12b1-w1000.jpg",
           "tag": "Architecture"
         },
         {
           "title": "Kutch Mirror-Work Embroidery",
           "subtitle": "Reflecting the Radiance of the Desert",
           "description": "Intricate needlework embedding tiny mica mirrors into brightly dyed cotton and silk fabrics.",
-          "image": "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1607604276583-eef5d076aa5f-w1000.jpg",
           "tag": "Textiles"
         },
         {
           "title": "Uttarayan Kite Festival",
           "subtitle": "Skies Ablaze with Joy and Color",
           "description": "Rooftops echoing with cries of 'Kai Po Che!' as colorful paper kites soar above historic Ahmedabad.",
-          "image": "https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1514565131-fce0801e5785-w1000.jpg",
           "tag": "Living Tradition"
         }
       ],
@@ -1067,7 +1067,7 @@ export const INDIAN_STATES = [
     "region": "West",
     "badge": "Land of Forts & Rajput Valor",
     "tagline": "Golden Fort of Jaisalmer, Kumbhalgarh's Great Wall & Ghoomar Elegance",
-    "heroImage": "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=1200&q=80",
+    "heroImage": "assets/img/photos/1599661046289-e31897846e41-w1200.jpg",
     "history": {
       "title": "Rajput Dynasties & Desert Citadels",
       "era": "6th Century \u2013 20th Century CE",
@@ -1182,28 +1182,28 @@ export const INDIAN_STATES = [
           "title": "Ghoomar Royal Dance",
           "subtitle": "Swirling Colors of Rajput Courts",
           "description": "Graceful hand turns and circular footwork as voluminous flared skirts pirouette to Manganiyar melodies.",
-          "image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1599661046289-e31897846e41-w1000.jpg",
           "tag": "Folk Dance"
         },
         {
           "title": "Mehrangarh Fort Ramparts",
           "subtitle": "Citadel of the Sun God",
           "description": "Rising 400 feet above the Blue City of Jodhpur, an impenetrable fortress carved from living desert rock.",
-          "image": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1590050752117-238cb0fb12b1-w1000.jpg",
           "tag": "Architecture"
         },
         {
           "title": "Phad Folk Narrative Scroll",
           "subtitle": "Visual Ballad of Folk Deities",
           "description": "Thirty-foot long canvas scrolls painted with natural dyes narrating the heroic epics of Pabuji and Devnarayan.",
-          "image": "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1607604276583-eef5d076aa5f-w1000.jpg",
           "tag": "Folk Art"
         },
         {
           "title": "Pushkar Desert Sunset Gathering",
           "subtitle": "Ancient Dunes and Camel Caravans",
           "description": "Nomadic traders, colorful turbans, and sacred temple bells resonating across the holy lake of Pushkar.",
-          "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1518709268805-4e9042af9f23-w1000.jpg",
           "tag": "Living Tradition"
         }
       ],
@@ -1217,7 +1217,7 @@ export const INDIAN_STATES = [
     "region": "West",
     "badge": "Enclave of Konkan Heritage & Baroque Splendor",
     "tagline": "Basilica of Bom Jesus, Shigmo Spring Pageantry & Kunbi Handloom Traditions",
-    "heroImage": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=1200&q=80",
+    "heroImage": "assets/img/photos/1512343879784-a960bf40e7f2-w1200.jpg",
     "history": {
       "title": "Kadamba Dynasty & Indo-Portuguese Confluence",
       "era": "10th Century \u2013 20th Century CE",
@@ -1332,28 +1332,28 @@ export const INDIAN_STATES = [
           "title": "Fugdi Folk Dance Celebration",
           "subtitle": "Rhythmic Vitality of Konkan Women",
           "description": "Fast-paced circular clapping dance ending with vigorous spins, celebrated during Ganesh and Dhalo festivals.",
-          "image": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1512343879784-a960bf40e7f2-w1000.jpg",
           "tag": "Folk Dance"
         },
         {
           "title": "Basilica of Bom Jesus Facade",
           "subtitle": "Unadorned Laterite Splendor of 1605 CE",
           "description": "Richly carved basalt portals set against unplastered red laterite blocks, an enduring world heritage icon.",
-          "image": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1590050752117-238cb0fb12b1-w1000.jpg",
           "tag": "Architecture"
         },
         {
           "title": "Azulejos Hand-Painted Ceramic Tiles",
           "subtitle": "Blue and White Heritage Ceramic Art",
           "description": "Glazed ceramic murals depicting Portuguese and Konkani historical vignettes decorating heritage villas.",
-          "image": "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1607604276583-eef5d076aa5f-w1000.jpg",
           "tag": "Crafts"
         },
         {
           "title": "Shigmo Festival Pageantry",
           "subtitle": "The Spring Festival of Color and Myth",
           "description": "Vibrant night processions featuring mythological float effigies and Ghode Modni warrior horse dancers.",
-          "image": "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1567157577867-05ccb1388e66-w1000.jpg",
           "tag": "Living Tradition"
         }
       ],
@@ -1367,7 +1367,7 @@ export const INDIAN_STATES = [
     "region": "North",
     "badge": "Sanctuary of Harmandir Sahib & Vibrant Bhangra",
     "tagline": "Land of Five Rivers, Sikh Spiritual Heritage & Phulkari Embroidered Shawls",
-    "heroImage": "https://images.unsplash.com/photo-1514222134-b57cbb8ce073?auto=format&fit=crop&w=1200&q=80",
+    "heroImage": "assets/img/photos/1514222134-b57cbb8ce073-w1200.jpg",
     "history": {
       "title": "Sikh Empire & Vedic Land of Five Rivers",
       "era": "1500 BCE \u2013 19th Century CE",
@@ -1482,28 +1482,28 @@ export const INDIAN_STATES = [
           "title": "Bhangra Harvest Celebration",
           "subtitle": "Unbridled Joy of the Golden Fields",
           "description": "Dancers dressed in bright Kurtas and Turla turbans leaping high to the resonant beats of the barrel Dhol.",
-          "image": "https://images.unsplash.com/photo-1514222134-b57cbb8ce073?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1514222134-b57cbb8ce073-w1000.jpg",
           "tag": "Folk Dance"
         },
         {
           "title": "Sri Harmandir Sahib Reflection",
           "subtitle": "Spiritual Beacon of Peace and Equality",
           "description": "The shimmering golden temple casting its sacred reflection upon the tranquil waters of the Amrit Sarovar.",
-          "image": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1590050752117-238cb0fb12b1-w1000.jpg",
           "tag": "Architecture"
         },
         {
           "title": "Phulkari Silk Embroidery",
           "subtitle": "Garden of Golden Silk Threads",
           "description": "Intricate geometric flower motifs embroidered with unstretched silk floss from the reverse side of handloom cloth.",
-          "image": "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1607604276583-eef5d076aa5f-w1000.jpg",
           "tag": "Handicrafts"
         },
         {
           "title": "Lohri Bonfire Festivity",
           "subtitle": "Warmth of Winter and Kinship",
           "description": "Families gathering around roaring fires singing traditional songs of Dulla Bhatti and sharing winter sweets.",
-          "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1518709268805-4e9042af9f23-w1000.jpg",
           "tag": "Living Tradition"
         }
       ],
@@ -1639,21 +1639,21 @@ export const INDIAN_STATES = [
           "title": "Surajkund Ancient Sun Reservoir",
           "subtitle": "10th Century Tomar Dynasty Amphitheatre",
           "description": "Stepped semi-circular sun pool built by King Surajpal, now home to the world's largest crafts fair.",
-          "image": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1590050752117-238cb0fb12b1-w1000.jpg",
           "tag": "Architecture"
         },
         {
           "title": "Rewari Brass Crafts",
           "subtitle": "Hand-Hammered Metalware Traditions",
           "description": "Lustrous brass pitchers and ornamental cookware beaten to perfection by hereditary metal artisans.",
-          "image": "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1607604276583-eef5d076aa5f-w1000.jpg",
           "tag": "Handicrafts"
         },
         {
           "title": "Brahma Sarovar Pilgrimage",
           "subtitle": "Sacred Waters of Kurukshetra",
           "description": "A vast sacred water reservoir where millions gather during solar eclipses for purification and spiritual contemplation.",
-          "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1518709268805-4e9042af9f23-w1000.jpg",
           "tag": "Living Tradition"
         }
       ],
@@ -1667,7 +1667,7 @@ export const INDIAN_STATES = [
     "region": "North",
     "badge": "Devbhoomi of Western Himalayas & Kath-Kuni Architecture",
     "tagline": "Earthquake-Resistant Wooden Temples, Nati Folk Dance & Kangra Miniatures",
-    "heroImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+    "heroImage": "assets/img/photos/1506744038136-46273834b3fb-w1200.jpg",
     "history": {
       "title": "Trigarta Kingdom & Hill Principalities",
       "era": "5th Century BCE \u2013 19th Century CE",
@@ -1781,28 +1781,28 @@ export const INDIAN_STATES = [
           "title": "Kullu Nati Community Dance",
           "subtitle": "World Record Community Circle Dance",
           "description": "Thousands of dancers moving hand-in-hand in sweeping concentric rings adorned in colorful woollen robes.",
-          "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1506744038136-46273834b3fb-w1000.jpg",
           "tag": "Folk Dance"
         },
         {
           "title": "Bhimakali Kath-Kuni Temple",
           "subtitle": "Eight-Hundred-Year-Old Seismic Timber Marvel",
           "description": "Towering multi-tier wooden temple in Sarahan standing firm against earthquakes through interlocking timber beams.",
-          "image": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1590050752117-238cb0fb12b1-w1000.jpg",
           "tag": "Architecture"
         },
         {
           "title": "Kangra Miniature Masterpiece",
           "subtitle": "Lyrical Colors of Pahari Painting",
           "description": "Delicate depictions of Krishna in blooming mountain landscapes painted with ground lapis lazuli and gold dust.",
-          "image": "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1607604276583-eef5d076aa5f-w1000.jpg",
           "tag": "Miniature Art"
         },
         {
           "title": "Kullu Dussehra Deity Gathering",
           "subtitle": "Congregation of Himalayan Gods",
           "description": "Resplendent palanquins carrying village Devatas through festive pine valleys accompanied by Karnal brass trumpets.",
-          "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1518709268805-4e9042af9f23-w1000.jpg",
           "tag": "Living Tradition"
         }
       ],
@@ -1938,21 +1938,21 @@ export const INDIAN_STATES = [
           "title": "Kedarnath Himalayan Sanctum",
           "subtitle": "Eternal Stone Monument at 11,755 Feet",
           "description": "Granite temple standing proudly against snow-capped Himalayan peaks, enduring twelve centuries of blizzards.",
-          "image": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1590050752117-238cb0fb12b1-w1000.jpg",
           "tag": "Architecture"
         },
         {
           "title": "Aipan Ritual Sacred Geometry",
           "subtitle": "Sacred Ochre and Rice-Paste Mandalas",
           "description": "Symbolic linear motifs drawn by women on doorways, symbolizing prosperity and divine blessings.",
-          "image": "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1607604276583-eef5d076aa5f-w1000.jpg",
           "tag": "Folk Art"
         },
         {
           "title": "Ganga Aarti at Haridwar",
           "subtitle": "Flames Dancing on the Sacred River",
           "description": "Towering brass multi-tiered lamps swung in unison at Har Ki Pauri as thousands of leaf lamps float on the Ganga.",
-          "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1518709268805-4e9042af9f23-w1000.jpg",
           "tag": "Living Tradition"
         }
       ],
@@ -1966,7 +1966,7 @@ export const INDIAN_STATES = [
     "region": "North",
     "badge": "Cradle of Sarnath, Kashi & the Taj Mahal",
     "tagline": "Timeless Varanasi Ghats, Ashokan Sarnath Capital & Classical Kathak Rhythms",
-    "heroImage": "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1200&q=80",
+    "heroImage": "assets/img/photos/1564507592333-c60657eea523-w1200.jpg",
     "history": {
       "title": "Mauryan Sarnath, Kashi & Awadh Legacy",
       "era": "1000 BCE \u2013 19th Century CE",
@@ -2082,28 +2082,28 @@ export const INDIAN_STATES = [
           "title": "Kathak Classical Pirouettes",
           "subtitle": "Rhythmic Lightning of Ghungroo Bells",
           "description": "Dancers performing rapid multiple spins (Chakkars) while ankle bells precisely echo complex tabla bols.",
-          "image": "https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1547153760-18fc86324498-w1000.jpg",
           "tag": "Classical Dance"
         },
         {
           "title": "Taj Mahal at Sunrise",
           "subtitle": "Poetry in Translucent White Marble",
           "description": "Makrana marble glowing in hues of pink and gold beside the Yamuna, adorned with semi-precious stone inlays.",
-          "image": "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1564507592333-c60657eea523-w1000.jpg",
           "tag": "Architecture"
         },
         {
           "title": "Banarasi Pure Zari Weaving",
           "subtitle": "Gold and Silver Threads on Sacred Silk",
           "description": "Master weavers operating historic drawlooms to weave intricate floral Shikargah and Buti motifs.",
-          "image": "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1607604276583-eef5d076aa5f-w1000.jpg",
           "tag": "Textiles"
         },
         {
           "title": "Dev Deepawali on Varanasi Ghats",
           "subtitle": "A Million Flames Reflected on the Ganga",
           "description": "Every stone step along the four-mile riverfront adorned with earthen lamps as celestial hymns echo.",
-          "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1518709268805-4e9042af9f23-w1000.jpg",
           "tag": "Living Tradition"
         }
       ],
@@ -2117,7 +2117,7 @@ export const INDIAN_STATES = [
     "region": "East",
     "badge": "Heart of Terracotta Temples & Durga Puja",
     "tagline": "Bishnupur Terracotta Marvels, Baul Mystics & UNESCO Intangible Heritage",
-    "heroImage": "https://images.unsplash.com/photo-1558431382-27e303142255?auto=format&fit=crop&w=1200&q=80",
+    "heroImage": "assets/img/photos/1558431382-27e303142255-w1200.jpg",
     "history": {
       "title": "Pala Buddhist Empire & Bengal Renaissance",
       "era": "8th Century CE \u2013 20th Century CE",
@@ -2233,28 +2233,28 @@ export const INDIAN_STATES = [
           "title": "Dhunuchi Dance during Durga Puja",
           "subtitle": "Smoke, Rhythm and Devotion",
           "description": "Performers balancing burning coconut husk censers in hands and teeth to the roaring tempo of Dhak drums.",
-          "image": "https://images.unsplash.com/photo-1558431382-27e303142255?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1558431382-27e303142255-w1000.jpg",
           "tag": "Living Tradition"
         },
         {
           "title": "Bishnupur Terracotta Facade",
           "subtitle": "Baked Earth Sculptures of 1655 CE",
           "description": "Elaborate clay reliefs portraying battle scenes, court musicians, and lotus mandalas covering every surface.",
-          "image": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1590050752117-238cb0fb12b1-w1000.jpg",
           "tag": "Architecture"
         },
         {
           "title": "Dokra Lost-Wax Metalwork",
           "subtitle": "Four-Thousand-Year Metallurgical Lineage",
           "description": "Rustic non-ferrous metal casting using clay cores and beeswax threads to produce timeless folk figurines.",
-          "image": "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1607604276583-eef5d076aa5f-w1000.jpg",
           "tag": "Handicrafts"
         },
         {
           "title": "Baul Minstrel of the Delta",
           "subtitle": "Wandering Philosophers of the Soul",
           "description": "Singers clad in saffron patchwork garments plucking the one-stringed Ektara singing songs of universal love.",
-          "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1518709268805-4e9042af9f23-w1000.jpg",
           "tag": "Folk Music"
         }
       ],
@@ -2390,21 +2390,21 @@ export const INDIAN_STATES = [
           "title": "Konark Sun Chariot Wheel",
           "subtitle": "Thirteenth-Century Astronomical Clock",
           "description": "A magnificent 9-foot stone wheel carved with twenty-four spokes that accurately measures time by the sun's shadow.",
-          "image": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1590050752117-238cb0fb12b1-w1000.jpg",
           "tag": "Architecture"
         },
         {
           "title": "Raghurajpur Pattachitra Scroll",
           "subtitle": "Fine Brushwork on Treated Cotton Canvas",
           "description": "Cloth canvas coated with tamarind glue and chalk, painted with natural stone pigments depicting epic Jagannath tales.",
-          "image": "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1607604276583-eef5d076aa5f-w1000.jpg",
           "tag": "Scroll Art"
         },
         {
           "title": "Rath Yatra Chariot Procession",
           "subtitle": "The Grand Chariot of the Universe",
           "description": "Massive 45-foot timber chariots adorned with bright red, yellow, and blue fabrics pulled by millions along Grand Road.",
-          "image": "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1567157577867-05ccb1388e66-w1000.jpg",
           "tag": "Living Tradition"
         }
       ],
@@ -2418,7 +2418,7 @@ export const INDIAN_STATES = [
     "region": "East",
     "badge": "Seat of Nalanda & Enlightenment at Bodh Gaya",
     "tagline": "Ancient Magadha Empire, Sacred Bodhi Tree & Madhubani Folk Art",
-    "heroImage": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1200&q=80",
+    "heroImage": "assets/img/photos/1602216056096-3b40cc0c9944-w1200.jpg",
     "history": {
       "title": "Magadha Empire & Ancient Nalanda University",
       "era": "6th Century BCE \u2013 12th Century CE",
@@ -2534,28 +2534,28 @@ export const INDIAN_STATES = [
           "title": "Chhath Puja Sunset Offering",
           "subtitle": "Ancient Vedic Reverence for the Sun",
           "description": "Vratis standing in river waters with decorated bamboo sups offering thanksgiving to the setting sun.",
-          "image": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1602216056096-3b40cc0c9944-w1000.jpg",
           "tag": "Living Tradition"
         },
         {
           "title": "Mahabodhi Temple Bodh Gaya",
           "subtitle": "The Seat of Universal Awakening",
           "description": "Majestic brick spire overlooking the sacred Bodhi tree where the Buddha attained supreme enlightenment.",
-          "image": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1590050752117-238cb0fb12b1-w1000.jpg",
           "tag": "Architecture"
         },
         {
           "title": "Madhubani Folk Painting",
           "subtitle": "Mythological Line Art of Mithila",
           "description": "Hand-painted fish, peacocks, and deities rendered with double outlines and natural mineral colors.",
-          "image": "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1607604276583-eef5d076aa5f-w1000.jpg",
           "tag": "Folk Art"
         },
         {
           "title": "Nalanda Ancient Monastery Rows",
           "subtitle": "The World's Ancient Residential Academy",
           "description": "Excavated red brick dormitories, meditation cells, and tiered stupas where 10,000 scholars once gathered.",
-          "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1518709268805-4e9042af9f23-w1000.jpg",
           "tag": "Archaeology"
         }
       ],
@@ -2569,7 +2569,7 @@ export const INDIAN_STATES = [
     "region": "East",
     "badge": "Land of Forests & Birsa Munda's Ulgulan",
     "tagline": "Santal Sohrai Tribal Murals, Sacred Sal Groves & Fiery Chhau Dance",
-    "heroImage": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80",
+    "heroImage": "assets/img/photos/1518709268805-4e9042af9f23-w1200.jpg",
     "history": {
       "title": "Chotanagpur Tribal Realm & Birsa Munda Uprising",
       "era": "Ancient Times \u2013 20th Century CE",
@@ -2684,28 +2684,28 @@ export const INDIAN_STATES = [
           "title": "Seraikella Chhau Masked Ballet",
           "subtitle": "Lyricism of Mask and Martial Grace",
           "description": "Dancers wearing serene pastel clay masks depicting celestial beings, executing acrobatic sword steps.",
-          "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1518709268805-4e9042af9f23-w1000.jpg",
           "tag": "Masked Dance"
         },
         {
           "title": "Maluti Terracotta Temple Cluster",
           "subtitle": "Seventy-Two Sacred Shrines of Dumka",
           "description": "Historic village where kings built 108 terracotta temples dedicated to Shiva, with 72 surviving today.",
-          "image": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1590050752117-238cb0fb12b1-w1000.jpg",
           "tag": "Architecture"
         },
         {
           "title": "Sohrai Indigenous Mud Murals",
           "subtitle": "Forest Animals Painted on Mud Walls",
           "description": "Women painting mud walls after harvest using natural ochre, charcoal, and kaolin clay using broken combs.",
-          "image": "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1607604276583-eef5d076aa5f-w1000.jpg",
           "tag": "Tribal Art"
         },
         {
           "title": "Sarhul Sacred Sal Bloom",
           "subtitle": "Thanksgiving to Mother Nature",
           "description": "Tribal elders and youth dancing in circles wearing white and red striped dhotis adorned with fragrant Sal flowers.",
-          "image": "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1567157577867-05ccb1388e66-w1000.jpg",
           "tag": "Living Tradition"
         }
       ],
@@ -2841,21 +2841,21 @@ export const INDIAN_STATES = [
           "title": "Laxman Brick Temple of Sirpur",
           "subtitle": "Seventh-Century Masterpiece of Carved Clay",
           "description": "Pristine red brick temple enduring for 1,400 years, adorned with intricate chaitya dormer motifs.",
-          "image": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1590050752117-238cb0fb12b1-w1000.jpg",
           "tag": "Architecture"
         },
         {
           "title": "Bastar Bell-Metal Casting",
           "subtitle": "Tribal Metallurgy of the Lost-Wax Art",
           "description": "Artisans shaping beeswax filaments into slender elephants and lamps before encasing in river clay moulds.",
-          "image": "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1607604276583-eef5d076aa5f-w1000.jpg",
           "tag": "Metalcraft"
         },
         {
           "title": "Bastar Chariot Pulling",
           "subtitle": "Seventy-Five Days of Tribal Pageantry",
           "description": "Massive two-tier wooden chariot handcrafted without nails pulled through Jagdalpur by thousands of tribal devotees.",
-          "image": "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1567157577867-05ccb1388e66-w1000.jpg",
           "tag": "Living Tradition"
         }
       ],
@@ -2869,7 +2869,7 @@ export const INDIAN_STATES = [
     "region": "Northeast",
     "badge": "Realm of the Ahoms & Golden Muga Silk",
     "tagline": "Undefeated Ahom Amphitheatre of Rang Ghar, Bihu Rhythms & One-Horned Rhinos",
-    "heroImage": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80",
+    "heroImage": "assets/img/photos/1544735716-392fe2489ffa-w1200.jpg",
     "history": {
       "title": "Ahom Dynasty & Kamarupa Kingdom",
       "era": "4th Century CE \u2013 19th Century CE",
@@ -2984,28 +2984,28 @@ export const INDIAN_STATES = [
           "title": "Rongali Bihu Celebration",
           "subtitle": "Springtime Joy of the Brahmaputra Valley",
           "description": "Young women in shimmering golden Muga Mekhela Chadors dancing with red Kopou orchid blossoms in their hair.",
-          "image": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1544735716-392fe2489ffa-w1000.jpg",
           "tag": "Folk Dance"
         },
         {
           "title": "Rang Ghar Royal Pavilion",
           "subtitle": "Asia's Oldest Royal Amphitheatre (1744 CE)",
           "description": "Two-storey brick pavilion shaped like an inverted longboat where Ahom kings watched community sports.",
-          "image": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1590050752117-238cb0fb12b1-w1000.jpg",
           "tag": "Architecture"
         },
         {
           "title": "Assamese Muga Golden Silk",
           "subtitle": "The Natural Golden Thread of the Earth",
           "description": "Lustrous golden silk thread derived from the endemic Antheraea assamensis silkworm, spun on traditional handlooms.",
-          "image": "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1607604276583-eef5d076aa5f-w1000.jpg",
           "tag": "Textiles"
         },
         {
           "title": "The Resonant Pepa Horn",
           "subtitle": "Voice of the Asiatic Water Buffalo",
           "description": "An ancient reed instrument crafted from curved buffalo horn that announces the arrival of Bohag spring across the valley.",
-          "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1518709268805-4e9042af9f23-w1000.jpg",
           "tag": "Music"
         }
       ],
@@ -3019,7 +3019,7 @@ export const INDIAN_STATES = [
     "region": "Northeast",
     "badge": "Land of Dawn-Lit Mountains & Tawang Monastery",
     "tagline": "Tawang's Mountain Monastery, Apatani Eco-Valleys & Sacred Tribal Councils",
-    "heroImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+    "heroImage": "assets/img/photos/1506744038136-46273834b3fb-w1200.jpg",
     "history": {
       "title": "Ancient Chutiya Realm & Himalayan Monastic Heritage",
       "era": "8th Century CE \u2013 Present",
@@ -3133,28 +3133,28 @@ export const INDIAN_STATES = [
           "title": "Tawang Torgya Chaam Dance",
           "subtitle": "Sacred Monastic Dance of the Lamas",
           "description": "Monks in elaborate silk brocades and hand-carved wooden masks dancing to cast away negative energies.",
-          "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1506744038136-46273834b3fb-w1000.jpg",
           "tag": "Sacred Dance"
         },
         {
           "title": "Tawang Monastery Perched on Clouds",
           "subtitle": "Citadel of Buddhist Learning at 10,000 Feet",
           "description": "Whitewashed stone monastery complex flanked by prayer flags against the snow peaks of the Eastern Himalayas.",
-          "image": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1590050752117-238cb0fb12b1-w1000.jpg",
           "tag": "Architecture"
         },
         {
           "title": "Apatani Eco-Farming Valley",
           "subtitle": "Centuries-Old Harmonious Terraces of Ziro",
           "description": "Indigenous agricultural channels integrating wet-rice farming and fingerling aquaculture without mechanized tools.",
-          "image": "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1607604276583-eef5d076aa5f-w1000.jpg",
           "tag": "Living Tradition"
         },
         {
           "title": "Monpa Handwoven Woollen Textiles",
           "subtitle": "Geometric Heritage of the Mountains",
           "description": "Intricate loom-woven shawls dyed with walnut bark and wild madder roots depicting symbolic cloud patterns.",
-          "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1518709268805-4e9042af9f23-w1000.jpg",
           "tag": "Handicrafts"
         }
       ],
@@ -3290,21 +3290,21 @@ export const INDIAN_STATES = [
           "title": "Sagol Kangjei Original Polo",
           "subtitle": "The Ancient Equestrian Heritage of Manipur",
           "description": "Meitei horsemen riding swift Manipuri ponies wielding cane mallets in the original cradle of the sport.",
-          "image": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1590050752117-238cb0fb12b1-w1000.jpg",
           "tag": "Equestrian Sport"
         },
         {
           "title": "Floating Islands of Loktak Lake",
           "subtitle": "World's Only Floating Wetland Phumdis",
           "description": "Circular rings of dense vegetation and soil floating upon freshwater Loktak Lake, home to the endangered Sangai deer.",
-          "image": "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1607604276583-eef5d076aa5f-w1000.jpg",
           "tag": "Natural Wonder"
         },
         {
           "title": "Ima Keithel All-Women Market",
           "subtitle": "Empowered Legacy of 5,000 Women Traders",
           "description": "Over 500-year-old market in Imphal run entirely by married women merchants selling handloom and fresh produce.",
-          "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1518709268805-4e9042af9f23-w1000.jpg",
           "tag": "Living Tradition"
         }
       ],
@@ -3318,7 +3318,7 @@ export const INDIAN_STATES = [
     "region": "Northeast",
     "badge": "Abode of the Clouds & Living Root Bridges",
     "tagline": "Bio-Engineered Living Root Bridges, Matrilineal Khasi Kinship & Hundred Drums Wangala",
-    "heroImage": "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&w=1200&q=80",
+    "heroImage": "assets/img/photos/1596178065887-1198b6148b2b-w1200.jpg",
     "history": {
       "title": "Matrilineal Khasi, Jaintia & Garo Realms",
       "era": "Ancient Times \u2013 Present",
@@ -3432,28 +3432,28 @@ export const INDIAN_STATES = [
           "title": "Wangala Hundred Drums Dance",
           "subtitle": "Thunder of Drums Across the Garo Hills",
           "description": "Men beating one hundred slender wooden drums in unison while women dance in coordinated rows.",
-          "image": "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1596178065887-1198b6148b2b-w1000.jpg",
           "tag": "Folk Dance"
         },
         {
           "title": "Double Decker Living Root Bridge",
           "subtitle": "Nature's Supreme Bio-Engineering",
           "description": "Two tiers of living Ficus elastica roots woven over decades spanning roaring rainforest streams at Nongriat.",
-          "image": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1590050752117-238cb0fb12b1-w1000.jpg",
           "tag": "Architecture"
         },
         {
           "title": "Shad Suk Mynsiem Royal Dancers",
           "subtitle": "The Dance of Peaceful Hearts",
           "description": "Khasi maidens wearing solid gold crowns (Pansngiat) and coral necklaces moving in gentle rhythmic steps.",
-          "image": "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1607604276583-eef5d076aa5f-w1000.jpg",
           "tag": "Living Tradition"
         },
         {
           "title": "Mawlynnong Village Cleanliness",
           "subtitle": "God's Own Pristine Green Hamlet",
           "description": "Cobbled pathways, bamboo dustbins, and blooming orchids cared for collectively by every village citizen.",
-          "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1518709268805-4e9042af9f23-w1000.jpg",
           "tag": "Eco-Heritage"
         }
       ],
@@ -3467,7 +3467,7 @@ export const INDIAN_STATES = [
     "region": "Northeast",
     "badge": "Land of the Lushai Hills & Cheraw Bamboo Dance",
     "tagline": "Rhythmic Precision of Cheraw, Chapchar Kut Carnival & Intricate Puan Weaving",
-    "heroImage": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80",
+    "heroImage": "assets/img/photos/1544735716-392fe2489ffa-w1200.jpg",
     "history": {
       "title": "Zo Clan Heritage & Traditional Governance",
       "era": "Ancient Times \u2013 Present",
@@ -3582,28 +3582,28 @@ export const INDIAN_STATES = [
           "title": "Cheraw Bamboo Dance Precision",
           "subtitle": "Rhythmic Ballet of the Clapping Canes",
           "description": "Dancers in vibrant Vakiria crowns leaping in and out of four-by-four clapping bamboo grids without missing a beat.",
-          "image": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1544735716-392fe2489ffa-w1000.jpg",
           "tag": "Folk Dance"
         },
         {
           "title": "Vangchhia Ancient Carved Menhirs",
           "subtitle": "Mysteries of the Lushai Ridge",
           "description": "Over 170 ancient standing stone slabs etched with warrior reliefs, hunting scenes, and royal animal crests.",
-          "image": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1590050752117-238cb0fb12b1-w1000.jpg",
           "tag": "Archaeology"
         },
         {
           "title": "Mizo Puan Handloom Weaving",
           "subtitle": "Geometric Poetry of the Loin Loom",
           "description": "Weavers crafting exquisite Puanchei skirts on traditional backstrap looms using bold red and black striped patterns.",
-          "image": "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1607604276583-eef5d076aa5f-w1000.jpg",
           "tag": "Textiles"
         },
         {
           "title": "Chapchar Kut Spring Pageantry",
           "subtitle": "Carnival of Joy in the Hills",
           "description": "Thousands of Mizo youth celebrating brotherhood and harvest in Aizawl wearing traditional woven headdresses.",
-          "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1518709268805-4e9042af9f23-w1000.jpg",
           "tag": "Living Tradition"
         }
       ],
@@ -3617,7 +3617,7 @@ export const INDIAN_STATES = [
     "region": "Northeast",
     "badge": "Land of Warriors & the Hornbill Festival",
     "tagline": "Sixteen Naga Tribes, Carved Morung Architecture & Hornbill Cultural Showcase",
-    "heroImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+    "heroImage": "assets/img/photos/1506744038136-46273834b3fb-w1200.jpg",
     "history": {
       "title": "Sixteen Naga Republics & Morung Traditions",
       "era": "Ancient Times \u2013 Present",
@@ -3731,28 +3731,28 @@ export const INDIAN_STATES = [
           "title": "Hornbill Festival Grand Pageantry",
           "subtitle": "The Festival of Festivals at Kisama",
           "description": "Sixteen tribes gathering in full ceremonial warrior regalia with hornbill feather crowns and brass neck rings.",
-          "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1506744038136-46273834b3fb-w1000.jpg",
           "tag": "Living Tradition"
         },
         {
           "title": "Carved Morung Community Hall",
           "subtitle": "The Traditional University of the Naga",
           "description": "Massive timber architecture adorned with deep carvings of Mithun horns, tigers, and guardian warriors.",
-          "image": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1590050752117-238cb0fb12b1-w1000.jpg",
           "tag": "Architecture"
         },
         {
           "title": "Naga Beadwork and Hornbill Plumes",
           "subtitle": "Ornaments of Valor and Status",
           "description": "Intricate glass and carnelian bead necklaces worn with black-and-white Great Indian Hornbill feathers.",
-          "image": "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1607604276583-eef5d076aa5f-w1000.jpg",
           "tag": "Tribal Art"
         },
         {
           "title": "Khonoma Green Village Terraces",
           "subtitle": "Asia's First Certified Green Hamlet",
           "description": "Alder tree agro-forestry and terrace paddy cultivation nurtured by sustainable customary village laws.",
-          "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1518709268805-4e9042af9f23-w1000.jpg",
           "tag": "Eco-Heritage"
         }
       ],
@@ -3766,7 +3766,7 @@ export const INDIAN_STATES = [
     "region": "Northeast",
     "badge": "Seat of the Manikya Kings & Water Palace of Neermahal",
     "tagline": "Lake Palace of Neermahal, Colossal Unakoti Rock Carvings & Hojagiri Dance",
-    "heroImage": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=1200&q=80",
+    "heroImage": "assets/img/photos/1512343879784-a960bf40e7f2-w1200.jpg",
     "history": {
       "title": "Manikya Dynasty & Ancient Unakoti Sanctuary",
       "era": "14th Century CE \u2013 1949 CE",
@@ -3881,28 +3881,28 @@ export const INDIAN_STATES = [
           "title": "Hojagiri Acrobatic Balance Dance",
           "subtitle": "Balance and Harmony of the Reang",
           "description": "Dancers balancing brass lamps on heads while moving hips rhythmically on the rim of an earthen pitcher.",
-          "image": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1512343879784-a960bf40e7f2-w1000.jpg",
           "tag": "Folk Dance"
         },
         {
           "title": "Neermahal Palace on Rudrasagar",
           "subtitle": "The Floating Palace of the Manikya Kings",
           "description": "White Indo-Saracenic palace surrounded by the shimmering waters and lotus pads of Rudrasagar Lake.",
-          "image": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1590050752117-238cb0fb12b1-w1000.jpg",
           "tag": "Architecture"
         },
         {
           "title": "Unakoti Colossal Rock-Cut Shiva",
           "subtitle": "Eighth-Century Bas-Reliefs in the Jungle",
           "description": "A 30-foot head of Shiva chiseled out of living mountain rock surrounded by lush jungle streams.",
-          "image": "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1607604276583-eef5d076aa5f-w1000.jpg",
           "tag": "Archaeology"
         },
         {
           "title": "Tripura Bamboo Screen Craft",
           "subtitle": "Intricate Slats of Golden Cane",
           "description": "Micro-shaved bamboo strips woven into gossamer partitions, decorative lamps, and royal artifacts.",
-          "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1518709268805-4e9042af9f23-w1000.jpg",
           "tag": "Crafts"
         }
       ],
@@ -3916,7 +3916,7 @@ export const INDIAN_STATES = [
     "region": "Northeast",
     "badge": "Guardian of Mount Kanchenjunga & Rumtek Monastery",
     "tagline": "Sacred Peaks of Kanchenjunga, Rumtek Monastic Treasures & Chaam Masked Dances",
-    "heroImage": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80",
+    "heroImage": "assets/img/photos/1544735716-392fe2489ffa-w1200.jpg",
     "history": {
       "title": "Chogyal Buddhist Monarchy & Treaty of Kabi Lungchok",
       "era": "1642 CE \u2013 1975 CE",
@@ -4031,28 +4031,28 @@ export const INDIAN_STATES = [
           "title": "Singhi Chaam Snow Lion Dance",
           "subtitle": "The Mythical Guardians of Kanchenjunga",
           "description": "Performers disguised as majestic white snow lions with turquoise manes leaping in worship of sacred peaks.",
-          "image": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1544735716-392fe2489ffa-w1000.jpg",
           "tag": "Masked Dance"
         },
         {
           "title": "Rumtek Monastery Dharmachakra",
           "subtitle": "Kagyu Spiritual Seat in the Mountains",
           "description": "Four-storey monastery resplendent with gold and vermilion, looking out across the mist-shrouded Gangtok hills.",
-          "image": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1590050752117-238cb0fb12b1-w1000.jpg",
           "tag": "Architecture"
         },
         {
           "title": "Sacred Peak of Kanchenjunga",
           "subtitle": "Five Treasures of the High Snows",
           "description": "Golden sunlight bathing the 8,586-meter Himalayan summit, worshipped as Sikkim's guardian deity.",
-          "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1506744038136-46273834b3fb-w1000.jpg",
           "tag": "Natural Wonder"
         },
         {
           "title": "Pang Lhabsol Warrior Dance",
           "subtitle": "Oath of Eternal Brotherhood",
           "description": "Lamas wearing martial helmets and brandishing ceremonial swords commemorating sacred peace under the mountain.",
-          "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1518709268805-4e9042af9f23-w1000.jpg",
           "tag": "Living Tradition"
         }
       ],
@@ -4066,7 +4066,7 @@ export const INDIAN_STATES = [
     "region": "Central",
     "badge": "Heart of Sanchi Stupa & Khajuraho Temples",
     "tagline": "Ancient Sanchi Great Stupa, Khajuraho Sculptures & 30,000-Year Bhimbetka Rock Art",
-    "heroImage": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1200&q=80",
+    "heroImage": "assets/img/photos/1590050752117-238cb0fb12b1-w1200.jpg",
     "history": {
       "title": "Avanti Empire, Ashokan Sanchi & Chandela Glory",
       "era": "3rd Century BCE \u2013 12th Century CE",
@@ -4181,7 +4181,7 @@ export const INDIAN_STATES = [
           "title": "The Great Stupa at Sanchi",
           "subtitle": "Oldest Stone Structure in India (3rd Century BCE)",
           "description": "Majestic sandstone dome and intricately sculpted Torana gateways preserving Buddhist heritage.",
-          "image": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1590050752117-238cb0fb12b1-w1000.jpg",
           "tag": "Architecture"
         },
         {
@@ -4195,14 +4195,14 @@ export const INDIAN_STATES = [
           "title": "Gond Tribal Tree of Life",
           "subtitle": "Intricate Dots and Lines of Forest Lore",
           "description": "Vibrant folk paintings where sacred deer, peacocks, and banyan roots pulse with rhythmic dotted patterns.",
-          "image": "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1607604276583-eef5d076aa5f-w1000.jpg",
           "tag": "Tribal Art"
         },
         {
           "title": "Bhimbetka Prehistoric Rock Shelters",
           "subtitle": "Thirty-Thousand-Year-Old Human Expression",
           "description": "Paleolithic and Mesolithic cave rock paintings in red and white ochre depicting hunting dances and elephants.",
-          "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1000&q=80",
+          "image": "assets/img/photos/1518709268805-4e9042af9f23-w1000.jpg",
           "tag": "Prehistory"
         }
       ],

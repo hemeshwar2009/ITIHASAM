@@ -50,7 +50,7 @@ export class LivingTraditionsSlideshow {
         title: 'Living Classical Heritage',
         subtitle: 'Ancient Traditions Across India',
         description: 'Centuries of rhythm, temple craft, handloom weaving, and oral epics passed down across generations.',
-        image: 'https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&w=1000&q=80',
+        image: 'assets/img/photos/1547153760-18fc86324498-w1000.jpg',
         tag: 'Heritage',
         stateName: this.stateData.name
       }
@@ -101,7 +101,7 @@ export class LivingTraditionsSlideshow {
             ${this.slides.map((slide, idx) => `
               <div class="slide-item ${idx === 0 ? 'active' : ''}" data-index="${idx}">
                 <div class="slide-image-wrapper">
-                  <img src="${slide.image}" alt="${slide.title}" class="slide-img" loading="eager" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&w=1000&q=80';" />
+                  <img src="${slide.image}" alt="${slide.title}" class="slide-img" loading="eager" onerror="this.onerror=null; this.src='assets/img/photos/1547153760-18fc86324498-w1000.jpg';" />
                   <div class="slide-overlay-gradient"></div>
                   <span class="slide-tag-badge">${slide.tag || 'Tradition'}</span>
                 </div>
