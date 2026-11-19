@@ -3622,8 +3622,8 @@ export const INDIAN_STATES = [
       "title": "Sixteen Naga Republics & Morung Traditions",
       "era": "Ancient Times \u2013 Present",
       "keyFigures": [
+        "A.Z. Phizo",
         "Rani Gaidinliu",
-        "AZ Phizo",
         "Haipou Jadonang"
       ],
       "highlights": "Nagaland comprises 16 distinct major tribes (Angami, Ao, Konyak, Sumi, Lotha, etc.) each with sovereign village councils. The Morung (youth educational hall) served as the vital cultural university where oral history, warfare, and craftsmanship were taught.",
