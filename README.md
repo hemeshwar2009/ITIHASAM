@@ -151,7 +151,7 @@ It is a static site, so any static host works (GitHub Pages, Netlify, Vercel, Cl
 
 The Class Board can rank a whole class across devices using Supabase project `ebmjiebcbyrobaxntgfa`. One-time setup:
 
-1. In the Supabase dashboard, open **SQL Editor**, paste the contents of `supabase/migrations/20261119000000_online_leaderboard.sql` and click **Run**.
+1. In the Supabase dashboard, open **SQL Editor**, run each file in `supabase/migrations/` in name order: `20261119000000_online_leaderboard.sql`, then `20261119010000_submit_score_safe_errors.sql` (paste the contents, click **Run**).
 2. Open **Project Settings → API Keys**, copy the **publishable** key (`sb_publishable_…`, or the legacy `anon` key) and paste it into `js/config.js` as `SUPABASE_KEY`. This key is meant to be public. **Never** paste the secret / `service_role` key.
 3. Reload the site → **Class Board** → enter a class code (e.g. `DPS-7B`) and a display name.
 
