@@ -3,7 +3,7 @@
 //         PORT=3000 node server.mjs
 import http from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
-import { extname, join, normalize, resolve } from 'node:path';
+import { extname, join, normalize, resolve, relative, isAbsolute, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = resolve(fileURLToPath(new URL('.', import.meta.url)));
@@ -29,7 +29,12 @@ const server = http.createServer(async (req, res) => {
   try {
     const urlPath = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
     let filePath = normalize(join(ROOT, urlPath));
-    if (!filePath.startsWith(ROOT)) { res.writeHead(403).end('Forbidden'); return; }
+    const rel = relative(ROOT, filePath);
+    // Stay inside the project folder and never serve dot-folders such as .git
+    if (rel.startsWith('..') || isAbsolute(rel) || rel.split(sep).some(part => part.startsWith('.'))) {
+      res.writeHead(403, { 'Content-Type': 'text/plain' }).end('Forbidden');
+      return;
+    }
     let info = await stat(filePath).catch(() => null);
     if (info && info.isDirectory()) {
       filePath = join(filePath, 'index.html');
@@ -47,7 +52,9 @@ const server = http.createServer(async (req, res) => {
   }
 });
 
-server.listen(PORT, () => {
+// Local-only by default; set HOST=0.0.0.0 to test from a phone on the same Wi-Fi.
+const HOST = process.env.HOST || '127.0.0.1';
+server.listen(PORT, HOST, () => {
   console.log('='.repeat(60));
   console.log(' 🏛️  ITIHASAM — Interactive Cultural Heritage Experience');
   console.log(` 🌐  Running at: http://localhost:${PORT}`);
