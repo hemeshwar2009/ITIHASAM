@@ -146,6 +146,7 @@ class GameStateManager {
       soundEnabled: true,
       musicEnabled: false,
       language: 'en',
+      darkMode: false,
       highContrast: false,
       reducedMotion: false,
       slideshowIntervalSeconds: 5,
@@ -435,6 +436,7 @@ class GameStateManager {
   resetProgress() {
     const keep = {
       language: this.state.language,
+      darkMode: this.state.darkMode,
       soundEnabled: this.state.soundEnabled,
       highContrast: this.state.highContrast,
       reducedMotion: this.state.reducedMotion,

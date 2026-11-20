@@ -49,7 +49,8 @@ const STRINGS = {
     // Settings
     settingsTitle: 'Preferences & Settings', language: 'Language', soundEffects: 'Sound Effects',
     soundDesc: 'Bell chimes, wooden clacks and victory fanfares.', music: 'Regional Music Motifs',
-    musicDesc: 'Play a short regional melody when you open a state.', highContrast: 'High Contrast',
+    musicDesc: 'Play a short regional melody when you open a state.', darkMode: 'Dark Brown Mode',
+    darkModeDesc: 'Use warm brown backgrounds and dark surfaces across every page.', highContrast: 'High Contrast',
     highContrastDesc: 'Stronger text and border colours for easier reading.', reducedMotion: 'Reduce Motion',
     reducedMotionDesc: 'Turn off parallax and most animations.', resetProgress: 'Reset Progress',
     resetDesc: 'Clear points and progress for the current explorer.', install: 'Install App',

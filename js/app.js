@@ -109,6 +109,7 @@ class AppRouter {
     soundSynth.toggleSound(s.soundEnabled !== false);
     soundSynth.toggleMusic(!!s.musicEnabled);
     document.body.classList.toggle('high-contrast', !!s.highContrast);
+    document.body.classList.toggle('dark-mode', !!s.darkMode);
     const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     document.body.classList.toggle('reduced-motion', !!s.reducedMotion || prefersReduced);
   }

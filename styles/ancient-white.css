@@ -255,3 +255,75 @@ h1, h2, h3, h4, h5, h6 {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-gold);
 }
+
+/* Warm brown dark mode, shared by every route. */
+body.dark-mode {
+  --bg-primary: #3a241b;
+  --bg-secondary: #4a3024;
+  --text-primary: #fff4e8;
+  --text-muted: #e0c4ad;
+  --border-sandstone: #805941;
+  --border-subtle: #6b4937;
+  --surface-card: #4a3024;
+  --shadow-ancient: 0 4px 22px rgba(24, 10, 5, 0.28);
+  --shadow-deep: 0 10px 36px rgba(24, 10, 5, 0.4);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+body.dark-mode::before {
+  background-image: radial-gradient(#805941 0.75px, transparent 0.75px), radial-gradient(#3a241b 0.75px, #3a241b 0.75px);
+  opacity: 0.2;
+}
+
+body.dark-mode .ancient-panel,
+body.dark-mode .ancient-input,
+body.dark-mode .btn-secondary {
+  background: var(--bg-secondary);
+  border-color: var(--border-sandstone);
+  color: var(--text-primary);
+}
+
+body.dark-mode .ancient-panel::after {
+  border-color: rgba(231, 190, 116, 0.24);
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6,
+body.dark-mode .text-primary {
+  color: var(--text-primary);
+}
+
+body.dark-mode .text-muted,
+body.dark-mode p {
+  color: var(--text-muted);
+}
+
+body.dark-mode .btn-secondary:hover {
+  background: #5a392a;
+  border-color: var(--accent-gold);
+}
+
+body.dark-mode .right-vertical-toolbar {
+  background: #2f1c15;
+  border-color: #704b36;
+}
+
+body.dark-mode .toolbar-btn,
+body.dark-mode .toolbar-avatar-preview {
+  color: #f8e4d0;
+}
+
+body.dark-mode .settings-modal-overlay,
+body.dark-mode .help-modal-overlay {
+  background: rgba(47, 25, 15, 0.78);
+}
+
+body.dark-mode .settings-card,
+body.dark-mode .help-card {
+  background: #4a3024;
+}

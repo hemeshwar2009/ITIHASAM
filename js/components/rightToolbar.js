@@ -104,6 +104,7 @@ export class RightToolbar {
             </div>
             ${this.toggleRow('setting-sound-toggle', t('soundEffects'), t('soundDesc'), s.soundEnabled !== false)}
             ${this.toggleRow('setting-music-toggle', t('music'), t('musicDesc'), !!s.musicEnabled)}
+            ${this.toggleRow('setting-dark-toggle', t('darkMode'), t('darkModeDesc'), !!s.darkMode)}
             ${this.toggleRow('setting-contrast-toggle', t('highContrast'), t('highContrastDesc'), !!s.highContrast)}
             ${this.toggleRow('setting-motion-toggle', t('reducedMotion'), t('reducedMotionDesc'), !!s.reducedMotion)}
             ${canInstall ? `
@@ -228,6 +229,7 @@ export class RightToolbar {
     };
     bindToggle('#setting-sound-toggle', 'soundEnabled', on => { soundSynth.toggleSound(on); if (on) soundSynth.playBell(); });
     bindToggle('#setting-music-toggle', 'musicEnabled', on => { soundSynth.toggleMusic(on); if (on) soundSynth.playRegionalMotif('South'); });
+    bindToggle('#setting-dark-toggle', 'darkMode', on => document.body.classList.toggle('dark-mode', on));
     bindToggle('#setting-contrast-toggle', 'highContrast');
     bindToggle('#setting-motion-toggle', 'reducedMotion');
 

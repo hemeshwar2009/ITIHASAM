@@ -315,10 +315,10 @@ export class AvatarCustomizer {
     ctx.fillStyle = this.currentAvatar.clothingColor || '#B76E4B';
     if (isFemale) {
       ctx.beginPath();
-      ctx.moveTo(cx - 19, cy);
-      ctx.lineTo(cx + 19, cy);
-      ctx.lineTo(cx + 31, cy + 65);
-      ctx.lineTo(cx - 31, cy + 65);
+      ctx.moveTo(cx - 16, cy);
+      ctx.lineTo(cx + 16, cy);
+      ctx.lineTo(cx + 17, cy + 42);
+      ctx.lineTo(cx - 17, cy + 42);
       ctx.closePath();
       ctx.fill();
       // Bright sari pallu and blouse neckline make the female presentation
@@ -326,11 +326,16 @@ export class AvatarCustomizer {
       ctx.strokeStyle = this.currentAvatar.accentColor || '#D4AF37';
       ctx.lineWidth = 7;
       ctx.beginPath();
-      ctx.moveTo(cx + 15, cy + 7);
-      ctx.lineTo(cx - 18, cy + 61);
+      ctx.moveTo(cx + 12, cy + 5);
+      ctx.lineTo(cx - 13, cy + 43);
       ctx.stroke();
       ctx.fillStyle = this.currentAvatar.accentColor || '#D4AF37';
-      ctx.fillRect(cx - 13, cy + 3, 26, 5);
+      ctx.fillRect(cx - 12, cy + 35, 24, 4);
+      // Narrow waist belt and small arms.
+      ctx.fillRect(cx - 17, cy + 38, 34, 4);
+      ctx.fillStyle = this.currentAvatar.skinTone || '#E0BC95';
+      ctx.fillRect(cx - 22, cy + 5, 6, 38);
+      ctx.fillRect(cx + 16, cy + 5, 6, 38);
     } else {
       ctx.fillRect(cx - 24, cy, 48, 65);
     }
@@ -344,10 +349,10 @@ export class AvatarCustomizer {
     ctx.fillStyle = '#FAF7F0';
     if (isFemale) {
       ctx.beginPath();
-      ctx.moveTo(cx - 27, cy + 65);
-      ctx.lineTo(cx + 27, cy + 65);
-      ctx.lineTo(cx + 20, cy + 104);
-      ctx.lineTo(cx - 20, cy + 104);
+      ctx.moveTo(cx - 17, cy + 42);
+      ctx.lineTo(cx + 17, cy + 42);
+      ctx.lineTo(cx + 23, cy + 102);
+      ctx.lineTo(cx - 23, cy + 102);
       ctx.closePath();
       ctx.fill();
     } else {

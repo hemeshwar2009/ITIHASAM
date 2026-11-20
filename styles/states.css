@@ -705,3 +705,68 @@
     grid-column: 1;
   }
 }
+
+/* Restore the original light presentation when the global switch is off. */
+body:not(.dark-mode) .states-explorer-wrap {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+body:not(.dark-mode) .states-explorer-wrap .explorer-header,
+body:not(.dark-mode) .states-explorer-wrap .state-card,
+body:not(.dark-mode) .states-explorer-wrap .empty-results-box,
+body:not(.dark-mode) .category-detail-card {
+  background: var(--bg-secondary);
+  border-color: var(--border-sandstone);
+  color: var(--text-primary);
+}
+
+body:not(.dark-mode) .states-explorer-wrap .explorer-title-area h2,
+body:not(.dark-mode) .states-explorer-wrap .state-name,
+body:not(.dark-mode) .cat-title,
+body:not(.dark-mode) .reward-item {
+  color: var(--text-primary);
+}
+
+body:not(.dark-mode) .states-explorer-wrap .explorer-title-area p,
+body:not(.dark-mode) .states-explorer-wrap .state-tagline,
+body:not(.dark-mode) .states-explorer-wrap .state-capital,
+body:not(.dark-mode) .cat-description {
+  color: var(--text-muted);
+}
+
+body:not(.dark-mode) .state-modal-overlay {
+  background: rgba(73, 58, 45, 0.6);
+}
+
+body:not(.dark-mode) .state-modal-content,
+body:not(.dark-mode) .state-modal-sidebar {
+  background: var(--bg-secondary);
+  border-color: var(--border-sandstone);
+  color: var(--text-primary);
+}
+
+body:not(.dark-mode) .state-modal-header {
+  border-bottom-color: var(--border-sandstone);
+}
+
+body:not(.dark-mode) .state-modal-header h2,
+body:not(.dark-mode) .state-modal-capital,
+body:not(.dark-mode) .header-tagline {
+  color: var(--text-primary);
+}
+
+body:not(.dark-mode) .modal-instruction-banner {
+  background: rgba(182, 154, 98, 0.12);
+  border-color: rgba(182, 154, 98, 0.3);
+  color: var(--text-primary);
+}
+
+body:not(.dark-mode) .state-filter-summary {
+  border-top-color: var(--border-sandstone);
+}
+
+body:not(.dark-mode) .cat-reward-indicator {
+  background: var(--bg-primary);
+  border-color: var(--border-subtle);
+}
