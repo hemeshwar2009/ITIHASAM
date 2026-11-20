@@ -1560,6 +1560,1098 @@
       "licenseUrl": "",
       "query": "Ita Fort Itanagar",
       "path": "assets/img/regions/arunachal-pradesh/history.jpg"
+    },
+    "architecture": {
+      "file": "File:Tawang Monastery (Tibetan Buddhist).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Tawang_Monastery_(Tibetan_Buddhist).jpg",
+      "artist": "Vikramjit Kakati",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Tawang Monastery",
+      "path": "assets/img/regions/arunachal-pradesh/architecture.jpg"
+    },
+    "festivals": {
+      "file": "File:Nyokum festival Nyishi.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Nyokum_festival_Nyishi.JPG",
+      "artist": "Prashanthns",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "query": "Nyokum festival",
+      "path": "assets/img/regions/arunachal-pradesh/festivals.jpg"
+    },
+    "culture": {
+      "file": "File:Mlengchung ba, Lumla village, Tawang district- RIWATCH Museum.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Mlengchung_ba,_Lumla_village,_Tawang_district-_RIWATCH_Museum.jpg",
+      "artist": "Research Institute of World’s Ancient Traditions Cultures and Heritage",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Monpa dance",
+      "path": "assets/img/regions/arunachal-pradesh/culture.jpg"
+    }
+  },
+  "manipur": {
+    "history": {
+      "file": "File:Shree Govindaji temple, Manipur.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Shree_Govindaji_temple,_Manipur.jpg",
+      "artist": "kknila",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "query": "Shree Govindajee Temple Imphal",
+      "path": "assets/img/regions/manipur/history.jpg"
+    },
+    "games": {
+      "file": "File:SAGOL KANGJEI - POLO IN MANIPUR.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:SAGOL_KANGJEI_-_POLO_IN_MANIPUR.jpg",
+      "artist": "E.J. Mitchell, Esq.",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "query": "Sagol Kangjei",
+      "path": "assets/img/regions/manipur/games.jpg"
+    },
+    "architecture": {
+      "file": "File:Kangla Fort, imphal.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Kangla_Fort,_imphal.JPG",
+      "artist": "Meghroddur",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Kangla Fort",
+      "path": "assets/img/regions/manipur/architecture.jpg"
+    },
+    "festivals": {
+      "file": "File:Leikang Lai Jagoi Khutthek group of gestures - in Lai Haraoba classical dance & music ritualistic performances.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Leikang_Lai_Jagoi_Khutthek_group_of_gestures_-_in_Lai_Haraoba_classical_dance_%26_music_ritualistic_performances.jpg",
+      "artist": "Kullachandra Singh, Ngariyambam",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "query": "Lai Haraoba",
+      "path": "assets/img/regions/manipur/festivals.jpg"
+    },
+    "culture": {
+      "file": "File:Meitei and Latin transliterations of \"Jagoi Raas\" and \"Manipuri Raas Leela\", the native term (Meitei term) and the common term (Sanskrit term) for the Manipuri classical dance respectively.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Meitei_and_Latin_transliterations_of_%22Jagoi_Raas%22_and_%22Manipuri_Raas_Leela%22,_the_native_term_(Meitei_term)_and_the_common_term_(Sanskrit_term)_for_the_Manipuri_classical_dance_respectively.jpg",
+      "artist": "Haoreima",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Manipuri dance Raas Leela",
+      "path": "assets/img/regions/manipur/culture.jpg"
+    },
+    "slide1": {
+      "file": "File:Rasa Lila in Manipuri dance style.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Rasa_Lila_in_Manipuri_dance_style.jpg",
+      "artist": "https://www.flickr.com/photos/matsukin/",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "query": "Manipuri Classical Raas Leela Manipur",
+      "path": "assets/img/regions/manipur/slide1.jpg"
+    },
+    "slide2": {
+      "file": "File:ꯍꯩꯉꯥꯡ ꯃꯥꯔꯖꯤꯡ ꯁꯥꯒꯣꯜ ꯃꯤꯇꯝ.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:%EA%AF%8D%EA%AF%A9%EA%AF%89%EA%AF%A5%EA%AF%A1_%EA%AF%83%EA%AF%A5%EA%AF%94%EA%AF%96%EA%AF%A4%EA%AF%A1_%EA%AF%81%EA%AF%A5%EA%AF%92%EA%AF%A3%EA%AF%9C_%EA%AF%83%EA%AF%A4%EA%AF%87%EA%AF%9D.jpg",
+      "artist": "Awangba Mangang",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Sagol Kangjei Original Polo Manipur",
+      "path": "assets/img/regions/manipur/slide2.jpg"
+    },
+    "slide3": {
+      "file": "File:Floating biomasses (\"Phumdi\" or \"Phumthi\" or \"Phum\" in Classical Meitei language) & islands in the Loktak Lake (alias \"Meitei Sea\") - World's only floating lake - in Kangleipak (Manipur) 09.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Floating_biomasses_(%22Phumdi%22_or_%22Phumthi%22_or_%22Phum%22_in_Classical_Meitei_language)_%26_islands_in_the_Loktak_Lake_(alias_%22Meitei_Sea%22)_-_World%27s_only_floating_lake_-_in_Kangleipak_(Manipur)_09.jpg",
+      "artist": "Haoreima",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "query": "Floating Islands of Loktak Lake Manipur",
+      "path": "assets/img/regions/manipur/slide3.jpg"
+    },
+    "slide4": {
+      "file": "File:Raas leela of majuli.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Raas_leela_of_majuli.jpg",
+      "artist": "Indranil Gayan",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Manipuri dance Raas Leela",
+      "path": "assets/img/regions/manipur/slide4.jpg"
+    }
+  },
+  "meghalaya": {
+    "history": {
+      "file": "File:Nartiang Monoliths in Meghalaya are tallest in the world.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Nartiang_Monoliths_in_Meghalaya_are_tallest_in_the_world.jpg",
+      "artist": "Iarmi Rabon",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Nartiang monoliths",
+      "path": "assets/img/regions/meghalaya/history.jpg"
+    },
+    "games": {
+      "file": "File:Khasi Archery.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Khasi_Archery.jpg",
+      "artist": "Wann Majaw",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "query": "Archery Meghalaya",
+      "path": "assets/img/regions/meghalaya/games.jpg"
+    },
+    "architecture": {
+      "file": "File:Double decker living root bridge 02.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Double_decker_living_root_bridge_02.jpg",
+      "artist": "Chiranjeeb Baul",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Double Decker Living Root Bridge",
+      "path": "assets/img/regions/meghalaya/architecture.jpg"
+    },
+    "festivals": {
+      "file": "File:Wangala Festival 2024.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Wangala_Festival_2024.jpg",
+      "artist": "Vishma thapa",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "query": "Wangala festival",
+      "path": "assets/img/regions/meghalaya/festivals.jpg"
+    },
+    "culture": {
+      "file": "File:SHAD SUK MYNSIEM.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:SHAD_SUK_MYNSIEM.jpg",
+      "artist": "Vishma thapa",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Shad Suk Mynsiem",
+      "path": "assets/img/regions/meghalaya/culture.jpg"
+    },
+    "slide2": {
+      "file": "File:Living root bridges of Nongriat village in East Khasi Hills district, Meghalaya JEG7387.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Living_root_bridges_of_Nongriat_village_in_East_Khasi_Hills_district,_Meghalaya_JEG7387.jpg",
+      "artist": "PJeganathan",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Double Decker Living Root Bridge Meghalaya",
+      "path": "assets/img/regions/meghalaya/slide2.jpg"
+    },
+    "slide3": {
+      "file": "File:Shad Suk Mynsiem 02.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Shad_Suk_Mynsiem_02.jpg",
+      "artist": "Kotinwpb",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Shad Suk Mynsiem",
+      "path": "assets/img/regions/meghalaya/slide3.jpg"
+    },
+    "slide4": {
+      "file": "File:Mawlynnong Village, Meghalaya (2).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Mawlynnong_Village,_Meghalaya_(2).jpg",
+      "artist": "ANKAN",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Mawlynnong Village Cleanliness Meghalaya",
+      "path": "assets/img/regions/meghalaya/slide4.jpg"
+    }
+  },
+  "mizoram": {
+    "history": {
+      "file": "File:Aizawl City in 2023.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Aizawl_City_in_2023.jpg",
+      "artist": "Robjersey",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "query": "Aizawl Mizoram",
+      "path": "assets/img/regions/mizoram/history.jpg"
+    },
+    "games": {
+      "file": "File:Nuchhungi English Medium School Hnahthial Lunglei Mizoram Mizo school girls hmeichhe hockey.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Nuchhungi_English_Medium_School_Hnahthial_Lunglei_Mizoram_Mizo_school_girls_hmeichhe_hockey.jpg",
+      "artist": "Byronkhiangte",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Mizoram sports",
+      "path": "assets/img/regions/mizoram/games.jpg"
+    },
+    "architecture": {
+      "file": "File:Skansen w Maurzycach, Łowicki Park Etnograficzny w Maurzycach, 2025, SOULinPIX, KsP 208.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Skansen_w_Maurzycach,_%C5%81owicki_Park_Etnograficzny_w_Maurzycach,_2025,_SOULinPIX,_KsP_208.jpg",
+      "artist": "Krzysztof Popławski",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Mizo traditional house",
+      "path": "assets/img/regions/mizoram/architecture.jpg"
+    },
+    "culture": {
+      "file": "File:Cheraw Mizoram.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cheraw_Mizoram.jpg",
+      "artist": "Ramesh Lalwani",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "query": "Cheraw dance",
+      "path": "assets/img/regions/mizoram/culture.jpg"
+    },
+    "slide1": {
+      "file": "File:The Cheraw Kan c.1940s.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:The_Cheraw_Kan_c.1940s.jpg",
+      "artist": "Major Anthony Gilchrist Mccall",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "query": "Cheraw dance",
+      "path": "assets/img/regions/mizoram/slide1.jpg"
+    },
+    "slide2": {
+      "file": "File:Cheraw jampui.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cheraw_jampui.jpg",
+      "artist": "Tlinga",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "query": "Cheraw dance",
+      "path": "assets/img/regions/mizoram/slide2.jpg"
+    },
+    "slide3": {
+      "file": "File:Cheraw.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cheraw.jpg",
+      "artist": "Vishnu90s",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Cheraw dance",
+      "path": "assets/img/regions/mizoram/slide3.jpg"
+    }
+  },
+  "nagaland": {
+    "history": {
+      "file": "File:Cemetery with kohima.jpeg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cemetery_with_kohima.jpeg",
+      "artist": "PP Yoonus",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "query": "Kohima War Cemetery",
+      "path": "assets/img/regions/nagaland/history.jpg"
+    },
+    "games": {
+      "file": "File:Naga Wrestling Jalukie.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Naga_Wrestling_Jalukie.jpg",
+      "artist": "Inreutu",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Naga wrestling",
+      "path": "assets/img/regions/nagaland/games.jpg"
+    },
+    "architecture": {
+      "file": "File:An Angami Naga hut.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:An_Angami_Naga_hut.jpg",
+      "artist": "JyotiPN",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Naga Morung",
+      "path": "assets/img/regions/nagaland/architecture.jpg"
+    },
+    "festivals": {
+      "file": "File:Hornbill Festival Nagaland 01.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Hornbill_Festival_Nagaland_01.jpg",
+      "artist": "Kaushik Mishra",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Hornbill Festival Nagaland",
+      "path": "assets/img/regions/nagaland/festivals.jpg"
+    },
+    "culture": {
+      "file": "File:Naga Warrior Dance In Air.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Naga_Warrior_Dance_In_Air.jpg",
+      "artist": "Saurabh sirohiya",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Naga warrior dance",
+      "path": "assets/img/regions/nagaland/culture.jpg"
+    }
+  },
+  "tripura": {
+    "history": {
+      "file": "File:Ujjayanta Palace as seen from the midpoint of the avenue 01.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Ujjayanta_Palace_as_seen_from_the_midpoint_of_the_avenue_01.JPG",
+      "artist": "Kingshuk Mondal",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "query": "Ujjayanta Palace",
+      "path": "assets/img/regions/tripura/history.jpg"
+    },
+    "games": {
+      "file": "File:Village people playing football in Kerala.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Village_people_playing_football_in_Kerala.jpg",
+      "artist": "Ganesh Mohan T",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Football India village",
+      "path": "assets/img/regions/tripura/games.jpg"
+    },
+    "architecture": {
+      "file": "File:Neermahal, Tripura 9 March, 2018 02.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Neermahal,_Tripura_9_March,_2018_02.jpg",
+      "artist": "Afifa Afrin",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Neermahal",
+      "path": "assets/img/regions/tripura/architecture.jpg"
+    },
+    "festivals": {
+      "file": "File:Temple of 14 gods-Tripura.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Temple_of_14_gods-Tripura.jpg",
+      "artist": "Sanjibroy56",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Kharchi Puja",
+      "path": "assets/img/regions/tripura/festivals.jpg"
+    },
+    "culture": {
+      "file": "File:Hojagiri dance on the streets.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Hojagiri_dance_on_the_streets.jpg",
+      "artist": "Arachneliya",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Hojagiri dance",
+      "path": "assets/img/regions/tripura/culture.jpg"
+    },
+    "slide2": {
+      "file": "File:Neer Mahal, the water palace of Tripura 06.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Neer_Mahal,_the_water_palace_of_Tripura_06.jpg",
+      "artist": "Kingshuk Mondal",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "query": "Neermahal Palace on Rudrasagar Tripura",
+      "path": "assets/img/regions/tripura/slide2.jpg"
+    }
+  },
+  "sikkim": {
+    "history": {
+      "file": "File:RABDENTSE RUINS entry.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:RABDENTSE_RUINS_entry.jpg",
+      "artist": "ARANYA HALDAR",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Rabdentse ruins",
+      "path": "assets/img/regions/sikkim/history.jpg"
+    },
+    "architecture": {
+      "file": "File:Rumtek Monastery 04.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Rumtek_Monastery_04.jpg",
+      "artist": "Bernard Gagnon",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Rumtek Monastery",
+      "path": "assets/img/regions/sikkim/architecture.jpg"
+    },
+    "culture": {
+      "file": "File:Pathway to Tingvong Monastery located in Upper Dzongu, North Sikkim, India.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Pathway_to_Tingvong_Monastery_located_in_Upper_Dzongu,_North_Sikkim,_India.jpg",
+      "artist": "Amitabha Gupta",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "query": "Sikkim cham dance",
+      "path": "assets/img/regions/sikkim/culture.jpg"
+    },
+    "slide1": {
+      "file": "File:Premise of Tingvong Monastery located in Upper Dzongu, North Sikkim, India 05.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Premise_of_Tingvong_Monastery_located_in_Upper_Dzongu,_North_Sikkim,_India_05.jpg",
+      "artist": "Amitabha Gupta",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "query": "Sikkim cham dance",
+      "path": "assets/img/regions/sikkim/slide1.jpg"
+    },
+    "slide2": {
+      "file": "File:Rumtek Dharmachakra prayer wheel Sikkim India.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Rumtek_Dharmachakra_prayer_wheel_Sikkim_India.jpg",
+      "artist": "Daniel Romanson",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "query": "Rumtek Monastery Dharmachakra Sikkim",
+      "path": "assets/img/regions/sikkim/slide2.jpg"
+    },
+    "slide3": {
+      "file": "File:Kanchenjunga sikkim.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Kanchenjunga_sikkim.jpg",
+      "artist": "Raghav pachouri",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Sacred Peak of Kanchenjunga Sikkim",
+      "path": "assets/img/regions/sikkim/slide3.jpg"
+    },
+    "slide4": {
+      "file": "File:Premise of Tingvong Monastery located in Upper Dzongu, North Sikkim, India 01.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Premise_of_Tingvong_Monastery_located_in_Upper_Dzongu,_North_Sikkim,_India_01.jpg",
+      "artist": "Amitabha Gupta",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "query": "Sikkim cham dance",
+      "path": "assets/img/regions/sikkim/slide4.jpg"
+    }
+  },
+  "madhya-pradesh": {
+    "history": {
+      "file": "File:Rock Shelter 8, Bhimbetka 02.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Rock_Shelter_8,_Bhimbetka_02.jpg",
+      "artist": "Bernard Gagnon",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "query": "Bhimbetka rock shelters",
+      "path": "assets/img/regions/madhya-pradesh/history.jpg"
+    },
+    "games": {
+      "file": "File:Mallakhamb area.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Mallakhamb_area.JPG",
+      "artist": "Pdesai2702",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Mallakhamb",
+      "path": "assets/img/regions/madhya-pradesh/games.jpg"
+    },
+    "architecture": {
+      "file": "File:Stupa 1, Sanchi 02.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Stupa_1,_Sanchi_02.jpg",
+      "artist": "Bernard Gagnon",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "query": "Great Stupa Sanchi",
+      "path": "assets/img/regions/madhya-pradesh/architecture.jpg"
+    },
+    "festivals": {
+      "file": "File:Odissi dancer at Khajuraho Dance Festival 2026 002.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Odissi_dancer_at_Khajuraho_Dance_Festival_2026_002.jpg",
+      "artist": "Suyash Dwivedi",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Khajuraho Dance Festival",
+      "path": "assets/img/regions/madhya-pradesh/festivals.jpg"
+    },
+    "culture": {
+      "file": "File:Gond Painting of MP1.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Gond_Painting_of_MP1.JPG",
+      "artist": "Roboture",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "query": "Gond painting",
+      "path": "assets/img/regions/madhya-pradesh/culture.jpg"
+    },
+    "slide1": {
+      "file": "File:Stupa 1 at Sanchi, Eastern Gateway, Madhya Pradesh, India.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Stupa_1_at_Sanchi,_Eastern_Gateway,_Madhya_Pradesh,_India.jpg",
+      "artist": "Rohit Sharma",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "The Great Stupa at Sanchi Madhya Pradesh",
+      "path": "assets/img/regions/madhya-pradesh/slide1.jpg"
+    },
+    "slide2": {
+      "file": "File:Khajuraho temples.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Khajuraho_temples.jpg",
+      "artist": "Anupks88",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Khajuraho Temple Stone Sculptures Madhya Pradesh",
+      "path": "assets/img/regions/madhya-pradesh/slide2.jpg"
+    },
+    "slide3": {
+      "file": "File:Ang mus may2.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Ang_mus_may2.JPG",
+      "artist": "Jack ma",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "query": "Gond painting",
+      "path": "assets/img/regions/madhya-pradesh/slide3.jpg"
+    },
+    "slide4": {
+      "file": "File:Rock Shelter 3, Bhimbetka 02.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Rock_Shelter_3,_Bhimbetka_02.jpg",
+      "artist": "Bernard Gagnon",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "query": "Bhimbetka Prehistoric Rock Shelters Madhya Pradesh",
+      "path": "assets/img/regions/madhya-pradesh/slide4.jpg"
+    }
+  },
+  "jammu-and-kashmir": {
+    "history": {
+      "file": "File:Avantiswami temple 01.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Avantiswami_temple_01.jpg",
+      "artist": "Piu1912",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Avantiswami temple",
+      "path": "assets/img/regions/jammu-and-kashmir/history.jpg"
+    },
+    "games": {
+      "file": "File:Xogo da billarda - 03 (cropped).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Xogo_da_billarda_-_03_(cropped).jpg",
+      "artist": "Xosema",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Gilli danda",
+      "path": "assets/img/regions/jammu-and-kashmir/games.jpg"
+    },
+    "architecture": {
+      "file": "File:Martand Sun Temple enclosure (6134371538).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Martand_Sun_Temple_enclosure_(6134371538).jpg",
+      "artist": "Varun Shiv Kapur from New Delhi, India",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "query": "Martand Sun Temple",
+      "path": "assets/img/regions/jammu-and-kashmir/architecture.jpg"
+    },
+    "festivals": {
+      "file": "File:Tulmul.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Tulmul.jpg",
+      "artist": "Amit Raina / Amitraina at en.wikipedia",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "query": "Kheer Bhawani Tulmul",
+      "path": "assets/img/regions/jammu-and-kashmir/festivals.jpg"
+    },
+    "culture": {
+      "file": "File:Pashmina scarf with woven elephant design 02.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Pashmina_scarf_with_woven_elephant_design_02.jpg",
+      "artist": "Kritzolina",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Pashmina shawl Kashmir",
+      "path": "assets/img/regions/jammu-and-kashmir/culture.jpg"
+    },
+    "slide1": {
+      "file": "File:Rouf Dance.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Rouf_Dance.jpg",
+      "artist": "Ramesh Lalwani",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "query": "Rouf Dance Jammu and Kashmir",
+      "path": "assets/img/regions/jammu-and-kashmir/slide1.jpg"
+    },
+    "slide2": {
+      "file": "File:A shawl weaver's shop, by Bishan Singh, likely Amritsar, ca.1874–75.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:A_shawl_weaver%27s_shop,_by_Bishan_Singh,_likely_Amritsar,_ca.1874%E2%80%9375.jpg",
+      "artist": "Bishan Singh",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "query": "Kani Shawl Weaving",
+      "path": "assets/img/regions/jammu-and-kashmir/slide2.jpg"
+    },
+    "slide3": {
+      "file": "File:Empty shikara on Dal Lake, Srinagar, India 2013-08-23 (flickr 9967093983).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Empty_shikara_on_Dal_Lake,_Srinagar,_India_2013-08-23_(flickr_9967093983).jpg",
+      "artist": "Fulvio Spada from Torino, Italy",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "query": "Shikaras on Dal Lake Jammu and Kashmir",
+      "path": "assets/img/regions/jammu-and-kashmir/slide3.jpg"
+    },
+    "slide4": {
+      "file": "File:Saffron From Pampore.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Saffron_From_Pampore.jpg",
+      "artist": "Umarsami",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Saffron of Pampore",
+      "path": "assets/img/regions/jammu-and-kashmir/slide4.jpg"
+    }
+  },
+  "ladakh": {
+    "history": {
+      "file": "File:Leh Palace from Central Asian Museum.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Leh_Palace_from_Central_Asian_Museum.jpg",
+      "artist": "Ingo Mehling",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "query": "Leh Palace",
+      "path": "assets/img/regions/ladakh/history.jpg"
+    },
+    "architecture": {
+      "file": "File:Alchi Monastery 01.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Alchi_Monastery_01.jpg",
+      "artist": "Bernard Gagnon",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Alchi Monastery",
+      "path": "assets/img/regions/ladakh/architecture.jpg"
+    },
+    "culture": {
+      "file": "File:Stok Palace, Ladakh 06.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Stok_Palace,_Ladakh_06.jpg",
+      "artist": "Deepank Ranka",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Thangka Ladakh",
+      "path": "assets/img/regions/ladakh/culture.jpg"
+    },
+    "slide1": {
+      "file": "File:Masked Buddhist Dance.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Masked_Buddhist_Dance.jpg",
+      "artist": "Sabine Blankevoort",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Masked Cham Dance",
+      "path": "assets/img/regions/ladakh/slide1.jpg"
+    },
+    "slide2": {
+      "file": "File:Leh Palace, Ladakh 04.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Leh_Palace,_Ladakh_04.jpg",
+      "artist": "Deepank Ranka",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Thangka Painting Ladakh",
+      "path": "assets/img/regions/ladakh/slide2.jpg"
+    },
+    "slide3": {
+      "file": "File:Pashmina goats.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Pashmina_goats.jpg",
+      "artist": "Redtigerxyz",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "query": "Changthangi Goats Ladakh",
+      "path": "assets/img/regions/ladakh/slide3.jpg"
+    },
+    "slide4": {
+      "file": "File:India - Ladakh - Trekking - 102 - prayer flags atop Yalang Nyau pass (3895808329).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:India_-_Ladakh_-_Trekking_-_102_-_prayer_flags_atop_Yalang_Nyau_pass_(3895808329).jpg",
+      "artist": "McKay Savage from London, UK",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "query": "Prayer Flags on the Passes Ladakh",
+      "path": "assets/img/regions/ladakh/slide4.jpg"
+    }
+  },
+  "delhi": {
+    "history": {
+      "file": "File:20191203 Naubat Khana, Red Fort, Delhi 0453 6340 DxO.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:20191203_Naubat_Khana,_Red_Fort,_Delhi_0453_6340_DxO.jpg",
+      "artist": "Jakub Hałun",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Red Fort Delhi",
+      "path": "assets/img/regions/delhi/history.jpg"
+    },
+    "games": {
+      "file": "File:Von der Jugendvorstandschaft organisiertes Mensch-ärgere-dich-nicht-Spiel.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Von_der_Jugendvorstandschaft_organisiertes_Mensch-%C3%A4rgere-dich-nicht-Spiel.jpg",
+      "artist": "Johannes S Liebl",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Pachisi board",
+      "path": "assets/img/regions/delhi/games.jpg"
+    },
+    "architecture": {
+      "file": "File:Art work on the wall of Qutb Minar Complex.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Art_work_on_the_wall_of_Qutb_Minar_Complex.jpg",
+      "artist": "Syed Sajidul Islam",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Qutb Minar",
+      "path": "assets/img/regions/delhi/architecture.jpg"
+    },
+    "festivals": {
+      "file": "File:Flower bedecked panka presented during Phool Walon Ki Sair festival.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Flower_bedecked_panka_presented_during_Phool_Walon_Ki_Sair_festival.JPG",
+      "artist": "Nvvchar",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "query": "Phool Walon Ki Sair",
+      "path": "assets/img/regions/delhi/festivals.jpg"
+    },
+    "culture": {
+      "file": "File:Qawwali hazrat nizamuddin delhi.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Qawwali_hazrat_nizamuddin_delhi.jpg",
+      "artist": "Kumarvimal",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Qawwali Nizamuddin",
+      "path": "assets/img/regions/delhi/culture.jpg"
+    },
+    "slide1": {
+      "file": "File:Nizamuddin Dargah -Delhi -Delhi -DSC 0001.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Nizamuddin_Dargah_-Delhi_-Delhi_-DSC_0001.jpg",
+      "artist": "Tushark18",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Qawwali at Nizamuddin Delhi",
+      "path": "assets/img/regions/delhi/slide1.jpg"
+    },
+    "slide3": {
+      "file": "File:20191203 Naubat Khana, Red Fort, Delhi 0456 6348 DxO.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:20191203_Naubat_Khana,_Red_Fort,_Delhi_0456_6348_DxO.jpg",
+      "artist": "Jakub Hałun",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Red Fort Delhi",
+      "path": "assets/img/regions/delhi/slide3.jpg"
+    },
+    "slide4": {
+      "file": "File:State Bank of India, Chandni Chowk branch, Delhi 02.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:State_Bank_of_India,_Chandni_Chowk_branch,_Delhi_02.jpg",
+      "artist": "Pinakpani",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Chandni Chowk Delhi",
+      "path": "assets/img/regions/delhi/slide4.jpg"
+    }
+  },
+  "chandigarh": {
+    "history": {
+      "file": "File:Chandigarh Rock Garden 4.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Chandigarh_Rock_Garden_4.jpg",
+      "artist": "Ijon",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Rock Garden Chandigarh",
+      "path": "assets/img/regions/chandigarh/history.jpg"
+    },
+    "games": {
+      "file": "File:A Kabaddi match at 2006 Asian Games.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:A_Kabaddi_match_at_2006_Asian_Games.jpg",
+      "artist": "Doha 2006",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "query": "Kabaddi match",
+      "path": "assets/img/regions/chandigarh/games.jpg"
+    },
+    "architecture": {
+      "file": "File:Palace of Assembly Chandigarh 2006.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Palace_of_Assembly_Chandigarh_2006.jpg",
+      "artist": "duncid",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "query": "Palace of Assembly Chandigarh",
+      "path": "assets/img/regions/chandigarh/architecture.jpg"
+    },
+    "festivals": {
+      "file": "File:Rose Garden ,Chandigarh,India.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Rose_Garden_,Chandigarh,India.jpg",
+      "artist": "Harvinder Chandigarh",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Zakir Hussain Rose Garden",
+      "path": "assets/img/regions/chandigarh/festivals.jpg"
+    },
+    "culture": {
+      "file": "File:Open Hand monument, Chandigarh.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Open_Hand_monument,_Chandigarh.jpg",
+      "artist": "Raakesh Blokhra",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "query": "Open Hand Monument",
+      "path": "assets/img/regions/chandigarh/culture.jpg"
+    },
+    "slide1": {
+      "file": "File:Another sign about Nek Chand's Rock Garden, Chandigarh (29336131537).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Another_sign_about_Nek_Chand%27s_Rock_Garden,_Chandigarh_(29336131537).jpg",
+      "artist": "shankar s. from Poona (pune), India, India",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "query": "Nek Chand's Rock Garden Chandigarh",
+      "path": "assets/img/regions/chandigarh/slide1.jpg"
+    },
+    "slide2": {
+      "file": "File:Capitol complex Monument 1 Chandigarh.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Capitol_complex_Monument_1_Chandigarh.jpg",
+      "artist": "Shanmugamp7",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "query": "Capitol Complex Chandigarh",
+      "path": "assets/img/regions/chandigarh/slide2.jpg"
+    },
+    "slide3": {
+      "file": "File:WCI2016 by Rehman - Opening (7).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:WCI2016_by_Rehman_-_Opening_(7).jpg",
+      "artist": "Rehman Abubakr",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Bhangra Chandigarh",
+      "path": "assets/img/regions/chandigarh/slide3.jpg"
+    },
+    "slide4": {
+      "file": "File:Signage for Chandigarh's Zakir Hussain Rose Garden (30404689928).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Signage_for_Chandigarh%27s_Zakir_Hussain_Rose_Garden_(30404689928).jpg",
+      "artist": "shankar s. from Poona (pune), India, India",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "query": "Zakir Hussain Rose Garden Chandigarh",
+      "path": "assets/img/regions/chandigarh/slide4.jpg"
+    }
+  },
+  "puducherry": {
+    "history": {
+      "file": "File:Arikamedu, Early Historic Site 03.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Arikamedu,_Early_Historic_Site_03.jpg",
+      "artist": "Jayaseerlourdhuraj",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "query": "Arikamedu",
+      "path": "assets/img/regions/puducherry/history.jpg"
+    },
+    "games": {
+      "file": "File:Pallanguzhi.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Pallanguzhi.JPG",
+      "artist": "Fotokannan",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "query": "Pallanguzhi",
+      "path": "assets/img/regions/puducherry/games.jpg"
+    },
+    "architecture": {
+      "file": "File:Pondicherry Municipality-2-white town-pondicherry-India.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Pondicherry_Municipality-2-white_town-pondicherry-India.jpg",
+      "artist": "Yercaud-elango",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "query": "White Town Pondicherry",
+      "path": "assets/img/regions/puducherry/architecture.jpg"
+    },
+    "festivals": {
+      "file": "File:Masi Magam festival, Puducherry, 2024.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Masi_Magam_festival,_Puducherry,_2024.jpg",
+      "artist": "Minolaf",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Masi Magam Puducherry",
+      "path": "assets/img/regions/puducherry/festivals.jpg"
+    },
+    "culture": {
+      "file": "File:Golden Mosaic.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Golden_Mosaic.jpg",
+      "artist": "Jay.Jarosz",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Matrimandir Auroville",
+      "path": "assets/img/regions/puducherry/culture.jpg"
+    },
+    "slide1": {
+      "file": "File:Promenade Hotel on Puducheery beach road.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Promenade_Hotel_on_Puducheery_beach_road.jpg",
+      "artist": "iMahesh",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "The Promenade Puducherry",
+      "path": "assets/img/regions/puducherry/slide1.jpg"
+    },
+    "slide2": {
+      "file": "File:India - Pondicherry - 012 - statues dot the courtyard of the Coloniale Guesthouse (4179316597).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:India_-_Pondicherry_-_012_-_statues_dot_the_courtyard_of_the_Coloniale_Guesthouse_(4179316597).jpg",
+      "artist": "McKay Savage from London, UK",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "query": "Villianur Terracotta",
+      "path": "assets/img/regions/puducherry/slide2.jpg"
+    },
+    "slide4": {
+      "file": "File:Matrimandir at Auroville, Puducherry - Pink006.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Matrimandir_at_Auroville,_Puducherry_-_Pink006.jpg",
+      "artist": "Pinku Halder",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Auroville's Matrimandir Puducherry",
+      "path": "assets/img/regions/puducherry/slide4.jpg"
+    }
+  },
+  "lakshadweep": {
+    "history": {
+      "file": "File:Minicoy Island, Lakshadweep.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Minicoy_Island,_Lakshadweep.jpg",
+      "artist": "Anand.himani18",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Minicoy",
+      "path": "assets/img/regions/lakshadweep/history.jpg"
+    },
+    "games": {
+      "file": "File:Dabba Kali2.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Dabba_Kali2.jpg",
+      "artist": "Aprabhala",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "query": "Lagori",
+      "path": "assets/img/regions/lakshadweep/games.jpg"
+    },
+    "festivals": {
+      "file": "File:Fishermen at Kavarathi, Lakshadweep, India (edit).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Fishermen_at_Kavarathi,_Lakshadweep,_India_(edit).jpg",
+      "artist": "Original: Shafeeq Thamarassery Derivative work: UnpetitproleX",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Lakshadweep",
+      "path": "assets/img/regions/lakshadweep/festivals.jpg"
+    },
+    "culture": {
+      "file": "File:Whitebarred goby Lakshadweep.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Whitebarred_goby_Lakshadweep.jpg",
+      "artist": "Rucha Karkarey",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Lakshadweep island lagoon",
+      "path": "assets/img/regions/lakshadweep/culture.jpg"
+    },
+    "slide1": {
+      "file": "File:Kolkali-Parichakali folk dance.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Kolkali-Parichakali_folk_dance.jpg",
+      "artist": "Rudolph.A.furtado",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "query": "Kolkali Lakshadweep",
+      "path": "assets/img/regions/lakshadweep/slide1.jpg"
+    },
+    "slide2": {
+      "file": "File:Koh Mak (island), Thailand, Shipwreck in lagoon.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Koh_Mak_(island),_Thailand,_Shipwreck_in_lagoon.jpg",
+      "artist": "Vyacheslav Argenberg",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "query": "Turquoise Lagoons",
+      "path": "assets/img/regions/lakshadweep/slide2.jpg"
+    },
+    "slide3": {
+      "file": "File:Fisherman in the lake with fishing rod.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Fisherman_in_the_lake_with_fishing_rod.jpg",
+      "artist": "Albarubescens",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Pole-and-Line Fishing",
+      "path": "assets/img/regions/lakshadweep/slide3.jpg"
+    },
+    "slide4": {
+      "file": "File:Coir doormat.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Coir_doormat.jpg",
+      "artist": "Vis M",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Coir Craft",
+      "path": "assets/img/regions/lakshadweep/slide4.jpg"
+    }
+  },
+  "andaman-and-nicobar-islands": {
+    "history": {
+      "file": "File:Andaman sea.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Andaman_sea.jpg",
+      "artist": "RIDH-1",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Ross Island Andaman",
+      "path": "assets/img/regions/andaman-and-nicobar-islands/history.jpg"
+    },
+    "games": {
+      "file": "File:A Nicobarese canoe at Nancowry.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:A_Nicobarese_canoe_at_Nancowry.jpg",
+      "artist": "Coxon, Stanley William",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "query": "Nicobar canoe",
+      "path": "assets/img/regions/andaman-and-nicobar-islands/games.jpg"
+    },
+    "architecture": {
+      "file": "File:Cellular jail or kaalaapani.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cellular_jail_or_kaalaapani.jpg",
+      "artist": "Jomesh at Malayalam Wikipedia",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+      "query": "Cellular Jail",
+      "path": "assets/img/regions/andaman-and-nicobar-islands/architecture.jpg"
+    },
+    "festivals": {
+      "file": "File:Henry Salt - View at Car Nicobar.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Henry_Salt_-_View_at_Car_Nicobar.jpg",
+      "artist": "James Fittler / After Henry Salt",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "query": "Car Nicobar",
+      "path": "assets/img/regions/andaman-and-nicobar-islands/festivals.jpg"
+    },
+    "culture": {
+      "file": "File:The Coral Reef at the Andaman Islands.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:The_Coral_Reef_at_the_Andaman_Islands.jpg",
+      "artist": "Ritiks",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "query": "Andaman coral reef",
+      "path": "assets/img/regions/andaman-and-nicobar-islands/culture.jpg"
+    },
+    "slide1": {
+      "file": "File:Life size Indian Hodi or Canoe 02.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Life_size_Indian_Hodi_or_Canoe_02.jpg",
+      "artist": "Pratishkhedekar",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Hodi Canoes",
+      "path": "assets/img/regions/andaman-and-nicobar-islands/slide1.jpg"
+    },
+    "slide2": {
+      "file": "File:Hospital-1-cellular jail-andaman-India.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Hospital-1-cellular_jail-andaman-India.jpg",
+      "artist": "Yercaud-elango",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Cellular Jail Andaman and Nicobar Islands",
+      "path": "assets/img/regions/andaman-and-nicobar-islands/slide2.jpg"
+    },
+    "slide3": {
+      "file": "File:Clown fish in the Andaman Coral Reef.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Clown_fish_in_the_Andaman_Coral_Reef.jpg",
+      "artist": "Ritiks",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "query": "Andaman coral reef",
+      "path": "assets/img/regions/andaman-and-nicobar-islands/slide3.jpg"
+    }
+  },
+  "dadra-and-nagar-haveli-and-daman-and-diu": {
+    "history": {
+      "file": "File:Upstairs to Moti Daman Fort By Portuguese in 15th century.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Upstairs_to_Moti_Daman_Fort_By_Portuguese_in_15th_century.jpg",
+      "artist": "Sethi kc",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Moti Daman Fort",
+      "path": "assets/img/regions/dadra-and-nagar-haveli-and-daman-and-diu/history.jpg"
+    },
+    "games": {
+      "file": "File:Von der Jugendvorstandschaft organisiertes Mensch-ärgere-dich-nicht-Spiel.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Von_der_Jugendvorstandschaft_organisiertes_Mensch-%C3%A4rgere-dich-nicht-Spiel.jpg",
+      "artist": "Johannes S Liebl",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Pachisi board",
+      "path": "assets/img/regions/dadra-and-nagar-haveli-and-daman-and-diu/games.jpg"
+    },
+    "architecture": {
+      "file": "File:Diu fort Diu india.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Diu_fort_Diu_india.jpg",
+      "artist": "Sumit sharma",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "query": "Diu Fort",
+      "path": "assets/img/regions/dadra-and-nagar-haveli-and-daman-and-diu/architecture.jpg"
+    },
+    "festivals": {
+      "file": "File:तारपा नृत्य २ Tarpa Dance 2.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:%E0%A4%A4%E0%A4%BE%E0%A4%B0%E0%A4%AA%E0%A4%BE_%E0%A4%A8%E0%A5%83%E0%A4%A4%E0%A5%8D%E0%A4%AF_%E0%A5%A8_Tarpa_Dance_2.jpg",
+      "artist": "Akshay Kharad, IIRD, Aurangabad",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Tarpa dance",
+      "path": "assets/img/regions/dadra-and-nagar-haveli-and-daman-and-diu/festivals.jpg"
+    },
+    "culture": {
+      "file": "File:Warli art at Borivali Stn 02.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Warli_art_at_Borivali_Stn_02.jpg",
+      "artist": "PratishKhedekar",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Warli painting",
+      "path": "assets/img/regions/dadra-and-nagar-haveli-and-daman-and-diu/culture.jpg"
+    },
+    "slide3": {
+      "file": "File:Church of Bom Jesus, Daman, Dadra and Nagar Haveli and Daman and Diu, India (2015).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Church_of_Bom_Jesus,_Daman,_Dadra_and_Nagar_Haveli_and_Daman_and_Diu,_India_(2015).jpg",
+      "artist": "Miteshnathani",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Diu Fort Dadra and Nagar Haveli and Daman and Diu",
+      "path": "assets/img/regions/dadra-and-nagar-haveli-and-daman-and-diu/slide3.jpg"
+    },
+    "slide4": {
+      "file": "File:Fishing harbour, coastal Village in Tamil Nadu.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Fishing_harbour,_coastal_Village_in_Tamil_Nadu.jpg",
+      "artist": "Rohini",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "query": "Fishing Harbours",
+      "path": "assets/img/regions/dadra-and-nagar-haveli-and-daman-and-diu/slide4.jpg"
     }
   }
 }
