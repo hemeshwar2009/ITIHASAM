@@ -69,6 +69,23 @@ export const INITIAL_ARCHETYPES = [
       hairColor: '#1A110B',
       accessory: 'cowrie-charm'
     }
+  },
+  {
+    id: 'heritage-scout',
+    name: 'The Heritage Scout',
+    title: 'Field Guide to Living Traditions',
+    description: 'A fearless cultural documentarian who travels from village festivals to mountain trails, collecting stories and craft traditions.',
+    avatar: {
+      name: 'Asha',
+      gender: 'scout-female',
+      skinTone: '#D5A77D',
+      clothing: 'tribal-handloom',
+      clothingColor: '#2B1E16',
+      accentColor: '#D4AF37',
+      headwear: 'none',
+      hairColor: '#1F140E',
+      accessory: 'brass-compass'
+    }
   }
 ];
 

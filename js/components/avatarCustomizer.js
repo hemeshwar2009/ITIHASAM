@@ -57,11 +57,11 @@ export class AvatarCustomizer {
           <div class="options-column">
             <!-- Tabs: Archetypes vs Custom Gear -->
             <div class="customizer-tabs-nav">
-              <button class="tab-btn ${this.activeTab === 'archetypes' ? 'active' : ''}" id="tab-archetypes">Four Historical Archetypes</button>
+              <button class="tab-btn ${this.activeTab === 'archetypes' ? 'active' : ''}" id="tab-archetypes">Five Historical Archetypes</button>
               <button class="tab-btn ${this.activeTab === 'custom' ? 'active' : ''}" id="tab-custom">Detailed Customization</button>
             </div>
 
-            <!-- Tab 1: 4 Initial Archetypes -->
+            <!-- Tab 1: 5 Initial Archetypes, including customizable female explorers -->
             <div class="tab-content ${this.activeTab === 'archetypes' ? '' : 'hidden'}" id="content-archetypes">
               <div class="archetypes-cards-list">
                 ${INITIAL_ARCHETYPES.map(arch => `
@@ -273,19 +273,41 @@ export class AvatarCustomizer {
     ctx.ellipse(cx, 220, 40, 10, 0, 0, Math.PI * 2);
     ctx.fill();
 
+    const isFemale = String(this.currentAvatar.gender || '').includes('female');
+
     // 2. Body / Attire
     ctx.fillStyle = this.currentAvatar.clothingColor || '#B76E4B';
-    ctx.fillRect(cx - 24, cy, 48, 65);
+    if (isFemale) {
+      ctx.beginPath();
+      ctx.moveTo(cx - 19, cy);
+      ctx.lineTo(cx + 19, cy);
+      ctx.lineTo(cx + 31, cy + 65);
+      ctx.lineTo(cx - 31, cy + 65);
+      ctx.closePath();
+      ctx.fill();
+    } else {
+      ctx.fillRect(cx - 24, cy, 48, 65);
+    }
 
     // Gold trim / border on attire
     ctx.fillStyle = '#B69A62';
-    ctx.fillRect(cx - 24, cy + 62, 48, 4);
+    ctx.fillRect(cx - (isFemale ? 31 : 24), cy + 62, isFemale ? 62 : 48, 4);
     ctx.fillRect(cx - 2, cy, 4, 62);
 
-    // Legs / Dhoti
+    // Lower attire
     ctx.fillStyle = '#FAF7F0';
-    ctx.fillRect(cx - 20, cy + 65, 18, 35);
-    ctx.fillRect(cx + 2, cy + 65, 18, 35);
+    if (isFemale) {
+      ctx.beginPath();
+      ctx.moveTo(cx - 27, cy + 65);
+      ctx.lineTo(cx + 27, cy + 65);
+      ctx.lineTo(cx + 20, cy + 104);
+      ctx.lineTo(cx - 20, cy + 104);
+      ctx.closePath();
+      ctx.fill();
+    } else {
+      ctx.fillRect(cx - 20, cy + 65, 18, 35);
+      ctx.fillRect(cx + 2, cy + 65, 18, 35);
+    }
 
     // Sandals / Shoes
     ctx.fillStyle = '#493A2D';
@@ -313,6 +335,16 @@ export class AvatarCustomizer {
     ctx.beginPath();
     ctx.arc(cx, cy - 14, 6, 0.1 * Math.PI, 0.9 * Math.PI);
     ctx.stroke();
+
+    // Hair silhouette makes female explorers visibly distinct while retaining full gear customization.
+    if (isFemale && this.currentAvatar.headwear === 'none') {
+      ctx.fillStyle = this.currentAvatar.hairColor || '#1A110B';
+      ctx.beginPath();
+      ctx.arc(cx, cy - 23, 27, Math.PI, Math.PI * 2);
+      ctx.fill();
+      ctx.fillRect(cx - 27, cy - 25, 7, 38);
+      ctx.fillRect(cx + 20, cy - 25, 7, 38);
+    }
 
     // 4. Headwear
     if (this.currentAvatar.headwear === 'pheta-turban') {

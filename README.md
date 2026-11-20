@@ -76,11 +76,12 @@ Every mini-game initially opens in **DEMO MODE**:
   - **Living Traditions Slideshow:** Automatically starts, **waits exactly 5 seconds** before auto-scrolling to the right at regular intervals, with pause/resume and full manual navigation.
 
 ### 4. Avatar Customization ("Choose Your Explorer")
-- 4 Initial Historical Archetypes:
+- 5 Initial Historical Archetypes, including customizable female explorers:
   - *The Royal Historian*
   - *The Temple Archaeologist*
   - *The Folklore Storyteller*
   - *The Boardgame Champion*
+  - *The Heritage Scout*
 - Full customization of Explorer Name, Skin Complexions, Traditional Attires (Kurta-Dhoti, Royal Sherwani, Kanchipuram Saree, Nehru Jacket, Angrakha, Naga Handloom), Headwear (Royal Pheta, Mysore Peta, Himachali Cap, Floral Juda), and Sacred Accessories.
 - Real-time pixel canvas preview.
 
