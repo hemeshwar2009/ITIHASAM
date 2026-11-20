@@ -85,6 +85,7 @@ Every mini-game initially opens in **DEMO MODE**:
   - *The Boardgame Champion*
   - *The Heritage Scout*
 - Full customization of Explorer Name, Skin Complexions, Traditional Attires (Kurta-Dhoti, Royal Sherwani, Kanchipuram Saree, Nehru Jacket, Angrakha, Naga Handloom), Headwear (Royal Pheta, Mysore Peta, Himachali Cap, Floral Juda), and Sacred Accessories.
+- Detailed Customization includes an explicit Male Explorer / Female Explorer presentation selector, with the live preview updating the explorer silhouette.
 - Real-time pixel canvas preview.
 
 ### 5. Gamification, Rewards & Printable Certificate

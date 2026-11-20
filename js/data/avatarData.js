@@ -90,6 +90,10 @@ export const INITIAL_ARCHETYPES = [
 ];
 
 export const CUSTOMIZATION_OPTIONS = {
+  genders: [
+    { id: 'explorer-male', name: 'Male Explorer', icon: '🧭' },
+    { id: 'explorer-female', name: 'Female Explorer', icon: '🌺' }
+  ],
   skinTones: [
     { id: 'tone-1', name: 'Fair Sandstone', value: '#F2D3B3' },
     { id: 'tone-2', name: 'Warm Honey', value: '#E0BC95' },

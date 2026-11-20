@@ -79,6 +79,19 @@ export class AvatarCustomizer {
 
             <!-- Tab 2: Detailed Customization (Appearance, Clothing, Headwear, Accessories) -->
             <div class="tab-content ${this.activeTab === 'custom' ? '' : 'hidden'}" id="content-custom">
+              <!-- Sex / presentation -->
+              <div class="custom-section">
+                <h4 class="section-title">Explorer Presentation</h4>
+                <div class="options-grid gender-options">
+                  ${CUSTOMIZATION_OPTIONS.genders.map(gender => `
+                    <button class="option-pill-btn ${String(this.currentAvatar.gender || '').includes('female') === (gender.id === 'explorer-female') ? 'active' : ''}" data-gender="${gender.id}">
+                      <span>${gender.icon}</span>
+                      <span>${gender.name}</span>
+                    </button>
+                  `).join('')}
+                </div>
+              </div>
+
               <!-- Skin Tones -->
               <div class="custom-section">
                 <h4 class="section-title">Skin Complexion</h4>
@@ -186,6 +199,16 @@ export class AvatarCustomizer {
           this.currentAvatar = { ...arch.avatar };
           this.render();
         }
+      });
+    });
+
+    // Skin tones
+    const genderBtns = this.container.querySelectorAll('[data-gender]');
+    genderBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        soundSynth.playClick();
+        this.currentAvatar.gender = btn.dataset.gender;
+        this.render();
       });
     });
 
