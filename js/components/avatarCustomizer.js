@@ -207,7 +207,20 @@ export class AvatarCustomizer {
     genderBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         soundSynth.playClick();
+        const wasFemale = String(this.currentAvatar.gender || '').includes('female');
+        const willBeFemale = btn.dataset.gender === 'explorer-female';
         this.currentAvatar.gender = btn.dataset.gender;
+        // Give the presentation an immediately recognisable starting look;
+        // all of these choices remain editable in the controls below.
+        if (willBeFemale && !wasFemale) {
+          this.currentAvatar.clothing = 'silk-saree';
+          this.currentAvatar.clothingColor = '#9C3D32';
+          this.currentAvatar.headwear = 'floral-juda';
+        } else if (!willBeFemale && wasFemale) {
+          this.currentAvatar.clothing = 'kurta-dhoti';
+          this.currentAvatar.clothingColor = '#FAF7F0';
+          this.currentAvatar.headwear = 'pheta-turban';
+        }
         this.render();
       });
     });
@@ -308,6 +321,16 @@ export class AvatarCustomizer {
       ctx.lineTo(cx - 31, cy + 65);
       ctx.closePath();
       ctx.fill();
+      // Bright sari pallu and blouse neckline make the female presentation
+      // readable even when the selected attire is dark.
+      ctx.strokeStyle = this.currentAvatar.accentColor || '#D4AF37';
+      ctx.lineWidth = 7;
+      ctx.beginPath();
+      ctx.moveTo(cx + 15, cy + 7);
+      ctx.lineTo(cx - 18, cy + 61);
+      ctx.stroke();
+      ctx.fillStyle = this.currentAvatar.accentColor || '#D4AF37';
+      ctx.fillRect(cx - 13, cy + 3, 26, 5);
     } else {
       ctx.fillRect(cx - 24, cy, 48, 65);
     }
@@ -393,6 +416,16 @@ export class AvatarCustomizer {
     } else {
       ctx.fillStyle = '#1A110B';
       ctx.fillRect(cx - 22, cy - 38, 44, 10);
+    }
+
+    if (isFemale) {
+      // Visible earrings and a bindi distinguish the face from the male
+      // preview without preventing any headwear combination.
+      ctx.fillStyle = '#D4AF37';
+      ctx.fillRect(cx - 28, cy - 17, 5, 8);
+      ctx.fillRect(cx + 23, cy - 17, 5, 8);
+      ctx.fillStyle = '#B76E4B';
+      ctx.fillRect(cx - 2, cy - 31, 5, 6);
     }
 
     // 5. Accessory Icon in Hand
