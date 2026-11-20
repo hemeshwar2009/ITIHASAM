@@ -112,6 +112,7 @@ export class IndiaMap {
               </g>
               <path class="map-inner-borders" d="${MAP_INNER_BORDERS}"/>
               <path class="map-outer-border" d="${MAP_OUTER_BORDER}"/>
+              <path class="map-highlight" id="map-highlight" d=""/>
               <g class="map-labels">${labels}</g>
             </svg>
             <p class="map-note">Hover or focus a state or Union Territory to preview it; click or press Enter to explore. Union Territory labels are in <em>italics</em>; small ones have a marker dot.
@@ -134,8 +135,11 @@ export class IndiaMap {
       const show = () => {
         this.container.querySelectorAll('.map-state.active').forEach(p => p.classList.remove('active'));
         path.classList.add('active');
-        // Bring the hovered state to the front so its outline is not hidden
-        path.parentNode.appendChild(path);
+        // Draw the highlight outline in a separate top layer. (Moving the shape
+        // itself in the DOM here would cancel the click that follows.)
+        const hl = this.container.querySelector('#map-highlight');
+        const shape = MAP_REGIONS[id];
+        if (hl && shape) hl.setAttribute('d', shape.d);
         const info = this.container.querySelector('#map-info');
         if (info) info.innerHTML = this.infoPanel(id);
         this.bindInfo();
