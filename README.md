@@ -3,6 +3,8 @@
 > *"36 Regions. Countless Stories. One Living Heritage."*
 > **Project Tagline:** *"Explore the Past. Play the Present. Preserve the Heritage."*
 
+🌐 **[Open the live ITIHASAM website](https://hemeshwar2009.github.io/ITIHASAM/)** · [View the GitHub repository](https://github.com/hemeshwar2009/ITIHASAM)
+
 ---
 
 ## 🌟 Executive Summary
