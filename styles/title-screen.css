@@ -576,3 +576,6 @@ body:has(#title-start-screen) #app-root {
     display: none;
   }
 }
+
+/* Controller hints stay on the right now that the profile badge is gone */
+.switch-control-hints { margin-left: auto; }

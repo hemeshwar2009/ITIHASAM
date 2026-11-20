@@ -94,17 +94,6 @@ export class TitleScreen {
 
             <!-- Game Logo: ITIHASAM (Medieval Font Style, Chunky 3D Outline) -->
             <div class="itihasam-logo-container">
-              <!-- Golden Crest Ornament perched atop the Title -->
-              <div class="logo-crest-ornament">
-                <svg width="44" height="34" viewBox="0 0 54 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <!-- Crown / Kalash Motif -->
-                  <path d="M 6 34 L 14 12 L 27 22 L 40 12 L 48 34 Z" fill="#FFC83B" stroke="#1A0D00" stroke-width="4" stroke-linejoin="round"/>
-                  <circle cx="14" cy="10" r="4" fill="#FF4757" stroke="#1A0D00" stroke-width="2"/>
-                  <circle cx="27" cy="8" r="5" fill="#2ED573" stroke="#1A0D00" stroke-width="2"/>
-                  <circle cx="40" cy="10" r="4" fill="#1E90FF" stroke="#1A0D00" stroke-width="2"/>
-                  <ellipse cx="27" cy="30" rx="6" ry="3" fill="#FFFFFF" opacity="0.6"/>
-                </svg>
-              </div>
 
               <!-- Main Game Title Text -->
               <h1 class="itihasam-title-text" title="ITIHASAM — An Epic Indian Cultural Chronicle">
@@ -117,53 +106,6 @@ export class TitleScreen {
               </div>
             </div>
 
-            <!-- Foreground Explorer Character standing on viewpoint gazing at the Taj & Sunset -->
-            <div class="start-mascot-wrapper" title="Your Explorer: ${avatarName}">
-              <div class="explorer-viewpoint-perch">
-                <svg class="explorer-character-svg" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
-                  <!-- Cute Hero Explorer Seen From Behind / Three-Quarter Angle -->
-                  <defs>
-                    <radialGradient id="turbanGrad" cx="45%" cy="35%" r="60%">
-                      <stop offset="0%" stop-color="#FF9F43" />
-                      <stop offset="70%" stop-color="#EE5253" />
-                      <stop offset="100%" stop-color="#1A0C00" />
-                    </radialGradient>
-                    <linearGradient id="tunicGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" stop-color="#48DBFB" />
-                      <stop offset="100%" stop-color="#0ABDE3" />
-                    </linearGradient>
-                    <linearGradient id="backpackGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" stop-color="#835738" />
-                      <stop offset="100%" stop-color="#4D2E17" />
-                    </linearGradient>
-                  </defs>
-
-                  <!-- Backpack -->
-                  <rect x="26" y="52" width="48" height="42" rx="10" fill="url(#backpackGrad)" stroke="#1A0D00" stroke-width="4"/>
-                  <rect x="34" y="60" width="32" height="12" rx="4" fill="#A0724C" stroke="#1A0D00" stroke-width="2"/>
-                  <!-- Bedroll attached to backpack top -->
-                  <rect x="22" y="44" width="56" height="14" rx="7" fill="#Feca57" stroke="#1A0D00" stroke-width="3"/>
-
-                  <!-- Body / Tunic (back view) -->
-                  <path d="M 28 54 Q 50 48 72 54 L 76 96 Q 50 102 24 96 Z" fill="url(#tunicGrad)" stroke="#1A0D00" stroke-width="4" stroke-linejoin="round"/>
-
-                  <!-- Little legs / boots standing on ledge -->
-                  <rect x="32" y="94" width="14" height="16" rx="6" fill="#3D2614" stroke="#1A0D00" stroke-width="3"/>
-                  <rect x="54" y="94" width="14" height="16" rx="6" fill="#3D2614" stroke="#1A0D00" stroke-width="3"/>
-
-                  <!-- Head / Turban with Kalgi feather -->
-                  <circle cx="50" cy="34" r="22" fill="url(#turbanGrad)" stroke="#1A0D00" stroke-width="4"/>
-                  <!-- Turban folds -->
-                  <path d="M 32 30 Q 50 42 68 30" fill="none" stroke="#C44569" stroke-width="3" stroke-linecap="round"/>
-                  <path d="M 34 38 Q 50 48 66 38" fill="none" stroke="#C44569" stroke-width="2.5" stroke-linecap="round"/>
-                  <!-- Golden Kalgi brooch and feather on turban -->
-                  <circle cx="42" cy="20" r="4" fill="#FFD700" stroke="#1A0D00" stroke-width="1.5"/>
-                  <path d="M 42 16 Q 38 6 32 4 Q 38 12 40 18 Z" fill="#2ED573" stroke="#1A0D00" stroke-width="1.5"/>
-                </svg>
-
-                <div class="explorer-stone-platform"></div>
-              </div>
-            </div>
 
           </div>
 
@@ -199,10 +141,6 @@ export class TitleScreen {
 
         <!-- 3. Bottom Utility Bar: Circular Profile Badge & Controller Hints -->
         <div class="title-bottom-bar">
-          <!-- Circular Profile Badge (Echoing the circular bottom-left icon in reference) -->
-          <div class="circular-profile-badge" id="btn-circular-profile" title="Explorer: ${avatarName} — customize avatar" role="button" tabindex="0" aria-label="Customize your explorer, ${avatarName}">
-            <span class="profile-avatar-emoji">${avatarEmoji}</span>
-          </div>
 
           <!-- Controller-style button hints -->
           <div class="switch-control-hints">
