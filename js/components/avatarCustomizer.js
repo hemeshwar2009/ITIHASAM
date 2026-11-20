@@ -388,13 +388,15 @@ export class AvatarCustomizer {
     ctx.stroke();
 
     // Hair silhouette makes female explorers visibly distinct while retaining full gear customization.
-    if (isFemale && this.currentAvatar.headwear === 'none') {
+    if (isFemale) {
       ctx.fillStyle = this.currentAvatar.hairColor || '#1A110B';
       ctx.beginPath();
       ctx.arc(cx, cy - 23, 27, Math.PI, Math.PI * 2);
       ctx.fill();
-      ctx.fillRect(cx - 27, cy - 25, 7, 38);
-      ctx.fillRect(cx + 20, cy - 25, 7, 38);
+      ctx.fillRect(cx - 28, cy - 25, 8, 49);
+      ctx.fillRect(cx + 20, cy - 25, 8, 49);
+      ctx.fillRect(cx - 24, cy + 16, 6, 20);
+      ctx.fillRect(cx + 18, cy + 16, 6, 20);
     }
 
     // 4. Headwear
