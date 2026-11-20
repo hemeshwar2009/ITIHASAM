@@ -4,7 +4,7 @@
 import { soundSynth } from '../audio/soundSynth.js';
 import { gameState } from '../state/gameState.js';
 import { t, escapeHTML } from '../i18n.js';
-import { getStateById } from '../data/statesData.js';
+import { getStateById, REGION_COUNT } from '../data/statesData.js';
 
 export class LandingStoryboard {
   constructor(containerId, options = {}) {
@@ -61,7 +61,7 @@ export class LandingStoryboard {
               <button class="quick-link-chip" data-go="start">🎮 Title Screen</button>
               <button class="quick-link-chip" data-go="daily">🔥 ${t('navDaily')}${gameState.hasAnsweredDailyToday() ? ' ✓' : ''}</button>
               <button class="quick-link-chip" data-go="timeline">⏳ ${t('navTimeline')}</button>
-              <button class="quick-link-chip" data-go="passport">🛂 ${t('navPassport')} (${gameState.countStamps()}/28)</button>
+              <button class="quick-link-chip" data-go="passport">🛂 ${t('navPassport')} (${gameState.countStamps()}/${REGION_COUNT})</button>
               <button class="quick-link-chip" data-go="impact">🌱 ${t('navImpact')}</button>
             </div>
           </div>
@@ -205,7 +205,7 @@ export class LandingStoryboard {
       <div class="continue-card ancient-panel">
         <div>
           <span class="continue-label">${t('welcomeBack')}, <strong>${escapeHTML(s.avatar.name || 'Explorer')}</strong></span>
-          <span class="continue-meta">🪙 ${s.points} CDP · Level ${s.currentLevel} · 🛂 ${gameState.countStamps()}/28 · 🔥 ${(s.daily && s.daily.streak) || 0}</span>
+          <span class="continue-meta">🪙 ${s.points} CDP · Level ${s.currentLevel} · 🛂 ${gameState.countStamps()}/${REGION_COUNT} · 🔥 ${(s.daily && s.daily.streak) || 0}</span>
         </div>
         ${st ? `<button class="btn-ancient btn-gold btn-sm" id="btn-hero-continue" data-state="${st.id}">▶ ${t('continueJourneyCta')}: ${escapeHTML(st.name)}</button>` : ''}
       </div>`;

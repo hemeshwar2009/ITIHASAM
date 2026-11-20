@@ -88,7 +88,7 @@ export const HERITAGE_GUIDE_QA = [
 - **Living Traditions:** watch every slide (about 150 CDP).
 - **Daily Challenge:** 60 CDP + a streak bonus. **Timeline:** up to 150 CDP.
 
-Points are awarded the first time you complete each activity — a loss earns nothing, so try again! CDP unlocks Levels 1–5, badges, 28 artifacts and your **Certificate of Cultural Mastery**.`
+Points are awarded the first time you complete each activity — a loss earns nothing, so try again! CDP unlocks Levels 1–5, badges, 36 artifacts and your **Certificate of Cultural Mastery**.`
   },
   {
     keywords: ['help', 'what can i do', 'guide', 'controls', 'explore'],
@@ -96,7 +96,7 @@ Points are awarded the first time you complete each activity — a loss earns no
     response: `Welcome, Explorer! Here is how to navigate **ITIHASAM**:
 
 1. **India Map:** each state tile fills with gold as you complete its 5 experiences.
-2. **Explore India:** search and filter all 28 states by region.
+2. **Explore India:** search and filter all 28 states and 8 Union Territories by region.
 3. **Mini-games:** every game opens with a demo first. Board games offer **Pass & Play** for two players.
 4. **Daily Quiz & Timeline:** one new question a day (keep your streak!) and a chronology challenge.
 5. **Passport & Rewards:** collect a stamp per state, badges, artifacts and a certificate.

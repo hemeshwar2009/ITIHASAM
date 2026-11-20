@@ -33,7 +33,16 @@ export const STATE_GAMES = {
   'nagaland': { game: 'sports', sport: 'wrestling' },
   'tripura': { game: 'sports', sport: 'ball' },
   'sikkim': { game: 'sports', sport: 'archery' },
-  'madhya-pradesh': { game: 'sports', sport: 'mallakhamb' }
+  'madhya-pradesh': { game: 'sports', sport: 'mallakhamb' },
+  // Union Territories
+  'jammu-and-kashmir': { game: 'sports', sport: 'gilli' },
+  'ladakh': { game: 'sports', sport: 'archery' },
+  'delhi': { game: 'chaupar', variant: 'Pachisi' },
+  'chandigarh': { game: 'sports', sport: 'kabaddi' },
+  'puducherry': { game: 'pallanguzhi' },
+  'lakshadweep': { game: 'sports', sport: 'sevenstones' },
+  'andaman-and-nicobar-islands': { game: 'sports', sport: 'canoe' },
+  'dadra-and-nagar-haveli-and-daman-and-diu': { game: 'chaupar', variant: 'Chopat' }
 };
 
 // Folk sports use one timing mechanic (stop the moving marker inside the
@@ -48,7 +57,9 @@ export const SPORT_THEMES = {
   ball: { icon: '⚽', name: 'Dhopkhel Ball Game', action: 'Throw the ball', target: '🧍', zone: 0.19, speed: 1.1, hitText: 'Direct hit!', missText: 'The ball missed.' },
   polo: { icon: '🏇', name: 'Sagol Kangjei (Manipuri Polo)', action: 'Swing the mallet', target: '⚪', zone: 0.15, speed: 1.35, hitText: 'Goal!', missText: 'The ball rolled away.' },
   pole: { icon: '🪵', name: 'Insuknawr (Pole Push)', action: 'Push with all your strength', target: '🧍', zone: 0.2, speed: 1.05, hitText: 'You pushed them back!', missText: 'You lost your footing.' },
-  mallakhamb: { icon: '🤸', name: 'Mallakhamb Pole Gymnastics', action: 'Hold the pose', target: '🪵', zone: 0.17, speed: 1.2, hitText: 'Graceful pose!', missText: 'You slipped down the pole.' }
+  mallakhamb: { icon: '🤸', name: 'Mallakhamb Pole Gymnastics', action: 'Hold the pose', target: '🪵', zone: 0.17, speed: 1.2, hitText: 'Graceful pose!', missText: 'You slipped down the pole.' },
+  sevenstones: { icon: '🥎', name: 'Seven Stones (Lagori)', action: 'Throw at the stone pile', target: '🪨', zone: 0.19, speed: 1.1, hitText: 'The stones topple!', missText: 'The ball rolled past.' },
+  canoe: { icon: '🛶', name: 'Hodi Canoe Race', action: 'Paddle in rhythm', target: '🏁', zone: 0.19, speed: 1.1, hitText: 'Perfect stroke!', missText: 'Your paddle splashed off-beat.' }
 };
 
 // ---------- Festivals ----------
@@ -185,6 +196,58 @@ export const FESTIVAL_THEMES = {
   'rhythm-thabal': { kind: 'rhythm', heading: 'YAOSHANG THABAL CHONGBA', instrument: 'Dhol & claps', icon: '👏', bpm: 108, lore: 'Under the moonlight, young people hold hands and dance the Thabal Chongba during Yaoshang.' },
   'rhythm-cheraw': { kind: 'rhythm', heading: 'CHAPCHAR KUT CHERAW', instrument: 'Bamboo poles', icon: '🎋', bpm: 92, lore: 'In Cheraw, dancers step nimbly between bamboo poles clapped together in rhythm.' },
   'rhythm-dholtasha': { kind: 'rhythm', heading: 'SHIGMO DHOL-TASHA', instrument: 'Dhol & tasha', icon: '🥁', bpm: 124, lore: 'Goa\'s spring festival fills the streets with drums, colourful floats and folk dances.' },
+  // Union Territory festivals
+  navreh: {
+    kind: 'mandala', heading: 'NAVREH THAAL (KASHMIRI NEW YEAR)', lamp: '🌸 SPRING MORNING',
+    layers: [
+      { name: 'Bowl of rice', icon: '🍚', color: '#F7F1E3' },
+      { name: 'Walnuts & curd', icon: '🌰', color: '#A0724C' },
+      { name: 'Fresh spring flowers', icon: '🌸', color: '#F4A6C6' },
+      { name: 'The new almanac (jantri)', icon: '📜', color: '#E6B85C' },
+      { name: 'A mirror for the first look', icon: '🪞', color: '#B8C7D9' }
+    ],
+    lore: 'On Navreh morning, Kashmiri Pandit families first look at a thaal arranged the night before, welcoming a year of plenty.',
+    done: 'Your Navreh thaal is ready — a bright new year begins!'
+  },
+  phoolwalon: {
+    kind: 'mandala', heading: 'PHOOL WALON KI SAIR PANKHA', lamp: '🎺 SHEHNAI PROCESSION',
+    layers: [
+      { name: 'Bamboo fan frame', icon: '🎋', color: '#C8A97E' },
+      { name: 'Marigold border', icon: '🏵️', color: '#E67E22' },
+      { name: 'Rose petals', icon: '🌹', color: '#C0392B' },
+      { name: 'Tuberose strings', icon: '🤍', color: '#FAF7F0' },
+      { name: 'Offer at temple and dargah', icon: '🙏', color: '#B69A62' }
+    ],
+    lore: "Delhi's florists carry giant flower fans to both the Yogmaya Temple and the Dargah of Khwaja Bakhtiyar Kaki — a festival of togetherness.",
+    done: 'The floral pankha joins the procession through Mehrauli!'
+  },
+  rosegarden: {
+    kind: 'mandala', heading: 'CHANDIGARH ROSE FESTIVAL', lamp: '🌹 GARDEN IN BLOOM',
+    layers: [
+      { name: 'Centre: deep red roses', icon: '🌹', color: '#A93226' },
+      { name: 'Ring 2: pink roses', icon: '🌸', color: '#F1948A' },
+      { name: 'Ring 3: yellow roses', icon: '🟡', color: '#F4D03F' },
+      { name: 'Ring 4: white roses', icon: '⚪', color: '#FAF7F0' },
+      { name: 'Ring 5: green lawn border', icon: '🍃', color: '#58A55C' }
+    ],
+    lore: "Each February the Zakir Hussain Rose Garden, one of Asia's largest, hosts flower shows and folk performances.",
+    done: 'The rose bed is in full bloom!'
+  },
+  hodi: {
+    kind: 'mandala', heading: 'NICOBARI HODI CANOE', lamp: '🌊 READY FOR THE RACE',
+    layers: [
+      { name: 'Carve the canoe hull', icon: '🪵', color: '#8B5A2B' },
+      { name: 'Fit the outrigger', icon: '🛶', color: '#A0724C' },
+      { name: 'Paint the bands', icon: '🎨', color: '#C0392B' },
+      { name: 'Tie palm-leaf decorations', icon: '🌴', color: '#27AE60' },
+      { name: 'Launch into the lagoon', icon: '🌊', color: '#2E86C1' }
+    ],
+    lore: 'Hodi canoes are carved from a single trunk and raced during Nicobarese celebrations.',
+    done: 'Your hodi glides into the lagoon, ready to race!'
+  },
+  'rhythm-cham': { kind: 'rhythm', heading: 'HEMIS TSECHU CHAM DANCE', instrument: 'Monastery drums & cymbals', icon: '🥁', bpm: 88, lore: 'Masked monks dance the cham at Hemis to drums, cymbals and long horns, honouring Guru Padmasambhava.' },
+  'rhythm-kolkali': { kind: 'rhythm', heading: 'KOLKALI STICK DANCE', instrument: 'Kolkali sticks', icon: '🥢', bpm: 110, lore: 'In Lakshadweep, dancers move in a circle, striking short sticks together in time with songs.' },
+  'rhythm-tarpa': { kind: 'rhythm', heading: 'WARLI TARPA DANCE', instrument: 'Tarpa (gourd horn)', icon: '🎺', bpm: 96, lore: 'Dancers link arms and spiral around the tarpa player, whose gourd horn sets the beat.' },
   'rhythm-tabla': { kind: 'rhythm', heading: 'KHAJURAHO DANCE FESTIVAL', instrument: 'Tabla', icon: '🪘', bpm: 100, lore: 'Classical dancers perform against the lit-up Khajuraho temples, accompanied by tabla and pakhawaj.' }
 };
 
@@ -216,7 +279,16 @@ export const STATE_FESTIVALS = {
   'nagaland': 'rhythm-logdrum',
   'tripura': 'diya',
   'sikkim': 'prayerflags',
-  'madhya-pradesh': 'rhythm-tabla'
+  'madhya-pradesh': 'rhythm-tabla',
+  // Union Territories
+  'jammu-and-kashmir': 'navreh',
+  'ladakh': 'rhythm-cham',
+  'delhi': 'phoolwalon',
+  'chandigarh': 'rosegarden',
+  'puducherry': 'pongal',
+  'lakshadweep': 'rhythm-kolkali',
+  'andaman-and-nicobar-islands': 'hodi',
+  'dadra-and-nagar-haveli-and-daman-and-diu': 'rhythm-tarpa'
 };
 
 export function getGameRoute(stateId) {

@@ -45,9 +45,13 @@ function simplify(pts, tol) {
     const [a, b] = stack.pop();
     let maxD = 0, idx = -1;
     const [ax, ay] = pts[a], [bx, by] = pts[b];
-    const dx = bx - ax, dy = by - ay, len = Math.hypot(dx, dy) || 1;
+    const dx = bx - ax, dy = by - ay, segLen = Math.hypot(dx, dy);
     for (let i = a + 1; i < b; i++) {
-      const d = Math.abs(dy * pts[i][0] - dx * pts[i][1] + bx * ay - by * ax) / len;
+      // A closed ring (an island drawn as one loop) starts and ends on the same
+      // point: measure distance to that point instead of to a zero-length line.
+      const d = segLen === 0
+        ? Math.hypot(pts[i][0] - ax, pts[i][1] - ay)
+        : Math.abs(dy * pts[i][0] - dx * pts[i][1] + bx * ay - by * ax) / segLen;
       if (d > maxD) { maxD = d; idx = i; }
     }
     if (maxD > tol && idx > 0) { keep[idx] = 1; stack.push([a, idx], [idx, b]); }
@@ -55,7 +59,12 @@ function simplify(pts, tol) {
   return pts.filter((_, i) => keep[i]);
 }
 const TOL = 0.35;
-const simpArcs = projArcs.map(a => simplify(a, TOL));
+// Tiny islands (a few pixels across) are kept as-is so they do not vanish
+const simpArcs = projArcs.map(a => {
+  const xs = a.map(p => p[0]), ys = a.map(p => p[1]);
+  const size = Math.max(Math.max(...xs) - Math.min(...xs), Math.max(...ys) - Math.min(...ys));
+  return size < 6 ? a : simplify(a, TOL);
+});
 
 // ---- 4. Build rings / paths ----
 const arcPoints = i => (i >= 0 ? simpArcs[i] : simpArcs[~i].slice().reverse());
@@ -98,21 +107,26 @@ topo.objects.states.geometries.forEach(g => {
   const id = slug(name);
   const polys = g.type === 'Polygon' ? [g.arcs] : g.arcs;
   let d = '', best = null, bestArea = 0;
+  const allPts = [];
   polys.forEach(poly => poly.forEach((ring, ri) => {
     const pts = ringPoints(ring);
     if (pts.length < 3) return;
+    allPts.push(...pts);
     d += ringToPath(pts);
     ring.forEach(ai => {
       const key = ai >= 0 ? ai : ~ai;
       if (!arcOwners.has(key)) arcOwners.set(key, new Set());
       arcOwners.get(key).add(id);
     });
-    if (ri === 0) {
+    if (ri === 0 && pts.length >= 3) {
       const area = Math.abs(ringArea(pts));
       if (area > bestArea) { bestArea = area; best = pts; }
     }
   }));
-  const [cx, cy] = best ? ringCentroid(best) : [0, 0];
+  // Centre of the largest outer ring; for scattered tiny islands, the average point
+  const [cx, cy] = best && bestArea > 2 ? ringCentroid(best)
+    : allPts.length ? [allPts.reduce((t, p) => t + p[0], 0) / allPts.length, allPts.reduce((t, p) => t + p[1], 0) / allPts.length]
+    : [0, 0];
   regions[id] = { name, d, cx: r1(cx), cy: r1(cy) };
 });
 

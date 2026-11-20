@@ -99,6 +99,8 @@ Every mini-game initially opens in **DEMO MODE**:
 
 ## ✨ What's New in Itihasam
 
+- **All 8 Union Territories are now playable** alongside the 28 states (36 regions): Jammu & Kashmir, Ladakh, Delhi, Chandigarh, Puducherry, Lakshadweep, Andaman & Nicobar Islands, and Dadra & Nagar Haveli and Daman & Diu. Each has all five experiences, its own game and festival activity, a passport stamp and a collectible artifact (content in `js/data/utData.js`).
+
 - **A different game for each state:** Pallanguzhi (Tamil Nadu, Goa), **Chaupar / Pachisi / Pagade / Ashta Chamma** dice races (Karnataka, Andhra Pradesh, Telangana, Gujarat, Rajasthan, Uttar Pradesh), **Bagh-Chal** tigers vs goats (Uttarakhand), and themed **folk sports** challenges for the rest: archery, kabaddi, wrestling, gilli-danda, Gedi stilts, Manipuri polo, Insuknawr, Mallakhamb and more. The routing lives in `js/data/gameRouting.js`.
 - **Pass & Play:** Pallanguzhi, Chaupar and Bagh-Chal can be played by two people on one device. Pallanguzhi's AI now simulates every move instead of always picking the biggest pit.
 - **Festivals per state:** ten "build the celebration" themes (Pookalam, Pongal pot, Bathukamma, Dasara Gombe, Rangoli, Mandana, Durga Puja pandal, Rath chariot, river of diyas, Losar prayer flags) and eleven **drum-rhythm** festivals (Garba, Bhangra dhol, Bihu, Wangala, Hornbill log drum, Kullu nagara, Sarhul mandar, Yaoshang, Cheraw, Shigmo, Khajuraho tabla).

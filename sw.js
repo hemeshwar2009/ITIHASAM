@@ -4,7 +4,7 @@
 // • Photos, fonts and CDN scripts are cached the first time they load
 //   (cache-first), so a visited page keeps working without internet.
 
-const VERSION = 'itihasam-v5';
+const VERSION = 'itihasam-v6';
 const SHELL_CACHE = `${VERSION}-shell`;
 const RUNTIME_CACHE = `${VERSION}-runtime`;
 
@@ -29,6 +29,7 @@ const SHELL = [
   'js/data/gameRouting.js',
   'js/data/rewardsData.js',
   'js/data/statesData.js',
+  'js/data/utData.js',
   'js/components/avatarCustomizer.js',
   'js/components/classLeaderboard.js',
   'js/components/dailyChallenge.js',

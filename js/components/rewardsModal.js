@@ -4,7 +4,7 @@
 import { soundSynth } from '../audio/soundSynth.js';
 import { gameState } from '../state/gameState.js';
 import { LEVELS, BADGES, ARTIFACTS } from '../data/rewardsData.js';
-import { INDIAN_STATES } from '../data/statesData.js';
+import { INDIAN_STATES, REGION_COUNT, STATE_COUNT, UT_COUNT, isUT } from '../data/statesData.js';
 import { escapeHTML } from '../i18n.js';
 
 const QR_LIB = 'https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js';
@@ -65,7 +65,7 @@ export class RewardsModal {
               <span class="score-val">Level ${currentLvl} of 5</span>
             </div>
             <div class="score-card">
-              <span class="score-title">Overall 28-State Progress</span>
+              <span class="score-title">Overall Progress (${REGION_COUNT} regions)</span>
               <span class="score-val">${overallPct}%</span>
             </div>
           </div>
@@ -76,7 +76,7 @@ export class RewardsModal {
           <button class="rewards-tab-btn ${this.activeTab === 'levels' ? 'active' : ''}" data-tab="levels" role="tab" aria-selected="${this.activeTab === 'levels'}">📜 Level Progression</button>
           <button class="rewards-tab-btn ${this.activeTab === 'badges' ? 'active' : ''}" data-tab="badges" role="tab" aria-selected="${this.activeTab === 'badges'}">🎖️ Badges (${gameState.state.unlockedBadges.length}/${BADGES.length})</button>
           <button class="rewards-tab-btn ${this.activeTab === 'artifacts' ? 'active' : ''}" data-tab="artifacts" role="tab" aria-selected="${this.activeTab === 'artifacts'}">🏺 Collectible Artifacts (${gameState.state.collectedArtifacts.length}/${ARTIFACTS.length})</button>
-          <button class="rewards-tab-btn ${this.activeTab === 'states-progress' ? 'active' : ''}" data-tab="states-progress" role="tab" aria-selected="${this.activeTab === 'states-progress'}">🗺️ 28 States Tracker</button>
+          <button class="rewards-tab-btn ${this.activeTab === 'states-progress' ? 'active' : ''}" data-tab="states-progress" role="tab" aria-selected="${this.activeTab === 'states-progress'}">🗺️ States & UTs Tracker</button>
           <button class="rewards-tab-btn ${this.activeTab === 'certificate' ? 'active' : ''}" data-tab="certificate" role="tab" aria-selected="${this.activeTab === 'certificate'}">🎓 Heritage Certificate</button>
         </div>
 
@@ -157,7 +157,7 @@ export class RewardsModal {
           </div>
         </div>
 
-        <!-- Tab 4: 28 States Progress Tracker -->
+        <!-- Tab 4: States & Union Territories Progress Tracker -->
         <div class="rewards-tab-content ${this.activeTab === 'states-progress' ? '' : 'hidden'}" id="tab-content-states-progress">
           <div class="states-tracker-table ancient-panel">
             <div class="tracker-header-row">
@@ -182,7 +182,7 @@ export class RewardsModal {
 
                 return `
                   <div class="tracker-row">
-                    <span class="td-state font-bold">${pct === 100 ? '🛂 ' : ''}${s.name}</span>
+                    <span class="td-state font-bold">${pct === 100 ? '🛂 ' : ''}${s.name}${isUT(s) ? ' <span class="ut-pill">UT</span>' : ''}</span>
                     <span class="td-region">${s.region}</span>
                     <span class="td-cat ${h ? 'done' : 'pending'}">${h ? '✓' : '•'}</span>
                     <span class="td-cat ${g ? 'done' : 'pending'}">${g ? '✓' : '•'}</span>
@@ -209,7 +209,7 @@ export class RewardsModal {
 
                   <p class="cert-prose">This certifies that intrepid heritage explorer</p>
                   <h2 class="cert-recipient-name">${escapeHTML(gameState.state.avatar.name || 'Explorer')}</h2>
-                  <p class="cert-prose">has journeyed through the ancient history, forgotten traditional games, architectural wonders, sacred festivals and living traditions of India, earning ${gameState.countStamps()} of 28 state passport stamps and ${gameState.state.unlockedBadges.length} badges.</p>
+                  <p class="cert-prose">has journeyed through the ancient history, forgotten traditional games, architectural wonders, sacred festivals and living traditions of India, earning ${gameState.countStamps()} of ${REGION_COUNT} passport stamps and ${gameState.state.unlockedBadges.length} badges.</p>
 
                   <div class="cert-stats-row">
                     <div class="cert-stat-item">
@@ -373,7 +373,7 @@ export class RewardsModal {
     const stats = [
       ['Cultural Points', `${s.points} CDP`],
       ['Mastery Rank', `Level ${s.currentLevel}`],
-      ['Passport Stamps', `${gameState.countStamps()} / 28`],
+      ['Passport Stamps', `${gameState.countStamps()} / ${REGION_COUNT}`],
       ['Badges', `${s.unlockedBadges.length}`]
     ];
     stats.forEach(([label, val], i) => {

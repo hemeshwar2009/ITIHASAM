@@ -7,6 +7,8 @@
 // 4. Festivals & Celebrations
 // 5. Regional Cultures
 
+import { UNION_TERRITORIES } from './utData.js';
+
 export const INDIAN_STATES = [
   {
     "id": "tamil-nadu",
@@ -4210,6 +4212,14 @@ export const INDIAN_STATES = [
     }
   }
 ];
+
+// The 8 Union Territories join the same journey (marked type: 'ut')
+INDIAN_STATES.push(...UNION_TERRITORIES);
+
+export const STATE_COUNT = INDIAN_STATES.filter(s => s.type !== 'ut').length;   // 28
+export const UT_COUNT = INDIAN_STATES.filter(s => s.type === 'ut').length;      // 8
+export const REGION_COUNT = INDIAN_STATES.length;                                   // 36
+export const isUT = (s) => !!s && s.type === 'ut';
 
 // Regional categorization helper
 export const REGIONS = {

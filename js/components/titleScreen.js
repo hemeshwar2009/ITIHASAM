@@ -113,7 +113,7 @@ export class TitleScreen {
 
               <!-- Capsule Subtitle Pill -->
               <div class="logo-tagline-pill">
-                <span class="logo-tagline-text">★ 28 STATES EXPEDITION ★</span>
+                <span class="logo-tagline-text">★ 28 STATES · 8 UTs ★</span>
               </div>
             </div>
 

@@ -12,7 +12,7 @@ export const LEVELS = [
     categoryKey: 'history',
     icon: '📜',
     requiredPoints: 0,
-    description: 'Explore ancient kingdoms, decipher royal stone edicts, and uncover historical artifacts across the 28 states.',
+    description: 'Explore ancient kingdoms, decipher royal stone edicts, and uncover historical artifacts across the 28 states and 8 Union Territories.',
     rewardBadge: 'Indus & Chola Pioneer',
     unlockMessage: 'Level 2: Traditional Games is unlocked!'
   },
@@ -176,7 +176,7 @@ export const BADGES = [
     name: 'Full Heritage Passport',
     category: 'Mastery',
     icon: '🛂',
-    description: 'Collected the passport stamp of all 28 states by finishing every category.',
+    description: 'Collected the passport stamp of all 28 states and 8 Union Territories by finishing every category.',
     cdpReward: 1000
   },
   {

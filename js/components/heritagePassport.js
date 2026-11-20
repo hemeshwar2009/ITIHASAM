@@ -4,7 +4,7 @@
 
 import { soundSynth } from '../audio/soundSynth.js';
 import { gameState, CATEGORY_KEYS } from '../state/gameState.js';
-import { INDIAN_STATES } from '../data/statesData.js';
+import { INDIAN_STATES, REGION_COUNT, isUT } from '../data/statesData.js';
 import { t, escapeHTML } from '../i18n.js';
 
 const CAT_ICONS = { history: '📜', games: '🎲', architecture: '🏛️', festivals: '🪔', culture: '🎭' };
@@ -42,7 +42,7 @@ export class HeritagePassport {
               </span>
             </span>` : `
             <span class="passport-empty" aria-hidden="true">
-              <span class="stamp-state">${escapeHTML(s.name)}</span>
+              <span class="stamp-state">${escapeHTML(s.name)}${isUT(s) ? ' <small class="ut-tag">UT</small>' : ''}</span>
               <span class="passport-cats">${CATEGORY_KEYS.map(k => `<span class="${doneCats.includes(k) ? 'on' : ''}">${CAT_ICONS[k]}</span>`).join('')}</span>
               <span class="stamp-date">${doneCats.length} / 5</span>
             </span>`}
@@ -57,10 +57,10 @@ export class HeritagePassport {
             <span class="category-pill">BHARAT HERITAGE PASSPORT</span>
             <h2>${t('passportTitle')}</h2>
             <p>${t('passportSubtitle')}</p>
-            <p class="passport-holder">Holder: <strong>${escapeHTML(name)}</strong> · Stamps: <strong>${stamped} / 28</strong></p>
+            <p class="passport-holder">Holder: <strong>${escapeHTML(name)}</strong> · Stamps: <strong>${stamped} / ${REGION_COUNT}</strong></p>
           </div>
-          <div class="passport-progress" role="progressbar" aria-valuemin="0" aria-valuemax="28" aria-valuenow="${stamped}" aria-label="Passport stamps collected">
-            <div class="passport-progress-fill" style="width:${(stamped / 28) * 100}%"></div>
+          <div class="passport-progress" role="progressbar" aria-valuemin="0" aria-valuemax="${REGION_COUNT}" aria-valuenow="${stamped}" aria-label="Passport stamps collected">
+            <div class="passport-progress-fill" style="width:${(stamped / REGION_COUNT) * 100}%"></div>
           </div>
         </div>
         <div class="passport-grid">${pages}</div>

@@ -205,7 +205,7 @@ Would you like to explore ${state.name}'s interactive games? Click **Explore Ind
       }
     }
 
-    // 3. Search all 28 states' stories for the best-matching passage
+    // 3. Search all 36 states' and Union Territories' stories for the best-matching passage
     const qTokens = tokenize(q);
     if (qTokens.length) {
       let best = null, bestScore = 0;
@@ -230,7 +230,7 @@ Open **${best.state.name}** from the India Map or Explore India to play its expe
     }
 
     // 4. Fallback answer
-    return `That is a fascinating aspect of Indian cultural heritage! Across our 28 states, each region preserves unique architectural traditions, ancient games of logic like Pallanguzhi, and vibrant seasonal celebrations like Onam and Pongal.
+    return `That is a fascinating aspect of Indian cultural heritage! Across our 28 states and 8 Union Territories, each region preserves unique architectural traditions, ancient games of logic like Pallanguzhi, and vibrant seasonal celebrations like Onam and Pongal.
 
 You can explore specific state marvels using the **Explore India** directory on the right-side toolbar, or ask me for rules of games like *Pallanguzhi* or *Brihadeeswarar Temple architecture*!`;
   }

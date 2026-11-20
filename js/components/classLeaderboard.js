@@ -7,6 +7,7 @@
 import { soundSynth } from '../audio/soundSynth.js';
 import { gameState } from '../state/gameState.js';
 import { t, escapeHTML } from '../i18n.js';
+import { REGION_COUNT } from '../data/statesData.js';
 import {
   isOnlineConfigured, currentClassCode, joinClass, leaveClass, fetchClass, submitNow, normaliseClassCode
 } from '../services/onlineLeaderboard.js';
@@ -83,7 +84,7 @@ export class ClassLeaderboard {
               <span role="cell" class="lb-name">${escapeHTML(r.name)}</span>
               <span role="cell" class="text-gold font-bold">${Number(r.points) || 0}</span>
               <span role="cell">${Number(r.level) || 1}</span>
-              <span role="cell">${Number(r.stamps) || 0} / 28</span>
+              <span role="cell">${Number(r.stamps) || 0} / ${REGION_COUNT}</span>
               <span role="cell">🔥 ${Number(r.streak) || 0}</span>
               <span role="cell" class="lb-updated">${escapeHTML(new Date(r.updated_at).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' }))}</span>
             </div>`).join('')}
@@ -176,7 +177,7 @@ export class ClassLeaderboard {
                 <span role="cell" class="lb-name">${escapeHTML(r.name)}${r.isActive ? ' <em>(playing now)</em>' : ''}</span>
                 <span role="cell" class="text-gold font-bold">${r.points}</span>
                 <span role="cell">${r.level}</span>
-                <span role="cell">${r.stamps} / 28</span>
+                <span role="cell">${r.stamps} / ${REGION_COUNT}</span>
                 <span role="cell">🔥 ${r.streak}</span>
                 <span role="cell" class="lb-actions">
                   ${r.isActive ? '' : `<button class="btn-ancient btn-secondary btn-sm" data-switch="${r.id}">${t('switchTo')}</button>`}

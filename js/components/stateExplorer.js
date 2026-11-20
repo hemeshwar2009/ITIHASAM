@@ -1,9 +1,9 @@
 // js/components/stateExplorer.js
-// ITIHASAM: 28 States Directory, Regional Filtering, Search & State Detail Modal
+// ITIHASAM: States & Union Territories Directory, Regional Filtering, Search & State Detail Modal
 
 import { soundSynth } from '../audio/soundSynth.js';
 import { gameState } from '../state/gameState.js';
-import { INDIAN_STATES, getStateById, searchStates, getStatesByRegion } from '../data/statesData.js';
+import { INDIAN_STATES, getStateById, searchStates, getStatesByRegion, isUT, STATE_COUNT, UT_COUNT } from '../data/statesData.js';
 import { describeGame, getFestivalTheme } from '../data/gameRouting.js';
 import { escapeHTML } from '../i18n.js';
 
@@ -49,7 +49,7 @@ export class StateExplorer {
         <div class="explorer-header ancient-panel">
           <div class="explorer-title-area">
             <span class="category-pill">STORYBOARD DIRECTORY</span>
-            <h2>Explore the 28 States of India</h2>
+            <h2>Explore the ${STATE_COUNT} States & ${UT_COUNT} Union Territories of India</h2>
             <p>Select any state to embark on its five interactive cultural experiences.</p>
           </div>
 
@@ -65,16 +65,16 @@ export class StateExplorer {
 
             <!-- Regional Filter Chips -->
             <div class="region-chips-row" id="region-chips-row">
-              ${['All', 'South', 'West', 'North', 'East', 'Northeast', 'Central'].map(reg => `
+              ${['All', 'South', 'West', 'North', 'East', 'Northeast', 'Central', 'UT'].map(reg => `
                 <button class="region-chip ${this.activeFilter === reg ? 'active' : ''}" data-region="${reg}" aria-pressed="${this.activeFilter === reg}">
-                  ${reg === 'All' ? 'All 28 States' : reg + ' India'}
+                  ${reg === 'All' ? 'All Regions' : reg === 'UT' ? 'Union Territories' : reg + ' India'}
                 </button>
               `).join('')}
             </div>
           </div>
         </div>
 
-        <!-- 28 States Cards Grid -->
+        <!-- States & Union Territories Cards Grid -->
         <div class="states-grid-container" id="states-grid">
           ${filteredStates.length > 0 ? filteredStates.map(state => {
             const completionPct = gameState.getStateCompletionPercentage(state.id);
@@ -89,7 +89,7 @@ export class StateExplorer {
 
                 <div class="state-card-body">
                   <div class="state-name-row">
-                    <h3 class="state-name">${state.name}</h3>
+                    <h3 class="state-name">${state.name}${isUT(state) ? ' <span class="ut-pill">UT</span>' : ''}</h3>
                     <span class="state-capital">🏛️ ${state.capital}</span>
                   </div>
                   <p class="state-tagline">${state.tagline}</p>
@@ -138,7 +138,9 @@ export class StateExplorer {
 
   getFilteredList() {
     let list = INDIAN_STATES;
-    if (this.activeFilter && this.activeFilter !== 'All') {
+    if (this.activeFilter === 'UT') {
+      list = INDIAN_STATES.filter(isUT);
+    } else if (this.activeFilter && this.activeFilter !== 'All') {
       list = getStatesByRegion(this.activeFilter);
     }
     if (this.searchQuery.trim()) {
@@ -285,7 +287,7 @@ export class StateExplorer {
     modalContent.innerHTML = `
       <div class="state-modal-header">
         <div class="header-titles">
-          <span class="region-pill">${state.region} India • Capital: ${state.capital}</span>
+          <span class="region-pill">${isUT(state) ? 'Union Territory • ' : ''}${state.region} India • Capital: ${state.capital}</span>
           <h2 id="state-modal-title">${escapeHTML(state.name)}</h2>
           <p class="header-tagline">${state.tagline}</p>
         </div>

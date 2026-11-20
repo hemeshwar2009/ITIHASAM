@@ -16,8 +16,8 @@ export class ImpactPage {
   render() {
     if (!this.container) return;
     const facts = [
-      ['28', 'states covered'],
-      ['140', 'cultural activities (5 per state)'],
+      ['28 + 8', 'states and Union Territories covered'],
+      ['180', 'cultural activities (5 per region)'],
       ['8', 'game types: history quest, Pallanguzhi, Chaupar, Bagh-Chal, folk sports, monument builder, festival builds, festival rhythm'],
       [String(BADGES.length), 'achievement badges'],
       ['3', 'interface languages'],
@@ -84,7 +84,7 @@ export class ImpactPage {
             <ul>
               <li>Living India map that fills with gold, and a Heritage Passport with a stamp for every state.</li>
               <li>Daily Heritage Challenge with streaks.</li>
-              <li>Levels, badges, 28 collectible artifacts and a shareable certificate with a QR code.</li>
+              <li>Levels, badges, 36 collectible artifacts and a shareable certificate with a QR code.</li>
             </ul>
           </section>
 
@@ -103,7 +103,7 @@ export class ImpactPage {
           <ul>
             <li>Teacher dashboards on top of the online class board (Supabase): class progress per state and per category.</li>
             <li>More interface languages (Bengali, Marathi, Telugu, Kannada, Malayalam, Assamese…).</li>
-            <li>Union Territories, and an AI Heritage Guide grounded in the site's own content.</li>
+            <li>An AI Heritage Guide grounded in the site's own content.</li>
             <li>Original photography and audio recorded with local artisans and musicians.</li>
           </ul>
           <p class="map-note">This device: ${Object.keys(gameState.state.completedActivities).length} of ${INDIAN_STATES.length * 5} activities completed by the current explorer.</p>
