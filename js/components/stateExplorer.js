@@ -285,21 +285,31 @@ export class StateExplorer {
     ];
 
     modalContent.innerHTML = `
-      <div class="state-modal-header">
-        <div class="header-titles">
-          <span class="region-pill">${isUT(state) ? 'Union Territory • ' : ''}${state.region} India • Capital: ${state.capital}</span>
-          <h2 id="state-modal-title">${escapeHTML(state.name)}</h2>
-          <p class="header-tagline">${state.tagline}</p>
-        </div>
-        <button class="modal-close-btn" id="btn-close-state-modal" aria-label="Close ${escapeHTML(state.name)}">✖</button>
-      </div>
+      <div class="state-modal-layout">
+        <aside class="state-modal-sidebar">
+          <div class="state-modal-header">
+            <div class="header-titles">
+              <span class="region-pill">${isUT(state) ? 'Union Territory • ' : ''}${state.region} India</span>
+              <h2 id="state-modal-title">${escapeHTML(state.name)}</h2>
+              <p class="state-modal-capital">Capital · ${escapeHTML(state.capital)}</p>
+              <p class="header-tagline">${state.tagline}</p>
+            </div>
+            <button class="modal-close-btn" id="btn-close-state-modal" aria-label="Close ${escapeHTML(state.name)}">✖</button>
+          </div>
+          <div class="modal-instruction-banner">
+            <span>✦</span>
+            <div><strong>Choose an experience</strong><br />Explore five cultural stories, games and traditions from this region.</div>
+          </div>
+          <div class="state-filter-summary">
+            <span class="state-filter-label">REGION FILTER</span>
+            <span class="state-filter-value">${isUT(state) ? 'Union Territories' : state.region + ' India'}</span>
+            <span class="state-filter-label">EXPERIENCES</span>
+            <span class="state-filter-value">05 cultural cards</span>
+          </div>
+        </aside>
 
-      <div class="state-modal-body">
-        <div class="modal-instruction-banner">
-          <span>✨</span> Select any of the 5 cultural category cards below to begin its interactive game & story experience:
-        </div>
-
-        <div class="category-cards-grid">
+        <div class="state-modal-body">
+          <div class="category-cards-grid">
           ${categories.map(cat => {
             const isCompleted = gameState.isActivityCompleted(state.id, cat.key);
             return `
@@ -332,6 +342,7 @@ export class StateExplorer {
             `;
           }).join('')}
         </div>
+      </div>
       </div>
     `;
 
