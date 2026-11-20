@@ -1,6 +1,6 @@
 # ITIHASAM (इतिहासम्) – An Interactive Cultural Heritage Experience
 
-> *"28 States. Countless Stories. One Living Heritage."*  
+> *"36 Regions. Countless Stories. One Living Heritage."*
 > **Project Tagline:** *"Explore the Past. Play the Present. Preserve the Heritage."*
 
 ---
@@ -9,7 +9,7 @@
 
 **ITIHASAM** is a visually immersive, interactive educational gaming website designed to bring India's rich cultural heritage alive for students and audiences worldwide. Designed following the authentic **ANCIENT WHITE** aesthetic, the platform combines the tactile elegance of ancient Indian manuscripts, stone-carved temple architecture, and vintage parchment textures with playable pixel-art games, interactive storyboards, and progressive gamified learning.
 
-The platform covers **all 28 states of India without exception**, with authentic historical personalities, indigenous board games, architectural marvels, sacred festivals, and living traditions.
+The platform covers **all 28 states and 8 Union Territories (36 regions)**, with authentic historical personalities, indigenous board games, architectural marvels, sacred festivals, and living traditions.
 
 ---
 
@@ -44,8 +44,8 @@ The platform covers **all 28 states of India without exception**, with authentic
   5. *Regional Cultures*
 - **Opposing Pointer Parallax:** Moving the mouse left shifts the floating discovery cards right; moving right shifts cards left; moving up shifts cards down; moving down shifts cards up. Smooth, clamped, with mobile touch support.
 
-### 2. Comprehensive 28 States Storyboard
-All 28 Indian states are meticulously documented across 5 cultural dimensions:
+### 2. Comprehensive 36-Region Storyboard
+All 28 Indian states and 8 Union Territories are documented across 5 cultural dimensions:
 - **Southern India (5):** Tamil Nadu, Kerala, Karnataka, Andhra Pradesh, Telangana
 - **Western India (4):** Maharashtra, Gujarat, Rajasthan, Goa
 - **Northern India (5):** Punjab, Haryana, Himachal Pradesh, Uttarakhand, Uttar Pradesh
@@ -53,7 +53,7 @@ All 28 Indian states are meticulously documented across 5 cultural dimensions:
 - **Northeastern India (8):** Assam, Arunachal Pradesh, Manipur, Meghalaya, Mizoram, Nagaland, Tripura, Sikkim
 - **Central India (1):** Madhya Pradesh
 
-Every state contains:
+Every region contains:
 1. **History & Civilization:** Empires, kings, scholars (e.g. Chola, Satavahana, Ahom, Mauryan), stone edicts, discovery quests, and historical artifacts.
 2. **Forgotten Traditional Games:** Authentic rules and playable boards (Pallanguzhi, Aadu Puli Aattam, Pagade, Chaupar, Ashta Chamma, Dhopkhel, Insuknawr, etc.).
 3. **Architectural Wonders:** Detailed engineering breakdowns and puzzle assembly (Brihadeeswarar, Taj Mahal, Konark, Hampi, Rani ki Vav, Sanchi, etc.).
@@ -105,15 +105,16 @@ Every mini-game initially opens in **DEMO MODE**:
 - **Pass & Play:** Pallanguzhi, Chaupar and Bagh-Chal can be played by two people on one device. Pallanguzhi's AI now simulates every move instead of always picking the biggest pit.
 - **Festivals per state:** ten "build the celebration" themes (Pookalam, Pongal pot, Bathukamma, Dasara Gombe, Rangoli, Mandana, Durga Puja pandal, Rath chariot, river of diyas, Losar prayer flags) and eleven **drum-rhythm** festivals (Garba, Bhangra dhol, Bihu, Wangala, Hornbill log drum, Kullu nagara, Sarhul mandar, Yaoshang, Cheraw, Shigmo, Khajuraho tabla).
 - **State-specific History quests:** the courtyard, its colours, the historic figures you meet and their dialogue all come from each state's data.
-- **Living India Map** (tile map) that fills with gold, a **Heritage Passport** with one stamp per state, a **Daily Heritage Challenge** with streaks, and **Timeline of the Ages**.
+- **Living India Map** with real geographic state and Union Territory boundaries, gold completion highlights, tiny-UT markers, a **Heritage Passport** with 36 stamps, a **Daily Heritage Challenge** with streaks, and **Timeline of the Ages**.
 - **Class Mode:** several explorer profiles on one device, ranked on a Class Board.
-- **Heritage Guide** now searches all 28 states' content and explains every game's rules.
-- **Rewards fixed:** a loss no longer awards points; badges match their descriptions; badge points can now trigger level-ups; 28 collectible artifacts (one per state, from its History quest); the slideshow only completes after every slide is seen. Toast pop-ups announce badges, level-ups, artifacts and stamps.
+- **Heritage Guide** searches all 36 regions' content and explains every game's rules.
+- **Rewards fixed:** a loss no longer awards points; badges match their descriptions; badge points can now trigger level-ups; 36 collectible artifacts (one per region, from its History quest); the slideshow only completes after every slide is seen. Toast pop-ups announce badges, level-ups, artifacts and stamps.
 - **Certificate:** download as a PNG with a QR code, print / save as PDF, or share (on phones).
 - **Interface languages:** English, हिन्दी, தமிழ் (Settings).
 - **Accessibility:** every game playable by keyboard, screen-reader labels and live narration, focus outlines, skip link, Esc closes dialogs, high-contrast and reduced-motion modes.
 - **Offline & installable (PWA):** a service worker caches the app and every photo you have viewed; it can be installed from Settings in Chrome or Edge.
-- **Regional music motifs:** an optional short melody in each region's style plays when you open a state (Settings → Regional Music Motifs).
+- **Regional music motifs:** an optional short melody in each region's style plays when you open a region (Settings → Regional Music Motifs).
+- **Licensed regional photography:** region and slideshow imagery is sourced from Wikimedia Commons with author and licence credits shown on the Impact page. The app falls back to its heritage placeholder when a photo is unavailable.
 - **Impact page** for judges and teachers: problem, audience, learning goals, curriculum links, roadmap.
 
 ---
@@ -137,19 +138,19 @@ python server.py
 ```bash
 node tools/download-images.mjs
 ```
-This downloads the Unsplash photos into `assets/img/photos/` and rewrites the code to use them. (Without it, photos still work offline once they have been viewed, thanks to the service worker.)
+This is optional legacy tooling for the original image set. The current regional photo workflow uses `node tools/fetch-commons-photos.mjs`, which records Wikimedia Commons attribution in `tools/photo-manifest.json` and regenerates `js/data/photoMap.js`.
 
 ---
 
 ## 🗺️ Credits
 
 - **Map boundaries:** [DataMeet India](https://github.com/datameet/maps) (CC BY 4.0), via [india-maps-data](https://github.com/udit-001/india-maps-data). Rebuild the map with `node tools/build-india-map.mjs <india.json>`.
-- **Photos:** [Unsplash](https://unsplash.com) (Unsplash License); file names keep the photo IDs.
+- **Photos:** Wikimedia Commons contributors, under the individual CC0, Public Domain, CC BY, or CC BY-SA licences recorded in `tools/photo-manifest.json`. The in-app Impact page displays the corresponding credits.
 - **Title screen** background: monument skyline from the team's design assets.
 
 ## 🌍 Live Site
 
-**https://hemeshwar2009.github.io/ITIHASAM/** — redeployed automatically by GitHub Actions on every push to `main` (see `.github/workflows/deploy-pages.yml`).
+**https://hemeshwar2009.github.io/ITIHASAM/** — redeployed automatically by GitHub Actions when the published `main` branch is updated (see `.github/workflows/deploy-pages.yml`). The development `live` branch is the no-login public-site line; publish it with `git push origin live:main` after review.
 
 ## 🌐 Deploying
 
@@ -183,7 +184,7 @@ Without a key the site works fully offline, and Class Mode keeps profiles on a s
 │   ├── ancient-white.css       # Core theme variables, typography, panels
 │   ├── landing.css             # Landing collage & curved storyboard
 │   ├── toolbar.css             # Right-side navigation
-│   ├── states.css              # 28 States directory & category modal
+│   ├── states.css              # 36-region directory & category modal
 │   ├── games.css               # Game wrappers, Pallanguzhi, Pookalam, history quest
 │   ├── slideshow.css           # Living Traditions slideshow
 │   ├── rewards.css             # Levels, badges, artifacts, certificate
@@ -198,9 +199,11 @@ Without a key the site works fully offline, and Class Mode keeps profiles on a s
     ├── i18n.js                 # English / हिन्दी / தமிழ் interface strings + escapeHTML
     ├── audio/soundSynth.js     # Web Audio: bells, clacks, drums, regional motifs
     ├── data/
-    │   ├── statesData.js       # Cultural content for all 28 states
+    │   ├── statesData.js       # Cultural content for 28 states + 8 UTs
+    │   ├── utData.js           # Union Territory content
+    │   ├── photoMap.js         # Generated regional photo paths and credits
     │   ├── gameRouting.js      # Which game / sport / festival each state uses
-    │   ├── rewardsData.js      # Levels, 15 badges, 28 artifacts
+    │   ├── rewardsData.js      # Levels, 15 badges, 36 artifacts
     │   ├── avatarData.js       # Explorer archetypes & outfits
     │   └── chatbotData.js      # Heritage Guide curated answers
     ├── state/gameState.js      # Profiles (Class Mode), progress, badges, streaks, events
@@ -213,7 +216,7 @@ Without a key the site works fully offline, and Class Mode keeps profiles on a s
     │   ├── classLeaderboard.js   # Class Mode profiles & ranking
     │   ├── impactPage.js         # Why Itihasam: goals, audience, curriculum
     │   ├── toastNotifier.js      # Badge / level / artifact / stamp pop-ups
-    │   ├── stateExplorer.js      # 28 states directory & detail modal
+│   ├── stateExplorer.js      # 36-region directory & detail modal
     │   ├── avatarCustomizer.js   # Choose your explorer
     │   ├── livingTraditions.js   # Culture slideshow
     │   ├── rewardsModal.js       # Rewards + PNG/QR certificate

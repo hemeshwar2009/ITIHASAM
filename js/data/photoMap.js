@@ -2374,18 +2374,18 @@ export const PHOTO_CREDITS = [
  {
   "region": "jammu-and-kashmir",
   "slot": "history",
-  "file": "Avantiswami temple 01.jpg",
-  "page": "https://commons.wikimedia.org/wiki/File:Avantiswami_temple_01.jpg",
-  "artist": "Piu1912",
+  "file": "Ruins of The Martand Sun Temple 28.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Ruins_of_The_Martand_Sun_Temple_28.jpg",
+  "artist": "Goutam1962",
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
  },
  {
   "region": "jammu-and-kashmir",
   "slot": "games",
-  "file": "Xogo da billarda - 03 (cropped).jpg",
-  "page": "https://commons.wikimedia.org/wiki/File:Xogo_da_billarda_-_03_(cropped).jpg",
-  "artist": "Xosema",
+  "file": "Jgp gilli danda.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Jgp_gilli_danda.jpg",
+  "artist": "Srvyadav",
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
  },
@@ -2527,9 +2527,9 @@ export const PHOTO_CREDITS = [
  {
   "region": "delhi",
   "slot": "games",
-  "file": "Von der Jugendvorstandschaft organisiertes Mensch-ärgere-dich-nicht-Spiel.jpg",
-  "page": "https://commons.wikimedia.org/wiki/File:Von_der_Jugendvorstandschaft_organisiertes_Mensch-%C3%A4rgere-dich-nicht-Spiel.jpg",
-  "artist": "Johannes S Liebl",
+  "file": "Embroidery, National Museum, New Delhi.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Embroidery,_National_Museum,_New_Delhi.jpg",
+  "artist": "Yann (talk)",
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
  },
@@ -2545,11 +2545,11 @@ export const PHOTO_CREDITS = [
  {
   "region": "delhi",
   "slot": "festivals",
-  "file": "Flower bedecked panka presented during Phool Walon Ki Sair festival.JPG",
-  "page": "https://commons.wikimedia.org/wiki/File:Flower_bedecked_panka_presented_during_Phool_Walon_Ki_Sair_festival.JPG",
-  "artist": "Nvvchar",
-  "license": "CC BY-SA 3.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  "file": "फूल वालों की सैर के पंखे.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:%E0%A4%AB%E0%A5%82%E0%A4%B2_%E0%A4%B5%E0%A4%BE%E0%A4%B2%E0%A5%8B%E0%A4%82_%E0%A4%95%E0%A5%80_%E0%A4%B8%E0%A5%88%E0%A4%B0_%E0%A4%95%E0%A5%87_%E0%A4%AA%E0%A4%82%E0%A4%96%E0%A5%87.jpg",
+  "artist": "कृष्ण कान्त शर्मा",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
  },
  {
   "region": "delhi",
@@ -2671,11 +2671,11 @@ export const PHOTO_CREDITS = [
  {
   "region": "puducherry",
   "slot": "history",
-  "file": "Arikamedu, Early Historic Site 03.jpg",
-  "page": "https://commons.wikimedia.org/wiki/File:Arikamedu,_Early_Historic_Site_03.jpg",
-  "artist": "Jayaseerlourdhuraj",
-  "license": "CC BY-SA 3.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  "file": "Arikamedu, archaeological site near Puducherry, India 31.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Arikamedu,_archaeological_site_near_Puducherry,_India_31.jpg",
+  "artist": "Pinakpani",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
  },
  {
   "region": "puducherry",
@@ -2770,11 +2770,11 @@ export const PHOTO_CREDITS = [
  {
   "region": "lakshadweep",
   "slot": "culture",
-  "file": "Whitebarred goby Lakshadweep.jpg",
-  "page": "https://commons.wikimedia.org/wiki/File:Whitebarred_goby_Lakshadweep.jpg",
-  "artist": "Rucha Karkarey",
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  "file": "Blue-Lagoons-In-Kalpeni-Lakshadweep.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Blue-Lagoons-In-Kalpeni-Lakshadweep.JPG",
+  "artist": "Vaikoovery",
+  "license": "CC BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0"
  },
  {
   "region": "lakshadweep",
