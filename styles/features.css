@@ -589,3 +589,13 @@ body.high-contrast .map-abbr { fill: #000; }
 
 /* Hover / focus outline drawn above all states (does not intercept clicks) */
 .map-highlight { fill: none; stroke: #1A120B; stroke-width: 3; stroke-linejoin: round; pointer-events: none; }
+
+/* Photo credits on the Impact page */
+.photo-credits summary { cursor: pointer; list-style: none; }
+.photo-credits summary h3 { display: inline; }
+.photo-credits summary::before { content: '▸ '; color: var(--accent-gold); }
+.photo-credits[open] summary::before { content: '▾ '; }
+.credit-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px 22px; margin-top: 12px; }
+.credit-region h4 { font-size: 0.95rem; margin-bottom: 4px; }
+.credit-region ul { padding-left: 16px; font-size: 0.78rem; color: var(--text-muted); display: grid; gap: 3px; }
+.credit-region a { color: var(--accent-terracotta); word-break: break-word; }

@@ -238,7 +238,7 @@ export class StateExplorer {
         title: 'History & Civilization',
         desc: state.history.highlights,
         icon: '📜',
-        image: state.heroImage,
+        image: state.photos.history,
         rewardPts: state.history.points,
         rewardText: state.history.artifact ? state.history.artifact.name : 'Chola Inscription Badge'
       },
@@ -248,7 +248,7 @@ export class StateExplorer {
         title: 'Forgotten Traditional Games',
         desc: `${state.games.title} — ${state.games.origin}. ${state.games.rules[0]}`,
         icon: '🎲',
-        image: 'assets/img/photos/1607604276583-eef5d076aa5f-w600.jpg',
+        image: state.photos.games,
         rewardPts: state.games.points,
         rewardText: `Play: ${describeGame(state.id)}`
       },
@@ -258,7 +258,7 @@ export class StateExplorer {
         title: 'Architectural Wonders',
         desc: `${state.architecture.title}: ${state.architecture.marvelDetails}`,
         icon: '🏛️',
-        image: 'assets/img/photos/1590050752117-238cb0fb12b1-w600.jpg',
+        image: state.photos.architecture,
         rewardPts: state.architecture.points,
         rewardText: 'Vimana Master Architect Badge'
       },
@@ -268,7 +268,7 @@ export class StateExplorer {
         title: 'Festivals & Celebrations',
         desc: `${state.festivals.title} (${state.festivals.season}). ${state.festivals.rituals}`,
         icon: '🪔',
-        image: 'assets/img/photos/1596178065887-1198b6148b2b-w600.jpg',
+        image: state.photos.festivals,
         rewardPts: state.festivals.points,
         rewardText: festTheme.kind === 'rhythm' ? `Rhythm: ${festTheme.instrument}` : `Build: ${festTheme.heading.toLowerCase().replace(/(^|\s)\S/g, c => c.toUpperCase())}`
       },
@@ -278,7 +278,7 @@ export class StateExplorer {
         title: 'Regional Cultures',
         desc: `${state.culture.title}. ${state.culture.dance}. ${state.culture.handicrafts}`,
         icon: '🎭',
-        image: 'assets/img/photos/1547153760-18fc86324498-w600.jpg',
+        image: state.photos.culture,
         rewardPts: state.culture.points,
         rewardText: 'Watch all slides to complete'
       }

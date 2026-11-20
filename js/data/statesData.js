@@ -8,6 +8,7 @@
 // 5. Regional Cultures
 
 import { UNION_TERRITORIES } from './utData.js';
+import { PHOTOS } from './photoMap.js';
 
 export const INDIAN_STATES = [
   {
@@ -4215,6 +4216,24 @@ export const INDIAN_STATES = [
 
 // The 8 Union Territories join the same journey (marked type: 'ut')
 INDIAN_STATES.push(...UNION_TERRITORIES);
+
+// Photos from Wikimedia Commons (tools/fetch-commons-photos.mjs): one per
+// category card plus the culture slideshow. The card image is the monument.
+const PLACEHOLDER = 'assets/img/heritage-placeholder.svg';
+INDIAN_STATES.forEach(s => {
+  const p = PHOTOS[s.id] || {};
+  s.photos = {
+    history: p.history || PLACEHOLDER,
+    games: p.games || PLACEHOLDER,
+    architecture: p.architecture || PLACEHOLDER,
+    festivals: p.festivals || PLACEHOLDER,
+    culture: p.culture || PLACEHOLDER
+  };
+  s.heroImage = p.architecture || p.history || PLACEHOLDER;
+  (s.culture.slideshowSlides || []).forEach((slide, i) => {
+    slide.image = p['slide' + (i + 1)] || p.culture || PLACEHOLDER;
+  });
+});
 
 export const STATE_COUNT = INDIAN_STATES.filter(s => s.type !== 'ut').length;   // 28
 export const UT_COUNT = INDIAN_STATES.filter(s => s.type === 'ut').length;      // 8

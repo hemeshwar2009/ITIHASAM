@@ -5,6 +5,8 @@ import { gameState } from '../state/gameState.js';
 import { INDIAN_STATES } from '../data/statesData.js';
 import { TIMELINE_EVENTS } from './timelineMode.js';
 import { BADGES } from '../data/rewardsData.js';
+import { PHOTO_CREDITS } from '../data/photoMap.js';
+import { escapeHTML } from '../i18n.js';
 
 export class ImpactPage {
   constructor(containerId) {
@@ -108,7 +110,33 @@ export class ImpactPage {
           </ul>
           <p class="map-note">This device: ${Object.keys(gameState.state.completedActivities).length} of ${INDIAN_STATES.length * 5} activities completed by the current explorer.</p>
         </div>
+
+        ${this.creditsSection()}
       </div>`;
+  }
+
+  // Attribution for every photo (required by CC BY / CC BY-SA licences)
+  creditsSection() {
+    const SLOT = { history: 'History', games: 'Games', architecture: 'Architecture', festivals: 'Festivals', culture: 'Culture' };
+    const byRegion = {};
+    PHOTO_CREDITS.forEach(c => { (byRegion[c.region] = byRegion[c.region] || []).push(c); });
+    const safeUrl = (u) => (/^https:\/\//.test(u || '') ? escapeHTML(u) : '#');
+    const rows = INDIAN_STATES.filter(s => byRegion[s.id]).map(s => `
+      <div class="credit-region">
+        <h4>${escapeHTML(s.name)}</h4>
+        <ul>${byRegion[s.id].map(c => `
+          <li><strong>${escapeHTML(SLOT[c.slot] || 'Slideshow ' + c.slot.replace('slide', ''))}:</strong>
+            <a href="${safeUrl(c.page)}" target="_blank" rel="noopener">${escapeHTML(c.file)}</a>
+            by ${escapeHTML(c.artist)} ·
+            ${c.licenseUrl ? `<a href="${safeUrl(c.licenseUrl)}" target="_blank" rel="noopener">${escapeHTML(c.license)}</a>` : escapeHTML(c.license)}</li>`).join('')}
+        </ul>
+      </div>`).join('');
+    return `
+      <details class="ancient-panel impact-card photo-credits">
+        <summary><h3>📷 Photo credits (${PHOTO_CREDITS.length})</h3></summary>
+        <p class="map-note">Photos are from Wikimedia Commons, used under the open licences shown (Creative Commons or public domain). Click a file name to see the original.</p>
+        <div class="credit-grid">${rows}</div>
+      </details>`;
   }
 
   destroy() {}

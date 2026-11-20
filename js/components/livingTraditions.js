@@ -50,7 +50,7 @@ export class LivingTraditionsSlideshow {
         title: 'Living Classical Heritage',
         subtitle: 'Ancient Traditions Across India',
         description: 'Centuries of rhythm, temple craft, handloom weaving, and oral epics passed down across generations.',
-        image: 'assets/img/photos/1547153760-18fc86324498-w1000.jpg',
+        image: 'assets/img/heritage-placeholder.svg',
         tag: 'Heritage',
         stateName: this.stateData.name
       }
