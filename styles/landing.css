@@ -13,31 +13,31 @@
   box-sizing: border-box;
 }
 
-/* Background Heritage Collage */
+/* Background: the title-screen monument skyline, heavily faded.
+   Fixed to the window so it stays put while the page scrolls. */
 .heritage-collage-bg {
-  position: absolute;
+  position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  opacity: 0.18;
-  filter: sepia(0.35) contrast(1.05);
+  background: url('../assets/img/itihasam_start_bg.jpg') center bottom / cover no-repeat;
   pointer-events: none;
   z-index: 0;
 }
 
+/* The old photo collage tiles are replaced by the single skyline image */
 .collage-item {
-  background-size: cover;
-  background-position: center;
-  transition: transform 10s ease;
+  display: none;
 }
 
-/* Subtle Ancient White Overlay to guarantee interface readability */
+/* Cream wash over the photo so text stays easy to read */
 .ancient-white-overlay {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: radial-gradient(circle at center, rgba(245, 240, 230, 0.9) 20%, rgba(250, 247, 240, 0.95) 75%, #F5F0E6 100%);
+  background: radial-gradient(circle at 50% 35%, rgba(250, 247, 240, 0.86) 0%, rgba(245, 240, 230, 0.82) 60%, rgba(245, 240, 230, 0.78) 100%);
   pointer-events: none;
+}
+
+body.high-contrast .ancient-white-overlay {
+  background: rgba(255, 253, 248, 0.92);
 }
 
 .mandala-faint-bg {

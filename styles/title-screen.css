@@ -421,15 +421,13 @@ body:has(#title-start-screen) #chatbot-mount {
   display: none;
 }
 
-body:has(#title-start-screen) .right-vertical-toolbar {
-  opacity: 0.75;
-  transform: translateX(calc(100% - 14px));
-  transition: transform 0.3s ease, opacity 0.3s ease;
+/* No toolbar on the title screen: the menu is the only navigation here */
+body:has(#title-start-screen) #toolbar-mount {
+  display: none;
 }
 
-body:has(#title-start-screen) .right-vertical-toolbar:hover {
-  transform: translateX(0);
-  opacity: 1;
+body:has(#title-start-screen) #app-root {
+  margin-right: 0;
 }
 
 /* ==========================================================================
